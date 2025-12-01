@@ -1,33 +1,64 @@
-import React, { useContext } from "react";
-import { FormContext } from "../context/FormContext";
+import React from "react";
 
-const ProgressBar = () => {
-  const { step } = useContext(FormContext);
-  const steps = ["Unit Details", "Unit Constitution", "Operational Plan", "Legal Details", "Financials", "Employment", "Declaration"];
-
-  const progressWidth = (step / steps.length) * 100;
+const ArrowProgressBar = ({ step }) => {
+  const steps = [
+    "Unit Details",
+    "Unit Constitution",
+    "Operational Plan",
+    "Legal Details",
+    "Financials",
+    "Employment",
+    "Declaration"
+  ];
 
   return (
-    <div className="mb-6">
-      <div className="w-full bg-gray-200 h-2 rounded-full">
-        <div
-          className="bg-blue-600 h-2 rounded-full transition-all duration-500"
-          style={{ width: `${progressWidth}%` }}
-        ></div>
-      </div>
-      <div className="flex justify-between mt-2">
-        {steps.map((_, i) => (
+    <div className="w-full flex overflow-x-auto no-scrollbar  mt-4 mb-4">
+      <div className="flex w-max">
+      {steps.map((label, index) => {
+        const isActive = index + 1 <= step;
+        const isCurrent = index + 1 === step;
+        const isLast = index === steps.length - 1;
+
+        return (
           <div
-            key={i}
-            className={`w-7 h-7 flex items-center justify-center rounded-full text-xs font-bold border
-              ${i + 1 <= step ? "bg-blue-600 text-white border-blue-600" : "bg-gray-300 border-gray-500"}`}
+            key={index}
+            className={`
+            relative px-3 py-2 text-[15px] font-medium flex items-center
+            whitespace-nowrap transition-all duration-300 shadow-sm
+            ${isActive
+                ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white"
+                : "bg-gray-200 text-gray-600"
+              }
+            ${isCurrent && "ring-1 ring-blue-400"}
+            ${!isLast ? "mr-1" : ""}
+          `}
+            style={{
+              clipPath: isLast
+                ? "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+                : "polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%)",
+              borderRadius: "4px",
+            }}
           >
-            {i + 1}
+            <span>{label}</span>
+
+            {!isLast && (
+              <div
+                className={`
+                absolute right-0 top-0 h-full w-3
+                ${isActive ? "bg-blue-700" : "bg-gray-300"}
+              `}
+                style={{
+                  clipPath: "polygon(0 0, 100% 50%, 0 100%)",
+                }}
+              ></div>
+            )}
           </div>
-        ))}
+        );
+      })}
       </div>
     </div>
   );
+
 };
 
-export default ProgressBar;
+export default ArrowProgressBar;

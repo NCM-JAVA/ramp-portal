@@ -1,470 +1,314 @@
 import React, { useState } from "react";
-import { ArrowLeft, ArrowLeftCircle, ArrowLeftCircleIcon, ArrowRight, ArrowRightCircle, ArrowRightCircleIcon, UserPlus } from "lucide-react";
+import {
+  ArrowLeftCircleIcon,
+  ArrowRightCircleIcon,
+} from "lucide-react";
+
+import UnitDetails from "../components/register/unitDetails";
+import UnitConstitution from "../components/register/unitConstitution";
+import OperationalPlan from "../components/register/operationalPlan";
+import LegalDetails from "../components/register/legalDetails";
+import Financials from "../components/register/financials";
+import Employment from "../components/register/employment";
+import Declaration from "../components/register/declaration";
+import ProgressBar from "../components/register/progressBar";
+import MainLayout from "../components/layouts/MainLayout";
 
 const Register = () => {
   const [step, setStep] = useState(1);
-  const [formDataUnitDetails, setFormDataUnitDetails] = useState({
-    industrial_unit: "",
-    email: "",
-    phone: "",
-    factory_address: "",
-    po: "",
-    district: "",
-    state: ""
-  });
+
+  const totalSteps = 8;
+
   const [formData, setFormData] = useState({
+    //Unit Details
     industrial_unit: "",
-    email: "",
     phone: "",
     factory_address: "",
     po: "",
     district: "",
-    state: ""
+    state: "",
+    email: "",
+
+    //Unit Constitution
+    constitution_type: "",
+    partners: "",
+    address: "",
+
+    //Operational Plan
+    date_of_commencement: "",
+    industry_type: "",
+    activity_type: "",
+    product_name: "",
+    power_requirement: "",
+    power_requirement_unit: "",
+    load_sanction_certificate: "",
+    annual_production_capacity: "",
+    annual_production_quantity: "",
+    annual_production_value: "",
+    major_raw_material: "",
+    new_unit: "",
+
+    //Legal Details
+    udyam_registration_no: "",
+    gst_no: "",
+    trading_license_no: "",
+    factory_license_no: "",
+    consdent_operate: "",
+    other_registration: "",
+
+    //Financials
+    land: "",
+    site_development: "",
+    factory_building: "",
+    office_building: "",
+    plant_machinary: "",
+    electrical_installation: "",
+    preliminary_expenses: "",
+    factory_license_no: "",
+    total_financial: "",
+
+    //Employment
+    apst_managerial: "",
+    apst_supervisory: "",
+    apst_skilled: "",
+    apst_semi_skilled: "",
+    apst_unskilled: "",
+    apst_others: "",
+    nonapst_managerial: "",
+    nonapst_supervisory: "",
+    nonapst_skilled: "",
+    nonapst_semi_skilled: "",
+    nonapst_unskilled: "",
+    nonapst_others: "",
+
+    //Declaration
+    new_unit: "", //checkbox
+    full_name: "",
+    signature: "",
+    seal: ""
+
   });
 
-  const next = () => setStep(step + 1);
-  const prev = () => setStep(step - 1);
-
-  const handleUnitDetailsChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    setFormDataUnitDetails({
-      ...formDataUnitDetails,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  };
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: type === "checkbox" ? checked : value
     });
-  }
 
-  const totalSteps = 7;
-
-  const handleSubmit = () => {
-    alert("Form submitted!");
-    console.log(formDataUnitDetails);
+    setErrors({
+      ...errors,
+      [name]: ""
+    });
   };
 
-  const steps = ["Unit Details", "Unit Constitution", "Operational Plan", "Legal Details", "Financials", "Employment", "Declaration"];
-  const progressWidth = (step / steps.length) * 100;
+  const validateUnitDetails = () => {
+    let temp = {};
+    let isValid = true;
+
+    if (!formData.industrial_unit.trim()) {
+      temp.industrial_unit = "Industrial unit is required";
+      isValid = false;
+    } else if (formData.industrial_unit.trim().length < 2) {
+      temp.industrial_unit = "Industrial unit must be at least 2 characters";
+      isValid = false;
+    }
+
+    if (formData.phone.trim()) {
+      if (!/^\d+$/.test(formData.phone.trim())) {
+        temp.phone = "Phone must contain digits only";
+        isValid = false;
+      } else if (!/^\d{10}$/.test(formData.phone.trim())) {
+        temp.phone = "Phone must be exactly 10 digits";
+        isValid = false;
+      }
+    }
+
+    if (!formData.factory_address.trim()) {
+      temp.factory_address = "Factory address is required";
+      isValid = false;
+    }
+
+    if (!formData.po.trim()) {
+      temp.po = "Post Office is required";
+      isValid = false;
+    }
+
+    if (!formData.district.trim()) {
+      temp.district = "District is required";
+      isValid = false;
+    }
+
+    if (!formData.state.trim()) {
+      temp.state = "State is required";
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      temp.email = "Email is required";
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      temp.email = "Enter a valid email";
+      isValid = false;
+    }
+
+    if (!formData.agree) {
+      temp.agree = "You must agree to continue";
+      isValid = false;
+    }
+
+    setErrors(temp);
+    return isValid;
+  };
+
+  const validateUnitConstitution = () => {
+    let temp = {};
+    let isValid = true;
+
+    if (!formData.constitution_type.trim()) {
+      temp.constitution_type = "Select Constitution type";
+      isValid = false;
+    }
+
+    if (!formData.partners.trim()) {
+      temp.partners = "Name of partners is required";
+      isValid = false;
+    } 
+    else if (formData.partners.trim().length < 2) {
+      temp.partners = "Partners name must be minimum 2 characters";
+      isValid = false;
+    }
+
+    if (!formData.address.trim()) {
+      temp.address = "Address is required";
+      isValid = false;
+    }
+
+    setErrors(temp);
+    return isValid;
+  };
+
+  const validateOperationalPlan = () => {
+    let temp = {};
+    let isValid = true;
+
+    if(!formData.date_of_commencement.trim()){
+      temp.date_of_commencement = "Date of commencement is required";
+      isValid = false;
+    }
+
+    if(!formData.industry_type.trim()){
+      temp.industry_type = "Industry type is required";
+      isValid = false;
+    }
+
+    if(!formData.new_unit){
+      temp.new_unit = "New unit is required";
+      isValid = false;
+    }
+
+    if(!formData.activity_type.trim()){
+      temp.activity_type = "Activity type is required";
+      isValid = false;
+    }
+
+    if(!formData.product_name.trim()){
+      temp.product_name = "Product name is required";
+      isValid = false;
+    }
+
+    if(!formData.power_requirement.trim()){
+      temp.power_requirement = "Power requirement is required";
+      isValid = false;
+    }
+
+    if(!formData.power_requirement_unit.trim()){
+      temp.power_requirement_unit = "Power requirement unit is required";
+      isValid = false;
+    }
+
+    if(!formData.annual_production_capacity.trim()){
+      temp.annual_production_capacity = "Annual production capacity is required";
+      isValid = false;
+    }
+
+    if(!formData.annual_production_quantity.trim()){
+      temp.annual_production_quantity = "Annual production quantity is required";
+      isValid = false;
+    }
+
+    if(!formData.annual_production_value.trim()){
+      temp.annual_production_value = "Annual production value is required";
+      isValid = false;
+    }
+
+    if(!formData.major_raw_material.trim()){
+      temp.major_raw_material = "Major raw material is required";
+      isValid = false;
+    }
+
+    setErrors(temp);
+    return isValid;
+  }
 
 
-  const Step1 = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold mb-4">Unit Details</h2>
+  // const handleChange = (e) => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Name of Industrial Unit & Location <span>*</span></label>
-          <input
-            name="industrial_unit"
-            value={formDataUnitDetails.industrial_unit}
-            placeholder="Enter Name of Industrial Unit & Location"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
+  // const nextStep = () => step < totalSteps && setStep(step + 1);
+  // const prevStep = () => step > 1 && setStep(step - 1);
 
+  const nextStep = () => {
+    if (step === 1 && !validateUnitDetails()) {
+      return;
+    } else if(step === 2 && !validateUnitConstitution()){
+      return;
+    } else if(step === 3 && !validateOperationalPlan()){
+      return;
+    }
 
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Registered Mobile/Telephone</label>
-          <input
-            name="phone"
-            value={formDataUnitDetails.phone}
-            placeholder="Registered Mobile Number"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
-      </div>
+    if (step < totalSteps) setStep(step + 1);
+  };
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">
-            Factory Address <span>*</span>
-          </label>
-          <input
-            name="factory_address"
-            value={formDataUnitDetails.factory_address}
-            placeholder="Address Line"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
+  const prevStep = () => {
+    if (step > 1) setStep(step - 1);
+  };
 
-        <div className="flex flex-col justify-end">
-          <input
-            name="po"
-            value={formDataUnitDetails.po}
-            placeholder="PO"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
+  const renderStep = () => {
+    const props = { formData, handleChange, nextStep, prevStep, errors };
 
-        <div className="flex flex-col justify-end">
-          <input
-            name="district"
-            value={formDataUnitDetails.district}
-            placeholder="District"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
-
-        <div className="flex flex-col justify-end">
-          <input
-            name="state"
-            value={formDataUnitDetails.state}
-            placeholder="State"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-1 gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Email <span>*</span></label>
-          <input
-            name="email"
-            value={formDataUnitDetails.email}
-            placeholder="Enter email"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex items-center space-x-3">
-          <input
-            type="checkbox"
-            name="agree"
-            className="w-4 h-4"
-            onChange={handleUnitDetailsChange}
-          />
-          <label className="text-gray-700 font-medium">I agree to the terms</label>
-        </div>
-      </div>
-
-
-
-      <div className="flex justify-end items-center gap-4 mt-4">
-        <button
-          onClick={prev}
-          className="px-5 py-2 border border-gray-400 rounded-md text-gray-700 bg-white flex items-center gap-2"
-        >
-          Save as Draft
-        </button>
-
-        <button
-          onClick={next}
-          className="bg-blue-600 text-white px-5 py-2 rounded-md flex items-center gap-2"
-        >
-          Next
-          <ArrowRightCircleIcon size={20} />
-        </button>
-      </div>
-
-    </div>
-
-  );
-
-  const Step2 = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold mb-4">Unit Constitution</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Constitution Type <span>*</span></label>
-          <select
-            name="constitution_type"
-            value={formData.constitution_type}
-            onChange={handleChange}
-            className="border p-2 rounded"
-          >
-            <option value="">Select Constitution Type</option>
-            <option value="constitution 1">constitution 1</option>
-          </select>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
-        <div className="flex flex-col">
-          <div className="flex flex-col">
-            <label className="mb-1 font-medium text-gray-700">Proprietor/Partners/Directors <span>*</span></label>
-            <input
-              name="partners"
-              placeholder="Name"
-              className="border p-2 rounded w-full"
-              onChange={handleChange}
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col justify-end">
-          <input
-            name="address"
-            value={formDataUnitDetails.po}
-            placeholder="Address"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-        <div className="flex flex-col">
-          <button onClick={prev} className="px-4 py-2 border rounded">
-            <span className="text-xl font-bold"> + </span>
-            <span>Add Member</span>
-          </button>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex items-center gap-4 mt-4">
-          <button
-            onClick={prev}
-            className="px-4 py-2 border rounded flex items-center gap-2"
-          >
-            <ArrowLeftCircleIcon size={20} />
-            Back
-          </button>
-        </div>
-
-        <div className="flex justify-end items-center gap-4 mt-4">
-          <button
-            onClick={prev}
-            className="px-5 py-2 border border-gray-400 rounded-md text-gray-700 bg-white flex items-center gap-2"
-          >
-            Save as Draft
-          </button>
-
-          <button
-            onClick={next}
-            className="bg-blue-600 text-white px-5 py-2 rounded-md flex items-center gap-2"
-          >
-            Next
-            <ArrowRightCircleIcon size={20} />
-          </button>
-        </div>
-      </div>
-
-    </div>
-  );
-
-  const Step3 = () => (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold mb-4">Operational Plan</h2>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Prposed Date of Commencement <span>*</span></label>
-          <input
-            name="date_of_commencement"
-            value={formData.industrial_unit}
-            placeholder="Enter Name of Industrial Unit & Location"
-            className="border p-2 rounded w-full"
-            onChange={handleChange}
-          />
-        </div>
-
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Type of Industry</label>
-          <input
-            name="industry_type"
-            value={formData.phone}
-            placeholder="Type of Industry"
-            className="border p-2 rounded w-full"
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Type of Activity</label>
-          <input
-            name="activity_type"
-            value={formData.phone}
-            placeholder="Type of Activity"
-            className="border p-2 rounded w-full"
-            onChange={handleChange}
-          />
-        </div>
-        
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Name of Product/Service <span>*</span></label>
-          <input
-            name="product_name"
-            value={formData.industrial_unit}
-            placeholder="Enter Name of Product/Service"
-            className="border p-2 rounded w-full"
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">
-            Power Requirement <span>*</span>
-          </label>
-          <input
-            name="power_requirement"
-            value={formDataUnitDetails.factory_address}
-            placeholder="Power Requirement"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
-
-        <div className="flex flex-col justify-end">
-          <input
-            name="power_requirement_unit"
-            value={formDataUnitDetails.po}
-            placeholder="KW"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
-
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-1 gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700">Email <span>*</span></label>
-          <input
-            name="email"
-            value={formDataUnitDetails.email}
-            placeholder="Enter email"
-            className="border p-2 rounded w-full"
-            onChange={handleUnitDetailsChange}
-          />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="flex items-center space-x-3">
-          <input
-            type="checkbox"
-            name="agree"
-            className="w-4 h-4"
-            onChange={handleUnitDetailsChange}
-          />
-          <label className="text-gray-700 font-medium">I agree to the terms</label>
-        </div>
-      </div>
-
-
-
-      <div className="flex justify-end items-center gap-4 mt-4">
-        <button
-          onClick={prev}
-          className="px-5 py-2 border border-gray-400 rounded-md text-gray-700 bg-white flex items-center gap-2"
-        >
-          Save as Draft
-        </button>
-
-        <button
-          onClick={next}
-          className="bg-blue-600 text-white px-5 py-2 rounded-md flex items-center gap-2"
-        >
-          Next
-          <ArrowRightCircleIcon size={20} />
-        </button>
-      </div>
-
-    </div>
-  );
-
-  const Step4 = () => (
-    <div className="space-y-4">
-      <h2 className="text-2xl font-bold mb-4">Step 4: City Info</h2>
-      <input name="city" placeholder="City" className="border p-2 w-full" onChange={handleChange} />
-      <button onClick={prev} className="px-4 py-2 border rounded">Back</button>
-      <button onClick={next} className="bg-blue-600 text-white px-4 py-2 rounded ml-2">Next</button>
-    </div>
-  );
-
-  const Step5 = () => (
-    <div className="space-y-4">
-      <h2 className="text-2xl font-bold mb-4">Step 5: State</h2>
-      <input name="state" placeholder="State" className="border p-2 w-full" onChange={handleChange} />
-      <button onClick={prev} className="px-4 py-2 border rounded">Back</button>
-      <button onClick={next} className="bg-blue-600 text-white px-4 py-2 rounded ml-2">Next</button>
-    </div>
-  );
-
-  const Step6 = () => (
-    <div className="space-y-4">
-      <h2 className="text-2xl font-bold mb-4">Step 6: Security</h2>
-      <input name="password" placeholder="Password" type="password" className="border p-2 w-full" onChange={handleChange} />
-      <input name="confirmPassword" placeholder="Confirm Password" type="password" className="border p-2 w-full" onChange={handleChange} />
-      <button onClick={prev} className="px-4 py-2 border rounded">Back</button>
-      <button onClick={next} className="bg-blue-600 text-white px-4 py-2 rounded ml-2">Next</button>
-    </div>
-  );
-
-  const Step7 = () => (
-    <div className="space-y-4">
-      <h2 className="text-2xl font-bold mb-4">Step 7: Review Details</h2>
-      <pre className="bg-gray-100 p-4 rounded">{JSON.stringify(formData, null, 2)}</pre>
-      <button onClick={prev} className="px-4 py-2 border rounded">Back</button>
-      <button onClick={handleSubmit} className="bg-green-600 text-white px-4 py-2 rounded ml-2">Submit</button>
-    </div>
-  );
+    switch (step) {
+      case 1: return <UnitDetails {...props} />;
+      case 2: return <UnitConstitution {...props} />;
+      case 3: return <OperationalPlan {...props} />;
+      case 4: return <LegalDetails {...props} />;
+      case 5: return <Financials {...props} />;
+      case 6: return <Employment {...props} />;
+      case 7: return <Declaration {...props} />;
+      default: return null;
+    }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-4xl">
+    <MainLayout>
+      <div className="min-h-screen flex justify-center items-center bg-gray-100 p-5">
+        <div className="bg-white shadow-xl w-full max-w-4xl p-8 rounded-2xl">
 
-        {/* <StepProgressBar step={step} totalSteps={totalSteps} /> */}
+          <ProgressBar step={step} />
 
-      <div className="mb-8">
-        <div className="flex justify-between mb-2">
-          {steps.map((s, i) => (
-            <div key={i} className={`text-sm font-medium ${i + 1 <= step ? "text-blue-600" : "text-gray-400"}`}>
-              {s}
-            </div>
-          ))}
-        </div>
+          {renderStep()}
 
-        <div className="w-full bg-gray-200 rounded-full h-2">
-          <div
-            className="bg-blue-600 h-2 rounded-full transition-all duration-500"
-            style={{ width: `${progressWidth}%` }}
-          ></div>
-        </div>
-
-        <div className="flex justify-between mt-2">
-          {steps.map((_, i) => (
-            <div
-              key={i}
-              className={`w-7 h-7 flex items-center justify-center rounded-full text-xs font-bold border
-                ${i + 1 <= step ? "bg-blue-600 text-white border-blue-600" : "bg-gray-300 border-gray-500"}`}
-            >
-              {i + 1}
-            </div>
-          ))}
         </div>
       </div>
-        
-        {step === 1 && <Step1 />}
-        {step === 2 && <Step2 />}
-        {step === 3 && <Step3 />}
-        {step === 4 && <Step4 />}
-        {step === 5 && <Step5 />}
-        {step === 6 && <Step6 />}
-        {step === 7 && <Step7 />}
-      </div>
-    </div>
+    </MainLayout>
   );
-};
+}
 
 export default Register;
