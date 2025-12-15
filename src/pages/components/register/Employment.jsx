@@ -2,8 +2,8 @@ import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
 
 const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
   return (
-    <div className="space-y-6 p-2 sm:p-4">
-      <h2 className="text-xl sm:text-2xl font-bold mb-4">Employment Generation</h2>
+    <div className="space-y-2 p-2 sm:p-2">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Employment Generation</h2>
 
       <div className="grid grid-cols-1 gap-6">
         <div className="w-full overflow-x-auto">
@@ -30,7 +30,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="apst_managerial"
                     value={formData?.apst_managerial ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -40,7 +40,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="apst_supervisory"
                     value={formData?.apst_supervisory ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -50,7 +50,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="apst_skilled"
                     value={formData?.apst_skilled ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -60,7 +60,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="apst_semi_skilled"
                     value={formData?.apst_semi_skilled ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -70,7 +70,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="apst_unskilled"
                     value={formData?.apst_unskilled ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -80,7 +80,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="apst_others"
                     value={formData?.apst_others ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
               </tr>
@@ -94,7 +94,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="nonapst_managerial"
                     value={formData?.nonapst_managerial ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -104,7 +104,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="nonapst_supervisory"
                     value={formData?.nonapst_supervisory ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -114,7 +114,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="nonapst_skilled"
                     value={formData?.nonapst_skilled ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -124,7 +124,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="nonapst_semi_skilled"
                     value={formData?.nonapst_semi_skilled ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -134,7 +134,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="nonapst_unskilled"
                     value={formData?.nonapst_unskilled ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
 
@@ -144,7 +144,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     name="nonapst_others"
                     value={formData?.nonapst_others ?? ""}
                     onChange={handleChange}
-                    className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                   />
                 </td>
               </tr>
@@ -157,7 +157,14 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
         <div className="flex items-start md:items-center">
           <button
             onClick={prevStep}
-            className="px-4 py-2 border rounded flex items-center gap-2 text-sm sm:text-base hover:bg-gray-100"
+            className="bg-orange-600 hover:bg-orange-700 
+                            text-white
+                            px-4 py-2 text-sm
+                            sm:px-5 sm:py-2 sm:text-base
+                            rounded-md 
+                            flex items-center justify-center gap-2
+                            w-full sm:w-auto
+                            transition-all"
           >
             <ArrowLeftCircleIcon size={20} />
             Back
@@ -167,14 +174,27 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
         <div className="flex flex-col sm:flex-row justify-end items-stretch sm:items-center gap-3 sm:gap-4">
           <button
             onClick={prevStep}
-            className="px-4 py-2 text-sm sm:text-base border border-gray-400 rounded-md text-gray-700 bg-white flex items-center justify-center gap-2 w-full sm:w-auto hover:bg-gray-100"
+            className="px-4 py-2 text-sm
+              sm:px-5 sm:py-2 sm:text-base
+              border border-orange-400 rounded-md 
+              text-gray-700 bg-white 
+              flex items-center justify-center gap-2 
+              w-full sm:w-auto
+              hover:bg-orange-100"
           >
             Save as Draft
           </button>
 
           <button
             onClick={nextStep}
-            className="bg-blue-600 text-white px-4 py-2 text-sm sm:text-base rounded-md flex items-center justify-center gap-2 w-full sm:w-auto hover:bg-blue-700"
+            className="bg-orange-600 hover:bg-orange-700 
+                            text-white
+                            px-4 py-2 text-sm
+                            sm:px-5 sm:py-2 sm:text-base
+                            rounded-md 
+                            flex items-center justify-center gap-2
+                            w-full sm:w-auto
+                            transition-all"
           >
             Next
             <ArrowRightCircleIcon size={20} />

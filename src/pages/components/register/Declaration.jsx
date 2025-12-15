@@ -1,15 +1,18 @@
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon, CheckCircle } from "lucide-react";
 import { useState } from "react";
 
-const Declaration = ({ formData, handleChange, nextStep, prevStep }) => {
-  const [success, setSuccess] = useState(false);
+const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep, errors, success }) => {
+  // const [success, setSuccess] = useState(false);
 
-  const handleSubmit = () => {
-    setSuccess(true);
-    setTimeout(() => {
-      window.location.href = "/auth/login";
-    }, 10000);
-  };
+  // const handleSubmit = () => {
+  //   if(errors){
+  //     return;
+  //   }
+  //   setSuccess(true);
+  //   setTimeout(() => {
+  //     window.location.href = "/auth/login";
+  //   }, 5000);
+  // };
 
   if (success) {
     return (
@@ -35,11 +38,11 @@ const Declaration = ({ formData, handleChange, nextStep, prevStep }) => {
   }
 
   return (
-    <div className="space-y-6 p-3 sm:p-4">
-      <h2 className="text-xl sm:text-2xl font-bold mb-3">Declaration</h2>
+    <div className="space-y-2 p-2 sm:p-2">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Declaration</h2>
 
-      <div className="grid grid-cols-1 gap-4">
-        <div className="flex items-start sm:items-center gap-3">
+      <div className="grid grid-cols-1">
+        <div className="flex items-center space-x-3">
           <input
             type="checkbox"
             name="new_unit"
@@ -50,6 +53,15 @@ const Declaration = ({ formData, handleChange, nextStep, prevStep }) => {
             I hereby declare that the information provided is true and correct to the best of my knowledge.
           </label>
         </div>
+
+        <div className="h-5">
+          {errors.new_unit && (
+            <p className="text-red-600 text-[12px] font-bold">
+              {errors.new_unit}
+            </p>
+          )}
+        </div>
+
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -62,9 +74,18 @@ const Declaration = ({ formData, handleChange, nextStep, prevStep }) => {
             name="full_name"
             value={formData.full_name}
             onChange={handleChange}
-            className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
             placeholder="Full Name"
           />
+
+          <div className="h-5">
+            {errors.full_name && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.full_name}
+              </p>
+            )}
+          </div>
+
         </div>
 
         <div className="flex flex-col">
@@ -76,9 +97,18 @@ const Declaration = ({ formData, handleChange, nextStep, prevStep }) => {
             name="signature"
             value={formData.signature}
             onChange={handleChange}
-            className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
             placeholder="Signature"
           />
+
+          <div className="h-5">
+            {errors.signature && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.signature}
+              </p>
+            )}
+          </div>
+
         </div>
       </div>
 
@@ -92,9 +122,18 @@ const Declaration = ({ formData, handleChange, nextStep, prevStep }) => {
             name="seal"
             value={formData.seal}
             onChange={handleChange}
-            className="w-full p-2 border rounded text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
             placeholder="Seal"
           />
+
+          <div className="h-5">
+            {errors.seal && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.seal}
+              </p>
+            )}
+          </div>
+
         </div>
       </div>
 
@@ -102,7 +141,14 @@ const Declaration = ({ formData, handleChange, nextStep, prevStep }) => {
         <div className="flex items-start md:items-center">
           <button
             onClick={prevStep}
-            className="px-4 py-2 border rounded flex items-center gap-2 text-sm sm:text-base hover:bg-gray-100"
+            className="bg-orange-600 hover:bg-orange-700 
+                            text-white
+                            px-4 py-2 text-sm
+                            sm:px-5 sm:py-2 sm:text-base
+                            rounded-md 
+                            flex items-center justify-center gap-2
+                            w-full sm:w-auto
+                            transition-all"
           >
             <ArrowLeftCircleIcon size={20} />
             Back
@@ -112,7 +158,13 @@ const Declaration = ({ formData, handleChange, nextStep, prevStep }) => {
         <div className="flex flex-col sm:flex-row justify-end items-stretch sm:items-center gap-3 sm:gap-4">
           <button
             onClick={prevStep}
-            className="px-5 py-2 border border-gray-400 rounded-md text-gray-700 bg-white flex items-center justify-center gap-2 text-sm sm:text-base hover:bg-gray-100 w-full sm:w-auto"
+            className="px-4 py-2 text-sm
+                                sm:px-5 sm:py-2 sm:text-base
+                                border border-orange-400 rounded-md 
+                                text-gray-700 bg-white 
+                                flex items-center justify-center gap-2 
+                                w-full sm:w-auto
+                                hover:bg-orange-100"
           >
             Save as Draft
           </button>

@@ -26,10 +26,10 @@ const ArrowProgressBar = ({ step }) => {
             relative px-3 py-2 text-[15px] font-medium flex items-center
             whitespace-nowrap transition-all duration-300 shadow-sm
             ${isActive
-                ? "bg-gradient-to-r from-blue-600 to-blue-700 text-white"
-                : "bg-gray-200 text-gray-600"
+                ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+                : "bg-orange-100 text-orange-700"
               }
-            ${isCurrent && "ring-1 ring-blue-400"}
+            ${isCurrent && "ring-1 ring-orange-400"}
             ${!isLast ? "mr-1" : ""}
           `}
             style={{
@@ -45,7 +45,7 @@ const ArrowProgressBar = ({ step }) => {
               <div
                 className={`
                 absolute right-0 top-0 h-full w-3
-                ${isActive ? "bg-blue-700" : "bg-gray-300"}
+                ${isActive ? "bg-orange-700" : "bg-orange-300"}
               `}
                 style={{
                   clipPath: "polygon(0 0, 100% 50%, 0 100%)",

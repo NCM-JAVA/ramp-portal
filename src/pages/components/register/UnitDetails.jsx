@@ -3,9 +3,9 @@ import { ArrowRightCircleIcon } from "lucide-react";
 const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => {
 
     return (
-        <div className="space-y-6 p-2 sm:p-4">
+        <div className="space-y-2 p-2 sm:p-2">
 
-            <h2 className="text-xl sm:text-2xl font-bold mb-4">Unit Details</h2>
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Unit Details</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
 
@@ -20,7 +20,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         value={formData.industrial_unit}
                         placeholder="Enter Name of Industrial Unit & Location"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
-                                  focus:ring-indigo-500 text-sm sm:text-base"
+                                  focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
@@ -44,7 +44,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         value={formData.phone}
                         placeholder="Registered Mobile Number"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
-                                  focus:ring-indigo-500 text-sm sm:text-base"
+                                  focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
@@ -72,7 +72,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         value={formData.factory_address}
                         placeholder="Address Line"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
-                                  focus:ring-indigo-500 text-sm sm:text-base"
+                                  focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
@@ -92,7 +92,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         value={formData.po}
                         placeholder="PO"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
-                                  focus:ring-indigo-500 text-sm sm:text-base"
+                                  focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
@@ -112,7 +112,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         value={formData.district}
                         placeholder="District"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
-                                  focus:ring-indigo-500 text-sm sm:text-base"
+                                  focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
@@ -132,7 +132,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         value={formData.state}
                         placeholder="State"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
-                                  focus:ring-indigo-500 text-sm sm:text-base"
+                                  focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
@@ -159,7 +159,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         value={formData.email}
                         placeholder="Enter email"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
-                                  focus:ring-indigo-500 text-sm sm:text-base"
+                                  focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
@@ -195,23 +195,31 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                 </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-end items-stretch sm:items-center gap-3 sm:gap-4 mt-4">
+            <div className="flex flex-col sm:flex-row justify-end items-stretch sm:items-center gap-3 sm:gap-4 mt-2">
 
                 <button
                     onClick={prevStep}
-                    className="px-4 py-2 text-sm sm:px-5 sm:py-2 sm:text-base
-                               border border-gray-400 rounded-md 
-                               text-gray-700 bg-white 
-                               flex items-center justify-center gap-2 w-full sm:w-auto"
+                    className="px-4 py-2 text-sm
+                                sm:px-5 sm:py-2 sm:text-base
+                                border border-orange-400 rounded-md 
+                                text-gray-700 bg-white 
+                                flex items-center justify-center gap-2 
+                                w-full sm:w-auto
+                                hover:bg-orange-100"
                 >
                     Save as Draft
                 </button>
 
                 <button
                     onClick={nextStep}
-                    className="bg-blue-600 text-white px-4 py-2 text-sm
-                               sm:px-5 sm:py-2 sm:text-base rounded-md 
-                               flex items-center justify-center gap-2 w-full sm:w-auto"
+                    className="bg-orange-600 hover:bg-orange-700 
+                            text-white
+                            px-4 py-2 text-sm
+                            sm:px-5 sm:py-2 sm:text-base
+                            rounded-md 
+                            flex items-center justify-center gap-2
+                            w-full sm:w-auto
+                            transition-all"
                 >
                     Next
                     <ArrowRightCircleIcon size={20} />
