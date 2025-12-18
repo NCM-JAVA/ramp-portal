@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import UnitDetails from "../components/register/UnitDetails";
-import UnitConstitution from "../components/register/UnitConstitution";
-import OperationalPlan from "../components/register/OperationalPlan";
-import LegalDetails from "../components/register/LegalDetails";
-import Financials from "../components/register/Financials";
-import Employment from "../components/register/Employment";
-import Declaration from "../components/register/Declaration";
-import ProgressBar from "../components/register/ProgressBar";
-import MainLayout from "../components/layouts/MainLayout";
+import UnitDetails from "../../components/register/UnitDetails";
+import UnitConstitution from "../../components/register/UnitConstitution";
+import OperationalPlan from "../../components/register/OperationalPlan";
+import LegalDetails from "../../components/register/LegalDetails";
+import Financials from "../../components/register/Financials";
+import Employment from "../../components/register/Employment";
+import Declaration from "../../components/register/Declaration";
+import ProgressBar from "../../components/register/ProgressBar";
+import MainLayout from "../../components/layouts/MainLayout";
 
 const Register = () => {
   const [step, setStep] = useState(1);

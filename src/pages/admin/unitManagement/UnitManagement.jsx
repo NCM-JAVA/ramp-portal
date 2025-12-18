@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
-import Card from "../../components/admin/common/Card";
+import Card from "../../../components/admin/common/Card";
 import { Eye, Edit, Trash2 } from "lucide-react";
-import StatusBadge from "../../components/admin/common/StatusBadge";
+import StatusBadge from "../../../components/admin/common/StatusBadge";
 
 
 const UnitManagement = () => {

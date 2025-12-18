@@ -6,11 +6,11 @@ import Register from "./pages/auth/Register";
 import Dashboard from "./pages/admin/Dashboard";
 import User from "./pages/admin/users/User";
 import UnitManagement from "./pages/admin/unitManagement/UnitManagement";
-import AdminLayout from "./pages/components/admin/layouts/AdminLayout";
 import UnitRegistration from "./pages/admin/unitManagement/UnitRegistration";
-import Toaster from "./pages/components/admin/common/Toaster";
+import Toaster from "./components/admin/common/Toaster";
 import AddIncentiveScheme from "./pages/admin/incentiveSchemes/AddIncentiveScheme";
 import IncentiveApplicationForm from "./pages/admin/incentiveSchemes/IncentiveApplicationForm";
+import AdminLayout from "./components/admin/layouts/AdminLayout";
 
 function App() {
   return (

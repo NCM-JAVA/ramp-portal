@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { Send, Upload } from "lucide-react";
 import { toast } from "react-toastify";
-import IncentiveDocumentUpload from "../../../components/incentiveSchemes/IncentiveDocumentUpload";
+import IncentiveDocumentUpload from "../../../components/admin/incentiveSchemes/IncentiveDocumentUpload";
 
 const IncentiveApplicationForm = () => {
 

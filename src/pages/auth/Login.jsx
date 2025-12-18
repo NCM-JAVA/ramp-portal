@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import MainLayout from "../components/layouts/MainLayout";
+import MainLayout from "../../components/layouts/MainLayout";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/slice/AuthSlice";

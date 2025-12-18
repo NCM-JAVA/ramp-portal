@@ -1,4 +1,4 @@
-import Card from "../components/admin/common/Card";
+import Card from "../../components/admin/common/Card";
 import { useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 
