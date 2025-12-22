@@ -1,5 +1,5 @@
-import { ArrowLeftCircleIcon, ArrowRightCircleIcon, CheckCircle } from "lucide-react";
-import { useState } from "react";
+import { ArrowLeftCircleIcon, CheckCircle, Upload } from "lucide-react";
+import { useState, useRef } from "react";
 
 const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep, errors, success }) => {
   // const [success, setSuccess] = useState(false);
@@ -13,6 +13,12 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
   //     window.location.href = "/auth/login";
   //   }, 5000);
   // };
+
+  const fileInputRef = useRef(null);
+
+  const handleButtonClick = () => {
+    fileInputRef.current.click();
+  };
 
   if (success) {
     return (
@@ -112,7 +118,64 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6">
+      <div className="grid grid-cols-2 gap-6">
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base flex items-center gap-2">
+            Signature file <span>*</span>
+            <span className="text-xs text-gray-500 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
+          </label>
+
+
+          <input
+            type="file"
+            ref={fileInputRef}
+            name="signature_file"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="hidden"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "signature_file",
+                  value: e.target.files[0],
+                },
+              })
+            }
+          />
+
+          <button
+            type="button"
+            onClick={handleButtonClick}
+            className="flex items-center justify-center gap-2 
+                   px-4 py-2 
+                   bg-orange-600 text-white 
+                   rounded-md 
+                   hover:bg-orange-700 
+                   transition 
+                   text-sm sm:text-base"
+          >
+            <Upload size={18} />
+            Upload Signature
+          </button>
+
+          {formData.signature_file && (
+            <p className="text-sm text-orange-700 mt-1">
+              {formData.signature_file.name}
+            </p>
+          )}
+
+          <div className="h-5">
+            {errors.signature_file && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.signature_file}
+              </p>
+            )}
+          </div>
+
+        </div>
+
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
             Seal <span>(Optional)</span>

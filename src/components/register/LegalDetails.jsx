@@ -1,6 +1,14 @@
-import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
+import { ArrowLeftCircleIcon, ArrowRightCircleIcon, Upload } from "lucide-react";
+import { useRef } from "react";
 
 const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => {
+
+  const fileInputRef = useRef(null);
+
+  const handleButtonClick = () => {
+    fileInputRef.current.click();
+  };
+
   return (
     <div className="space-y-2 p-2 sm:p-2">
       <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Legal Details</h2>
@@ -30,30 +38,6 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
 
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            GST No. <span>*</span>
-          </label>
-          <input
-            type="text"
-            name="gst_no"
-            value={formData.gst_no}
-            onChange={handleChange}
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-            placeholder="GST No."
-          />
-
-          <div className="h-5">
-            {errors.gst_no && (
-              <p className="text-red-600 text-[12px] font-bold">
-                {errors.gst_no}
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
             Trading License No. <span>*</span>
           </label>
           <input
@@ -73,7 +57,76 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
             )}
           </div>
         </div>
+      </div>
 
+      <div className="grid grid-cols-2 gap-6">
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            GST No. <span>*</span>
+          </label>
+          <input
+            type="text"
+            name="gst_no"
+            value={formData.gst_no}
+            onChange={handleChange}
+            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+            placeholder="GST No."
+          />
+
+          <div className="h-5">
+            {errors.gst_no && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.gst_no}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base flex items-center gap-2">
+            GST Document Upload <span>*</span>
+            <span className="text-xs text-gray-800 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
+          </label>
+
+          <input
+            type="file"
+            name="gst_document"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "gst_document",
+                  value: e.target.files[0],
+                },
+              })
+            }
+          />
+
+          <div className="h-5">
+            {formData.gst_document && (
+              <p className="text-xs text-green-600 mt-1">
+                {formData.gst_document.name}
+              </p>
+            )}
+
+            {errors.gst_document && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.gst_document}
+              </p>
+            )}
+          </div>
+        </div>
+        
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
             Factory License No. <span>*</span>
@@ -95,6 +148,47 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
             )}
           </div>
         </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            Factory License Document <span>*</span>
+            <span className="text-xs text-gray-800 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
+          </label>
+
+          <input
+            type="file"
+            name="factory_license_document"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "factory_license_document",
+                  value: e.target.files[0],
+                },
+              })
+            }
+          />
+
+          <div className="h-5">
+            {formData.factory_license_document && (
+              <p className="text-xs text-green-600 mt-1">
+                {formData.factory_license_document.name}
+              </p>
+            )}
+
+            {errors.factory_license_document && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.factory_license_document}
+              </p>
+            )}
+          </div>
+        </div>
+        
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:gap-6">

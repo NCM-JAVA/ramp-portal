@@ -29,6 +29,8 @@ const Register = () => {
     constitution_type: "",
     partners: "",
     address: "",
+    aadhar_document: "",
+    pan_document: "",
 
     //Operational Plan
     date_of_commencement: "",
@@ -185,6 +187,48 @@ const Register = () => {
       isValid = false;
     }
 
+    // Aadhar Document Validation
+    if (!formData.aadhar_document) {
+      temp.aadhar_document = "Aadhar document is required";
+      isValid = false;
+    } else {
+      const allowedTypes = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "application/pdf",
+      ];
+
+      if (!allowedTypes.includes(formData.aadhar_document.type)) {
+        temp.aadhar_document = "Aadhar must be JPG, PNG, or PDF";
+        isValid = false;
+      } else if (formData.aadhar_document.size > 2 * 1024 * 1024) {
+        temp.aadhar_document = "Aadhar file must be less than 2MB";
+        isValid = false;
+      }
+    }
+
+    // PAN Document Validation
+    if (!formData.pan_document) {
+      temp.pan_document = "PAN document is required";
+      isValid = false;
+    } else {
+      const allowedTypes = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "application/pdf",
+      ];
+
+      if (!allowedTypes.includes(formData.pan_document.type)) {
+        temp.pan_document = "PAN must be JPG, PNG, or PDF";
+        isValid = false;
+      } else if (formData.pan_document.size > 2 * 1024 * 1024) {
+        temp.pan_document = "PAN file must be less than 2MB";
+        isValid = false;
+      }
+    }
+
     setErrors(temp);
     return isValid;
   };
@@ -281,6 +325,48 @@ const Register = () => {
       isValid = false;
     }
 
+    // GST Document Validation
+    if (!formData.gst_document) {
+      temp.gst_document = "GST document is required";
+      isValid = false;
+    } else {
+      const allowedTypes = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "application/pdf",
+      ];
+
+      if (!allowedTypes.includes(formData.gst_document.type)) {
+        temp.gst_document = "GST document must be JPG, PNG, or PDF";
+        isValid = false;
+      } else if (formData.gst_document.size > 2 * 1024 * 1024) {
+        temp.gst_document = "GST file must be less than 2MB";
+        isValid = false;
+      }
+    }
+
+    // PAN Document Validation
+    if (!formData.factory_license_document) {
+      temp.factory_license_document = "Factory license document is required";
+      isValid = false;
+    } else {
+      const allowedTypes = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "application/pdf",
+      ];
+
+      if (!allowedTypes.includes(formData.factory_license_document.type)) {
+        temp.factory_license_document = "Factory license must be JPG, PNG, or PDF";
+        isValid = false;
+      } else if (formData.factory_license_document.size > 2 * 1024 * 1024) {
+        temp.factory_license_document = "Factory license file must be less than 2MB";
+        isValid = false;
+      }
+    }
+
     setErrors(temp);
     return isValid;
   }
@@ -372,10 +458,10 @@ const Register = () => {
   }
 
   const handleSubmit = () => {
-    if(!validateDeclaration()){
+    if (!validateDeclaration()) {
       return;
     }
-      
+
     setSuccess(true);
 
     setTimeout(() => {
@@ -405,7 +491,7 @@ const Register = () => {
       return;
     } else if (step === 5 && !validateFinancials()) {
       return;
-    } 
+    }
 
     if (step < totalSteps) setStep(step + 1);
   };

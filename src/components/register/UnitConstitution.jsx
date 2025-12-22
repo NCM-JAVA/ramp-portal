@@ -28,7 +28,7 @@ const UnitConstitution = ({ formData, handleChange, nextStep, prevStep, errors }
               </p>
             )}
           </div>
-          
+
         </div>
       </div>
 
@@ -72,6 +72,85 @@ const UnitConstitution = ({ formData, handleChange, nextStep, prevStep, errors }
             )}
           </div>
         </div>
+
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            Aadhar Document <span>*</span>
+          </label>
+
+          <input
+            type="file"
+            name="aadhar_document"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "aadhar_document",
+                  value: e.target.files[0],
+                },
+              })
+            }
+          />
+
+          <div className="h-5">
+            {formData.aadhar_document && (
+              <p className="text-xs text-green-600 mt-1">
+                {formData.aadhar_document.name}
+              </p>
+            )}
+
+            {errors.aadhar_document && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.aadhar_document}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            PAN Document <span>*</span>
+          </label>
+
+          <input
+            type="file"
+            name="pan_document"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "pan_document",
+                  value: e.target.files[0],
+                },
+              })
+            }
+          />
+
+          <div className="h-5">
+            {formData.pan_document && (
+              <p className="text-xs text-green-600 mt-1">
+                {formData.pan_document.name}
+              </p>
+            )}
+
+            {errors.pan_document && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.pan_document}
+              </p>
+            )}
+          </div>
+        </div>
+
 
       </div>
 
