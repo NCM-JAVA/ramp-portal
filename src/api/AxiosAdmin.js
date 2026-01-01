@@ -1,8 +1,8 @@
-import axios  from "axios";
+import axios from "axios";
 
 const AxiosAdmin = axios.create({
-    baseURL: "http://127.0.0.1:8000/api/admin",
-     headers: {
+    baseURL: process.env.REACT_APP_ADMIN_API_BASE_URL || "http://127.0.0.1:8000/api/admin",
+    headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
     },
@@ -10,8 +10,8 @@ const AxiosAdmin = axios.create({
 
 // Add Authorization token automatically
 AxiosAdmin.interceptors.request.use((config) => {
-    const token = localStorage.getItem("token"); // change as per your key
-    
+    const token = localStorage.getItem("token");
+
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }

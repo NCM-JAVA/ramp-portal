@@ -1,6 +1,6 @@
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
 
-const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors }) => {
+const OperationalPlan = ({ formData, handleChange, handleFileChange, handleNext, handleBack, errors, touched }) => {
     return (
         <div className="space-y-2 p-2 sm:p-2">
             <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Operational Plan</h2>
@@ -58,7 +58,8 @@ const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors })
                         type="checkbox"
                         name="new_unit"
                         className="w-4 h-4"
-                        onChange={handleChange}
+                        checked={formData.new_unit || false}
+                        onChange={(e) => handleChange({ target: { name: 'new_unit', value: e.target.checked } })}
                     />
                     <span className="text-gray-700 font-medium">
                         New unit (date must be on/after 01.04.2025)
@@ -284,7 +285,8 @@ const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors })
 
                 <div className="flex items-center mt-4">
                     <button
-                        onClick={prevStep}
+                        onClick={handleBack}
+                        type="button"
                         className="bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm
@@ -302,7 +304,7 @@ const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors })
                 <div className="flex flex-col sm:flex-row justify-end items-stretch sm:items-center gap-3 mt-4">
 
                     <button
-                        onClick={prevStep}
+                        type="button"
                         className="px-4 py-2 text-sm
                             sm:px-5 sm:py-2 sm:text-base
                             border border-orange-400 rounded-md 
@@ -315,7 +317,8 @@ const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors })
                     </button>
 
                     <button
-                        onClick={nextStep}
+                        onClick={handleNext}
+                        type="button"
                         className="bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm

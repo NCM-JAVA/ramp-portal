@@ -1,6 +1,7 @@
 import { ArrowRightCircleIcon } from "lucide-react";
+import FormError from "../common/FormError";
 
-const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => {
+const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) => {
 
     return (
         <div className="space-y-2 p-2 sm:p-2">
@@ -25,11 +26,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     />
 
                     <div className="h-5">
-                        {errors.industrial_unit && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.industrial_unit}
-                            </p>
-                        )}
+                        <FormError name="industrial_unit" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -49,11 +46,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     />
 
                     <div className="h-5">
-                        {errors.phone && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.phone}
-                            </p>
-                        )}
+                        <FormError name="phone" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -77,11 +70,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     />
 
                     <div className="h-5">
-                        {errors.factory_address && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.factory_address}
-                            </p>
-                        )}
+                        <FormError name="factory_address" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -97,11 +86,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     />
 
                     <div className="h-5">
-                        {errors.po && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.po}
-                            </p>
-                        )}
+                        <FormError name="po" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -117,11 +102,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     />
 
                     <div className="h-5">
-                        {errors.district && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.district}
-                            </p>
-                        )}
+                        <FormError name="district" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -137,11 +118,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     />
 
                     <div className="h-5">
-                        {errors.state && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.state}
-                            </p>
-                        )}
+                        <FormError name="state" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -164,11 +141,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     />
 
                     <div className="h-5">
-                        {errors.email && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.email}
-                            </p>
-                        )}
+                        <FormError name="email" errors={errors} touched={touched} />
                     </div>
                 </div>
             </div>
@@ -178,8 +151,9 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     <input
                         type="checkbox"
                         name="agree"
+                        checked={formData.agree || false}
                         className="w-4 h-4"
-                        onChange={handleChange}
+                        onChange={(e) => handleChange({ target: { name: 'agree', value: e.target.checked } })}
                     />
                     <label className="text-gray-700 font-medium text-sm sm:text-base">
                         I agree to the terms
@@ -187,18 +161,14 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                 </div>
 
                 <div className="h-5">
-                    {errors.agree && (
-                        <p className="text-red-600 text-[12px] font-bold">
-                            {errors.agree}
-                        </p>
-                    )}
+                    <FormError name="agree" errors={errors} touched={touched} />
                 </div>
             </div>
 
             <div className="flex flex-col sm:flex-row justify-end items-stretch sm:items-center gap-3 sm:gap-4 mt-2">
 
                 <button
-                    onClick={prevStep}
+                    type="button"
                     className="px-4 py-2 text-sm
                                 sm:px-5 sm:py-2 sm:text-base
                                 border border-orange-400 rounded-md 
@@ -211,7 +181,8 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                 </button>
 
                 <button
-                    onClick={nextStep}
+                    type="button"
+                    onClick={handleNext}
                     className="bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm
@@ -232,3 +203,4 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
 };
 
 export default UnitDetails;
+
