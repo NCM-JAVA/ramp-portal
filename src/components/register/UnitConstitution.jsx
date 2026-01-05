@@ -1,6 +1,9 @@
+import React from 'react';
+import { Field } from 'formik';
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
+import FormError from "../common/FormError";
 
-const UnitConstitution = ({ formData, handleChange, handleFileChange, handleNext, handleBack, errors, touched }) => {
+const UnitConstitution = ({ formData, handleFileChange, handleNext, handleBack, errors, touched }) => {
     return (
         <div className="space-y-2 p-2 sm:p-2">
             <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Unit Constitution</h2>
@@ -11,22 +14,17 @@ const UnitConstitution = ({ formData, handleChange, handleFileChange, handleNext
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Constitution Type <span>*</span>
                     </label>
-                    <select
+                    <Field
+                        as="select"
                         name="constitution_type"
-                        value={formData.constitution_type}
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                     >
                         <option value="">Select Constitution Type</option>
                         <option value="constitution 1">constitution 1</option>
-                    </select>
+                    </Field>
 
                     <div className="h-5">
-                        {errors.constitution_type && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.constitution_type}
-                            </p>
-                        )}
+                        <FormError name="constitution_type" errors={errors} touched={touched} />
                     </div>
 
                 </div>
@@ -38,38 +36,26 @@ const UnitConstitution = ({ formData, handleChange, handleFileChange, handleNext
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Proprietor / Partners / Directors <span>*</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="partners"
-                        value={formData.partners}
                         placeholder="Name"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
                     <div className="h-5">
-                        {errors.partners && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.partners}
-                            </p>
-                        )}
+                        <FormError name="partners" errors={errors} touched={touched} />
                     </div>
                 </div>
 
                 <div className="flex flex-col justify-end">
-                    <input
+                    <Field
                         type="text"
                         name="address"
-                        value={formData.address}
                         placeholder="Address"
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                     />
                     <div className="h-5">
-                        {errors.address && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.address}
-                            </p>
-                        )}
+                        <FormError name="address" errors={errors} touched={touched} />
                     </div>
                 </div>
 

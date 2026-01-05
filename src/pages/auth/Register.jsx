@@ -133,10 +133,7 @@ const Register = () => {
             touchedFields[key] = true;
         });
         setTouched(touchedFields);
-
-        // Validate the form
         const errors = await validateForm();
-
         if (Object.keys(errors).length === 0) {
             setStep((prev) => Math.min(prev + 1, totalSteps));
         } else {
@@ -153,8 +150,6 @@ const Register = () => {
 
     const handleSubmit = async (values) => {
         const submitData = new FormData();
-
-        // Append all form fields to FormData
         Object.keys(values).forEach((key) => {
             if (
                 key === "aadhar_document" ||
@@ -197,7 +192,6 @@ const Register = () => {
                 );
             }
         } catch (error) {
-            console.error("Registration error:", error);
             toast.error("An unexpected error occurred. Please try again.", {
                 position: "top-right",
                 autoClose: 5000,
@@ -212,8 +206,6 @@ const Register = () => {
             case 1:
                 return (
                     <UnitDetails
-                        formData={values}
-                        handleChange={(e) => setFieldValue(e.target.name, e.target.value)}
                         handleNext={() => handleNext(validateForm, setTouched, values)}
                         errors={errors}
                         touched={touched}
@@ -223,7 +215,6 @@ const Register = () => {
                 return (
                     <UnitConstitution
                         formData={values}
-                        handleChange={(e) => setFieldValue(e.target.name, e.target.value)}
                         handleFileChange={(e) => setFieldValue(e.target.name, e.target.files[0])}
                         handleNext={() => handleNext(validateForm, setTouched, values)}
                         handleBack={handleBack}
@@ -234,8 +225,6 @@ const Register = () => {
             case 3:
                 return (
                     <OperationalPlan
-                        formData={values}
-                        handleChange={(e) => setFieldValue(e.target.name, e.target.value)}
                         handleFileChange={(e) => setFieldValue(e.target.name, e.target.files[0])}
                         handleNext={() => handleNext(validateForm, setTouched, values)}
                         handleBack={handleBack}
@@ -247,7 +236,6 @@ const Register = () => {
                 return (
                     <LegalDetails
                         formData={values}
-                        handleChange={(e) => setFieldValue(e.target.name, e.target.value)}
                         handleFileChange={(e) => setFieldValue(e.target.name, e.target.files[0])}
                         handleNext={() => handleNext(validateForm, setTouched, values)}
                         handleBack={handleBack}
@@ -258,8 +246,6 @@ const Register = () => {
             case 5:
                 return (
                     <Financials
-                        formData={values}
-                        handleChange={(e) => setFieldValue(e.target.name, e.target.value)}
                         handleNext={() => handleNext(validateForm, setTouched, values)}
                         handleBack={handleBack}
                         errors={errors}
@@ -269,8 +255,6 @@ const Register = () => {
             case 6:
                 return (
                     <Employment
-                        formData={values}
-                        handleChange={(e) => setFieldValue(e.target.name, e.target.value)}
                         handleNext={() => handleNext(validateForm, setTouched, values)}
                         handleBack={handleBack}
                     />
@@ -278,8 +262,6 @@ const Register = () => {
             case 7:
                 return (
                     <Declaration
-                        formData={values}
-                        handleChange={(e) => setFieldValue(e.target.name, e.target.value)}
                         handleFileChange={(e) => setFieldValue(e.target.name, e.target.files[0])}
                         handleSubmit={formikProps.handleSubmit}
                         handleBack={handleBack}
@@ -296,7 +278,7 @@ const Register = () => {
     return (
         <MainLayout>
             <div className="flex justify-center items-center bg-gray-100 px-4 py-6">
-                <div className="bg-white shadow-2xl w-full max-w-5xl p-6 sm:p-10 rounded-3xl border border-gray-200">
+                <div className="bg-white shadow-xl w-full max-w-5xl p-6 sm:p-10 rounded-3xl border border-gray-200">
                     <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-2">
                         Industrial Unit Registration
                     </h2>
@@ -324,7 +306,7 @@ const Register = () => {
                         initialValues={initialValues}
                         validationSchema={getValidationSchema(step)}
                         onSubmit={handleSubmit}
-                        validateOnChange={false}
+                        validateOnChange={true}
                         validateOnBlur={true}
                     >
                         {(formikProps) => <Form>{renderStep(formikProps)}</Form>}

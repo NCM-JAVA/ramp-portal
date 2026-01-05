@@ -1,6 +1,8 @@
+import React from 'react';
+import { Field } from 'formik';
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
 
-const Employment = ({ formData, handleChange, handleNext, handleBack }) => {
+const Employment = ({ handleNext, handleBack }) => {
     return (
         <div className="space-y-2 p-2 sm:p-2">
             <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Employment Generation</h2>
@@ -25,61 +27,49 @@ const Employment = ({ formData, handleChange, handleNext, handleBack }) => {
                                 <td className="border px-4 py-2">APST</td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="apst_managerial"
-                                        value={formData?.apst_managerial ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="apst_supervisory"
-                                        value={formData?.apst_supervisory ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="apst_skilled"
-                                        value={formData?.apst_skilled ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="apst_semi_skilled"
-                                        value={formData?.apst_semi_skilled ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="apst_unskilled"
-                                        value={formData?.apst_unskilled ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="apst_others"
-                                        value={formData?.apst_others ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
@@ -89,61 +79,49 @@ const Employment = ({ formData, handleChange, handleNext, handleBack }) => {
                                 <td className="border px-4 py-2">NONAPST</td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="nonapst_managerial"
-                                        value={formData?.nonapst_managerial ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="nonapst_supervisory"
-                                        value={formData?.nonapst_supervisory ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="nonapst_skilled"
-                                        value={formData?.nonapst_skilled ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="nonapst_semi_skilled"
-                                        value={formData?.nonapst_semi_skilled ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="nonapst_unskilled"
-                                        value={formData?.nonapst_unskilled ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>
 
                                 <td className="border px-4 py-2">
-                                    <input
+                                    <Field
                                         type="text"
                                         name="nonapst_others"
-                                        value={formData?.nonapst_others ?? ""}
-                                        onChange={handleChange}
                                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     />
                                 </td>

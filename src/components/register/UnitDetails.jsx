@@ -1,7 +1,9 @@
+import React from 'react';
+import { Field } from 'formik';
 import { ArrowRightCircleIcon } from "lucide-react";
 import FormError from "../common/FormError";
 
-const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) => {
+const UnitDetails = ({ handleNext, errors, touched }) => {
 
     return (
         <div className="space-y-2 p-2 sm:p-2">
@@ -12,17 +14,15 @@ const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) =>
 
                 <div className="flex flex-col">
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-                        Name of Industrial Unit & Location <span>*</span>
+                        Name of Industrial Unit & Location <span className='text-red-500'>*</span>
                     </label>
 
-                    <input
+                    <Field
                         type="text"
                         name="industrial_unit"
-                        value={formData.industrial_unit}
                         placeholder="Enter Name of Industrial Unit & Location"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
@@ -35,14 +35,12 @@ const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) =>
                         Registered Mobile/Telephone
                     </label>
 
-                    <input
+                    <Field
                         type="text"
                         name="phone"
-                        value={formData.phone}
                         placeholder="Registered Mobile Number"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
@@ -56,17 +54,15 @@ const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) =>
 
                 <div className="flex flex-col justify-end">
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-                        Factory Address <span>*</span>
+                        Factory Address <span className='text-red-500'>*</span>
                     </label>
 
-                    <input
+                    <Field
                         type="text"
                         name="factory_address"
-                        value={formData.factory_address}
                         placeholder="Address Line"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
@@ -75,14 +71,12 @@ const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) =>
                 </div>
 
                 <div className="flex flex-col justify-end">
-                    <input
+                    <Field
                         type="text"
                         name="po"
-                        value={formData.po}
                         placeholder="PO"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
@@ -91,14 +85,12 @@ const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) =>
                 </div>
 
                 <div className="flex flex-col justify-end">
-                    <input
+                    <Field
                         type="text"
                         name="district"
-                        value={formData.district}
                         placeholder="District"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
@@ -107,14 +99,12 @@ const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) =>
                 </div>
 
                 <div className="flex flex-col justify-end">
-                    <input
+                    <Field
                         type="text"
                         name="state"
-                        value={formData.state}
                         placeholder="State"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
@@ -127,17 +117,15 @@ const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) =>
             <div className="grid grid-cols-1 md:grid-cols-1">
                 <div className="flex flex-col">
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-                        Email <span>*</span>
+                        Email <span className='text-red-500'>*</span>
                     </label>
 
-                    <input
+                    <Field
                         type="text"
                         name="email"
-                        value={formData.email}
                         placeholder="Enter email"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
@@ -148,12 +136,10 @@ const UnitDetails = ({ formData, handleChange, handleNext, errors, touched }) =>
 
             <div className="grid grid-cols-1">
                 <div className="flex items-center space-x-3">
-                    <input
+                    <Field
                         type="checkbox"
                         name="agree"
-                        checked={formData.agree || false}
                         className="w-4 h-4"
-                        onChange={(e) => handleChange({ target: { name: 'agree', value: e.target.checked } })}
                     />
                     <label className="text-gray-700 font-medium text-sm sm:text-base">
                         I agree to the terms

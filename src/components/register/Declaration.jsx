@@ -1,18 +1,10 @@
+import React, { useRef } from 'react';
+import { Field, useFormikContext } from 'formik';
 import { ArrowLeftCircleIcon, CheckCircle, Upload } from "lucide-react";
-import { useState, useRef } from "react";
+import FormError from "../common/FormError";
 
-const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep, errors, success, loading }) => {
-    // const [success, setSuccess] = useState(false);
-
-    // const handleSubmit = () => {
-    //   if(errors){
-    //     return;
-    //   }
-    //   setSuccess(true);
-    //   setTimeout(() => {
-    //     window.location.href = "/auth/login";
-    //   }, 5000);
-    // };
+const Declaration = ({ handleFileChange, handleSubmit, handleBack, errors, touched, success, loading }) => {
+    const { values } = useFormikContext();
 
     const fileInputRef = useRef(null);
 
@@ -49,11 +41,10 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
 
             <div className="grid grid-cols-1">
                 <div className="flex items-center space-x-3">
-                    <input
+                    <Field
                         type="checkbox"
                         name="new_unit"
                         className="w-4 h-4 mt-1 sm:mt-0"
-                        onChange={handleChange}
                     />
                     <label className="text-gray-700 font-medium text-sm sm:text-base">
                         I hereby declare that the information provided is true and correct to the best of my knowledge.
@@ -61,11 +52,7 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
                 </div>
 
                 <div className="h-5">
-                    {errors.new_unit && (
-                        <p className="text-red-600 text-[12px] font-bold">
-                            {errors.new_unit}
-                        </p>
-                    )}
+                    <FormError name="new_unit" errors={errors} touched={touched} />
                 </div>
 
             </div>
@@ -75,21 +62,15 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Full Name <span>*</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="full_name"
-                        value={formData.full_name}
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         placeholder="Full Name"
                     />
 
                     <div className="h-5">
-                        {errors.full_name && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.full_name}
-                            </p>
-                        )}
+                        <FormError name="full_name" errors={errors} touched={touched} />
                     </div>
 
                 </div>
@@ -98,21 +79,15 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Signature (type name) <span>*</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="signature"
-                        value={formData.signature}
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         placeholder="Signature"
                     />
 
                     <div className="h-5">
-                        {errors.signature && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.signature}
-                            </p>
-                        )}
+                        <FormError name="signature" errors={errors} touched={touched} />
                     </div>
 
                 </div>
@@ -132,17 +107,10 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
                     <input
                         type="file"
                         ref={fileInputRef}
-                        name="signature_file"
+                        name="signature"
                         accept="image/png,image/jpeg,image/jpg,application/pdf"
                         className="hidden"
-                        onChange={(e) =>
-                            handleChange({
-                                target: {
-                                    name: "signature_file",
-                                    value: e.target.files[0],
-                                },
-                            })
-                        }
+                        onChange={handleFileChange}
                     />
 
                     <button
@@ -160,16 +128,16 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
                         Upload Signature
                     </button>
 
-                    {formData.signature_file && (
+                    {values.signature && (
                         <p className="text-sm text-orange-700 mt-1">
-                            {formData.signature_file.name}
+                            {values.signature.name}
                         </p>
                     )}
 
                     <div className="h-5">
-                        {errors.signature_file && (
+                        {errors.signature && (
                             <p className="text-red-600 text-[12px] font-bold">
-                                {errors.signature_file}
+                                {errors.signature}
                             </p>
                         )}
                     </div>
@@ -180,21 +148,15 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Seal <span>(Optional)</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="seal"
-                        value={formData.seal}
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         placeholder="Seal"
                     />
 
                     <div className="h-5">
-                        {errors.seal && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.seal}
-                            </p>
-                        )}
+                        <FormError name="seal" errors={errors} touched={touched} />
                     </div>
 
                 </div>
@@ -203,8 +165,9 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start md:items-center">
                     <button
-                        onClick={prevStep}
+                        onClick={handleBack}
                         disabled={loading}
+                        type="button"
                         className="bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm
@@ -222,8 +185,9 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
 
                 <div className="flex flex-col sm:flex-row justify-end items-stretch sm:items-center gap-3 sm:gap-4">
                     <button
-                        onClick={prevStep}
+                        onClick={handleBack}
                         disabled={loading}
+                        type="button"
                         className="px-4 py-2 text-sm
                                 sm:px-5 sm:py-2 sm:text-base
                                 border border-orange-400 rounded-md 
@@ -239,6 +203,7 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
                     <button
                         onClick={handleSubmit}
                         disabled={loading}
+                        type="submit"
                         className="bg-green-600 text-white px-5 py-2 rounded-md flex items-center justify-center gap-2 text-sm sm:text-base hover:bg-green-700 w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         {loading ? "Submitting..." : "Submit Application"}

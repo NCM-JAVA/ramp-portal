@@ -47,8 +47,6 @@ const authSlice = createSlice({
         },
 
         setUserFromStorage: (state, action) => {
-            console.log("Loaded from localStorage:", action.payload);
-
             state.user = action.payload.user;
             state.token = action.payload.token;
         },

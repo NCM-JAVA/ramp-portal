@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/slice/AuthSlice";
 import { toast } from "react-toastify";
 import { ROLES } from "../../constants/roles";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import { loginValidationSchema } from "../../validations/schemas";
+import FormError from "../../components/common/FormError";
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -76,8 +77,10 @@ export default function Login() {
                         initialValues={initialValues}
                         validationSchema={loginValidationSchema}
                         onSubmit={handleSubmit}
+                        validateOnChange={true}
+                        validateOnBlur={true}
                     >
-                        {({ isSubmitting }) => (
+                        {({ isSubmitting, errors, touched }) => (
                             <Form className="space-y-1">
                                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4 sm:gap-6">
                                     <div className="flex flex-col">
@@ -90,7 +93,7 @@ export default function Login() {
                                             disabled={loading || isSubmitting}
                                         />
                                         <div className="h-5">
-                                            <ErrorMessage name="email" component="p" className="text-red-600 text-[12px] font-bold" />
+                                            <FormError name="email" errors={errors} touched={touched} />
                                         </div>
                                     </div>
                                 </div>
@@ -106,7 +109,7 @@ export default function Login() {
                                             disabled={loading || isSubmitting}
                                         />
                                         <div className="h-5">
-                                            <ErrorMessage name="password" component="p" className="text-red-600 text-[12px] font-bold" />
+                                            <FormError name="password" errors={errors} touched={touched} />
                                         </div>
                                     </div>
                                 </div>

@@ -1,13 +1,9 @@
+import React from 'react';
+import { Field } from 'formik';
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
-import { useRef } from "react";
+import FormError from "../common/FormError";
 
-const LegalDetails = ({ formData, handleChange, handleFileChange, handleNext, handleBack, errors, touched }) => {
-
-    const fileInputRef = useRef(null);
-
-    const handleButtonClick = () => {
-        fileInputRef.current.click();
-    };
+const LegalDetails = ({ formData, handleFileChange, handleNext, handleBack, errors, touched }) => {
 
     return (
         <div className="space-y-2 p-2 sm:p-2">
@@ -18,21 +14,15 @@ const LegalDetails = ({ formData, handleChange, handleFileChange, handleNext, ha
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Udyam / IEM Registration No. <span>*</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="udyam_registration_no"
-                        value={formData.udyam_registration_no}
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         placeholder="Udyam / IEM Registration No."
                     />
 
                     <div className="h-5">
-                        {errors.udyam_registration_no && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.udyam_registration_no}
-                            </p>
-                        )}
+                        <FormError name="udyam_registration_no" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -40,21 +30,15 @@ const LegalDetails = ({ formData, handleChange, handleFileChange, handleNext, ha
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Trading License No. <span>*</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="trading_license_no"
-                        value={formData.trading_license_no}
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         placeholder="Trading License No."
                     />
 
                     <div className="h-5">
-                        {errors.trading_license_no && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.trading_license_no}
-                            </p>
-                        )}
+                        <FormError name="trading_license_no" errors={errors} touched={touched} />
                     </div>
                 </div>
             </div>
@@ -65,21 +49,15 @@ const LegalDetails = ({ formData, handleChange, handleFileChange, handleNext, ha
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         GST No. <span>*</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="gst_no"
-                        value={formData.gst_no}
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         placeholder="GST No."
                     />
 
                     <div className="h-5">
-                        {errors.gst_no && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.gst_no}
-                            </p>
-                        )}
+                        <FormError name="gst_no" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -124,21 +102,15 @@ const LegalDetails = ({ formData, handleChange, handleFileChange, handleNext, ha
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Factory License No. <span>*</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="factory_license_no"
-                        value={formData.factory_license_no}
-                        onChange={handleChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         placeholder="Factory License No."
                     />
 
                     <div className="h-5">
-                        {errors.factory_license_no && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.factory_license_no}
-                            </p>
-                        )}
+                        <FormError name="factory_license_no" errors={errors} touched={touched} />
                     </div>
                 </div>
 
@@ -182,21 +154,15 @@ const LegalDetails = ({ formData, handleChange, handleFileChange, handleNext, ha
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Consent to Operate / SPCB <span className="text-xs font-normal">(If Applicable)</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="consent_operate"
-                        value={formData.consent_operate}
                         placeholder="Consent to Operate / SPCB"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
-                        {errors.consent_operate && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.consent_operate}
-                            </p>
-                        )}
+                        <FormError name="consent_operate" errors={errors} touched={touched} />
                     </div>
                 </div>
             </div>
@@ -206,21 +172,15 @@ const LegalDetails = ({ formData, handleChange, handleFileChange, handleNext, ha
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Any Other Registration <span className="text-xs font-normal">(Optional)</span>
                     </label>
-                    <input
+                    <Field
                         type="text"
                         name="other_registration"
-                        value={formData.other_registration}
                         placeholder="Any Other Registration"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                        onChange={handleChange}
                     />
 
                     <div className="h-5">
-                        {errors.other_registration && (
-                            <p className="text-red-600 text-[12px] font-bold">
-                                {errors.other_registration}
-                            </p>
-                        )}
+                        <FormError name="other_registration" errors={errors} touched={touched} />
                     </div>
                 </div>
             </div>
