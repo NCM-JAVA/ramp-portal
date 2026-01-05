@@ -1,4 +1,4 @@
-import { ArrowLeftCircleIcon, ArrowRightCircleIcon, Upload } from "lucide-react";
+import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
 import { useRef } from "react";
 
 const LegalDetails = ({ formData, handleChange, handleFileChange, handleNext, handleBack, errors, touched }) => {
