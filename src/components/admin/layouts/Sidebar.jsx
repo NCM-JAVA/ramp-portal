@@ -8,7 +8,10 @@ import {
   FileText,
   BarChart2,
   ShoppingCart,
-  MessageSquare
+  MessageSquare,
+  User,
+  Bell,
+  AlertCircle
 } from "lucide-react";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
@@ -26,12 +29,16 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   const menuItems = [
     { label: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" />, path: "/admin/dashboard" },
+    // { label: "Available Schemes", icon: <LayoutDashboard className="w-5 h-5" />, path: "/admin/available-schemes" },
+    { label: "Apply for Incentives", icon: <LayoutDashboard className="w-5 h-5" />, path: "/admin/available-schemes" },
     { label: "Unit Management", icon: <Building2 className="w-5 h-5" />, path: "/admin/unit-management" },
-    { label: "Incentive Schemes", icon: <Gift className="w-5 h-5" />, path: "/admin/incentive-schemes-application" },
-    { label: "My Applications", icon: <FileText className="w-5 h-5" />, path: "/admin/applications" },
-    { label: "Progress Reporting", icon: <BarChart2 className="w-5 h-5" />, path: "/admin/progress" },
-    { label: "Marketplace", icon: <ShoppingCart className="w-5 h-5" />, path: "/admin/market" },
-    { label: "Grievance", icon: <MessageSquare className="w-5 h-5" />, path: "/admin/grievance" },
+    // { label: "Incentive Schemes", icon: <Gift className="w-5 h-5" />, path: "/admin/incentive-schemes-application" },
+    { label: "My Applications", icon: <FileText className="w-5 h-5" />, path: "/admin/my-application" },
+    { label: "Progress Reporting", icon: <BarChart2 className="w-5 h-5" />, path: "/admin/progress-reporting" },
+    { label: "Marketplace", icon: <ShoppingCart className="w-5 h-5" />, path: "/admin/market-place" },
+    { label: "Grievance", icon: <AlertCircle className="w-5 h-5" />, path: "/admin/grievance" },
+    { label: "Notifications", icon: <Bell className="w-5 h-5" />, path: "/admin/notifications" },
+    { label: "My Profile", icon: <User className="w-5 h-5" />, path: "/admin/my-profile" },
   ];
 
   return (
@@ -70,8 +77,8 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                   flex items-center gap-3 px-3 py-3 mb-2 rounded-lg text-sm 
                   transition-all duration-200
                   ${active
-                    ? "bg-orange-500 text-white"
-                    : "hover:bg-orange-600 hover:text-white"
+                    ? "bg-blue-500 text-white"
+                    : "hover:bg-blue-600 hover:text-white"
                   }
                 `}
               >

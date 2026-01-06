@@ -7,7 +7,7 @@ export default function Footer() {
       </p>
 
       <p className="text-xs opacity-70 text-center md:text-right">
-        Designed & Developed with ❤️
+        Designed & Developed by Netcreative Mind
       </p>
     </footer>
   );

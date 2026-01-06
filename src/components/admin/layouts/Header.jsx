@@ -25,8 +25,8 @@ const Header = () => {
                 </button>
 
                 <div className="text-white text-sm text-right">
-                    <p className="font-semibold">Netcreativemind</p>
-                    <p className="opacity-70">Company</p>
+                    <p className="font-semibold">Anshu Singh</p>
+                    <p className="opacity-70">Unit Owner</p>
                 </div>
 
                 <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold" onClick={handleLogout}>

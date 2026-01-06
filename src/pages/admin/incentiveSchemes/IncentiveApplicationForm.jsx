@@ -97,7 +97,7 @@ const IncentiveApplicationForm = () => {
 
           <div className="space-y-1">
             <h3 className="text-lg font-semibold border-b-2 border-gray-800 pb-1">Basic Unit Information</h3>
-            <p className="text-m font-semibold text-red-700"><i>Note: These fields are auto-populated from the Registration-Master Data</i></p>
+            {/* <p className="text-m font-semibold text-red-700"><i>Note: These fields are auto-populated from the Registration-Master Data</i></p> */}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div>
