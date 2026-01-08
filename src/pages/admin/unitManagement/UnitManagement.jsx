@@ -15,7 +15,7 @@ const UnitManagement = () => {
     setPageSubTitle("Manage your industrial units");
     setActionButton(
       <button
-        onClick={() => navigate("/admin/unit-registration")}
+        onClick={() => navigate("/admin/unit/unit-registration")}
         className="bg-white text-blue-600 px-4 py-2 rounded-lg shadow font-semibold border border-blue-600 hover:bg-blue-50"
       >
         + New Unit Registration

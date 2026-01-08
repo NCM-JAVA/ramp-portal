@@ -34,10 +34,10 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
         </p>
 
         <a
-          href="/auth/login"
-          className="inline-block bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition text-sm sm:text-base"
+          href="/admin/dashboard"
+          className="inline-block bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700 transition text-sm sm:text-base"
         >
-          Go to Login
+          Go to Dashboard
         </a>
       </div>
     );
@@ -234,7 +234,7 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
 
           <button
             onClick={handleSubmit}
-            className="bg-green-600 text-white px-5 py-2 rounded-md flex items-center justify-center gap-2 text-sm sm:text-base hover:bg-green-700 w-full sm:w-auto"
+            className="bg-orange-600 text-white px-5 py-2 rounded-md flex items-center justify-center gap-2 text-sm sm:text-base hover:bg-orange-700 w-full sm:w-auto"
           >
             Submit Application
           </button>

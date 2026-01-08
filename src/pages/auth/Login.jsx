@@ -8,6 +8,8 @@ export default function Login() {
     // const dispatch = useDispatch();
     const { loading, error, token, user } = useSelector((state) => state.auth);
     const navigate = useNavigate();
+    const [openModal, setOpenModal] = useState(false);
+    const [selectedOption, setSelectedOption] = useState("");
 
 
     const [formData, setFormData] = useState({
@@ -22,8 +24,10 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate("/admin/dashboard");
+        // navigate("/admin/dashboard");
         // dispatch(loginUser(formData));
+
+        setOpenModal(true);
     };
 
     useEffect(() => {
@@ -118,6 +122,75 @@ export default function Login() {
                     </p>
                 </div>
             </div>
+
+            {openModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+                    <div className="bg-white rounded-2xl shadow-2xl w-full max-w-xl p-8 animate-fadeIn">
+
+                        {/* Header */}
+                        <h2 className="text-2xl font-semibold text-gray-800 text-center mb-2">
+                            Choose Next Action
+                        </h2>
+                        <p className="text-sm text-gray-500 text-center mb-8">
+                            Select one option to continue
+                        </p>
+
+                        {/* Button-style Options */}
+                        <div className="grid gap-5">
+
+                            {/* Option 1 */}
+                            <button
+                                onClick={() => {
+                                    setOpenModal(false);
+                                    navigate("/admin/dashboard");
+                                }}
+                                className="group flex items-start gap-4 p-6 rounded-xl border border-gray-200
+                     hover:border-green-600 hover:bg-green-50 transition-all
+                     text-left shadow-sm hover:shadow-md"
+                            >
+                                <div className="mt-1 w-5 h-5 rounded-full border-2 border-green-600
+                          group-hover:bg-green-600"></div>
+                                <div>
+                                    <p className="font-medium text-gray-800">
+                                        Application for Subsidy / Incentive
+                                    </p>
+                                    <p className="text-sm text-gray-500 mt-1">
+                                        Claim for AIDIP
+                                    </p>
+                                </div>
+                            </button>
+
+                            {/* Option 2 */}
+                            <button
+                                onClick={() => {
+                                    setOpenModal(false);
+                                    navigate("/unit-register");
+                                }}
+                                className="group flex items-start gap-4 p-6 rounded-xl border border-gray-200
+                     hover:border-orange-600 hover:bg-orange-50 transition-all
+                     text-left shadow-sm hover:shadow-md"
+                            >
+                                <div className="mt-1 w-5 h-5 rounded-full border-2 border-orange-600
+                          group-hover:bg-orange-600"></div>
+                                <div>
+                                    <p className="font-medium text-gray-800">
+                                        Registration for AIDIP 2025
+                                    </p>
+                                    <p className="text-sm text-gray-500 mt-1">
+                                        Unit Registration
+                                    </p>
+                                </div>
+                            </button>
+
+
+                        </div>
+                    </div>
+                </div>
+            )}
+
+
+
+
         </MainLayout>
     );
 }

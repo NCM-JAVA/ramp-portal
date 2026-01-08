@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route , Navigate} from "react-router-d
 import Login from "./pages/auth/Login";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/auth/Register";
+import UnitRegister from "./pages/auth/UnitRegister";
 import Dashboard from "./pages/admin/Dashboard";
 import User from "./pages/admin/users/User";
 import AvailableSchemes from "./pages/admin/Schemes/AvailableSchemes";
@@ -29,18 +30,19 @@ function App() {
           <Route path="/" element={<Navigate to="/auth/login" replace />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/unit-register" element={<UnitRegister />} />
 
           {/* Admin Panle */}
           <Route path="/admin" element={<AdminLayout />} >
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="available-schemes" element={<AvailableSchemes />} />
+            <Route path="schemes/available-schemes" element={<AvailableSchemes />} />
             <Route path="users" element={<User />} />
-            <Route path="unit-management" element={<UnitManagement />} />
-            <Route path="unit-registration" element={<UnitRegistration />} />
+            <Route path="unit/unit-management" element={<UnitManagement />} />
+            <Route path="unit/unit-registration" element={<UnitRegistration />} />
             <Route path="add-incentive-schemes" element={<AddIncentiveScheme />} />
             <Route path="incentive-schemes-application" element={<IncentiveApplicationForm />} />
             <Route path="my-application" element={<ApplicationList />} />
-            <Route path="scheme-application/:id/form" element={<SchemeApplicationForm />} />
+            <Route path="schemes/scheme-application/:id/form" element={<SchemeApplicationForm />} />
             <Route path="progress-reporting" element={<ProgressReporting />} />
             <Route path="market-place" element={<Marketplace />} />
             <Route path="grievance" element={<Grievance />} />

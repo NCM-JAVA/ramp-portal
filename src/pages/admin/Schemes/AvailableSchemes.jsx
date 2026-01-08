@@ -62,7 +62,7 @@ const AvailableSchemes = () => {
                                         disabled={!row.eligibility_status}
                                         onClick={() => {
                                             if (row.eligibility_status) {
-                                                navigate(`/admin/scheme-application/${row.id}/form`);
+                                                navigate(`/admin/schemes/scheme-application/${row.id}/form`);
                                             }
                                         }}
                                         className={`
