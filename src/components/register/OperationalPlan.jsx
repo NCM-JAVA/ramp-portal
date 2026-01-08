@@ -161,10 +161,10 @@ const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors })
                 </div>
             </div>
 
-            <div className="grid grid-cols-1">
-                <div className="flex flex-col">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                <div className="flex flex-col sm:col-span-1 md:col-span-2">
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-                        Load Sanction Certificate <span>(Optional)</span>
+                        Load Sanction Certificate <span>*</span>
                     </label>
                     <input
                         name="load_sanction_certificate"
@@ -172,6 +172,35 @@ const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors })
                         placeholder="Load Sanction Certificate"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
+                    />
+
+                    <div className="h-5">
+                        {errors.load_sanction_certificate && (
+                            <p className="text-red-600 text-[12px] font-bold">
+                                {errors.load_sanction_certificate}
+                            </p>
+                        )}
+                    </div>
+                </div>
+                <div className="flex flex-col justify-end sm:col-span-1 md:col-span-2">
+                    {/* <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        Load Sanction Certificate
+                    </label> */}
+                    <input
+                        type="file"
+                        name="load_document"
+                        accept="image/png,image/jpeg,image/jpg,application/pdf"
+                        className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+                        onChange={(e) =>
+                            handleChange({
+                                target: {
+                                    name: "load_document",
+                                    value: e.target.files[0],
+                                },
+                            })
+                        }
                     />
 
                     <div className="h-5">
