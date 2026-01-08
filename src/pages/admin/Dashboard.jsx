@@ -15,12 +15,12 @@ const Dashboard = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <Card title="Total Applications" value="12" subtitle="Submitted" gradient="bg-gradient-to-r from-blue-500 to-blue-700" />
         <Card title="Approved" value="6" subtitle="Approved" gradient="bg-gradient-to-r from-green-500 to-green-700" />
         <Card title="Pending Review" value="3" subtitle="Under Review" gradient="bg-gradient-to-r from-orange-500 to-red-500" />
         <Card title="Active Queries" value="1" subtitle="Queries Raised" gradient="bg-gradient-to-r from-purple-500 to-pink-500" />
-      </div>
+      </div> */}
 
       <div className="bg-white p-6 rounded-xl shadow overflow-x-auto">
         <h3 className="text-lg font-semibold mb-4">Recent Applications</h3>

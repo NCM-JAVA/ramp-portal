@@ -155,7 +155,7 @@ export default function Login() {
                                         Application for Subsidy / Incentive
                                     </p>
                                     <p className="text-sm text-gray-500 mt-1">
-                                        Claim for AIDIP
+                                        Claim for APIDIP
                                     </p>
                                 </div>
                             </button>
@@ -174,7 +174,7 @@ export default function Login() {
                           group-hover:bg-orange-600"></div>
                                 <div>
                                     <p className="font-medium text-gray-800">
-                                        Registration for AIDIP 2025
+                                        Registration for APIDIP 2025
                                     </p>
                                     <p className="text-sm text-gray-500 mt-1">
                                         Unit Registration
