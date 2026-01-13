@@ -14,8 +14,8 @@ const Header = () => {
     return (
         <header className="w-full bg-gradient-to-r from-orange-600 to-indigo-600 px-6 py-4 flex justify-between items-center shadow-md">
             <div className="text-white">
-                <h1 className="text-xl font-semibold">Industrial Unit Portal</h1>
-                <p className="text-sm opacity-80">Department of Industries, Arunachal Pradesh</p>
+                {/* <h1 className="text-xl font-semibold">Industrial Unit Portal</h1>
+                <p className="text-sm opacity-80">Department of Industries, Arunachal Pradesh</p> */}
             </div>
 
             <div className="flex items-center gap-6">

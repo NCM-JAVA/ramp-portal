@@ -1,10 +1,13 @@
 import Card from "../../components/admin/common/Card";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import StatusBadge from "../../components/admin/common/StatusBadge";
+import { Eye } from "lucide-react";
 
 const Dashboard = () => {
 
   const { setPageTitle, setPageSubTitle, setActionButton, setBackButton } = useOutletContext();
+  const [openViewModal, setOpenViewModal] = useState(false);
 
   useEffect(() => {
     setPageTitle("Dashboard Overview");
@@ -28,29 +31,161 @@ const Dashboard = () => {
         <table className="w-full min-w-[500px]">
           <thead className="bg-gray-100 text-left">
             <tr>
-              <th className="p-3">App ID</th>
-              <th className="p-3">Status</th>
-              <th className="p-3">Last Updated</th>
+              <th className="p-2">Application ID</th>
+              <th className="p-2">Application Type</th>
+              <th className="p-2">Unit Name </th>
+              <th className="p-2">Scheme Name</th>
+              <th className="p-2">Submission Date</th>
+              <th className="p-2">Current Status</th>
+              <th className="p-2">Action</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b">
-              <td className="p-3">APP-2025-001</td>
-              <td className="p-3"><span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs">Pending</span></td>
-              <td className="p-3">12 Jan 2025</td>
+              <td className="p-2">APP-2025-000123</td>
+              <td className="p-2">Incentive Claim</td>
+              <td className="p-2">Himalayan Agro Unit</td>
+              <td className="p-2">Capital Investment Subsidy</td>
+              <td className="p-2">12 Jan 2025</td>
+              <td className="p-2"><StatusBadge status="under_scrutiny" /></td>
+              <td className="p-2">
+                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
+                      <Eye className="w-5 h-5" />
+                  </button>
+              </td>
             </tr>
             <tr className="border-b">
-              <td className="p-3">APP-2025-002</td>
-              <td className="p-3"><span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs">Approved</span></td>
-              <td className="p-3">10 Jan 2025</td>
+              <td className="p-2">APP-2025-000124</td>
+              <td className="p-2">Incentive Claim</td>
+              <td className="p-2">Himalayan Agro Unit</td>
+              <td className="p-2">Capital Investment Subsidy</td>
+              <td className="p-2">01 Mar 2025</td>
+              <td className="p-2"><StatusBadge status="under_scrutiny" /></td>
+              <td className="p-2">
+                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
+                      <Eye className="w-5 h-5" />
+                  </button>
+              </td>
             </tr>
-            <tr>
-              <td className="p-3">APP-2024-158</td>
-              <td className="p-3"><span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">In Review</span></td>
-              <td className="p-3">08 Jan 2025</td>
+            <tr className="border-b">
+              <td className="p-2">APP-2025-000125</td>
+              <td className="p-2">Incentive Claim</td>
+              <td className="p-2">Himalayan Agro Unit</td>
+              <td className="p-2">Capital Investment Subsidy</td>
+              <td className="p-2">21 Aug 2025</td>
+              <td className="p-2"><StatusBadge status="under_scrutiny" /></td>
+              <td className="p-2">
+                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
+                      <Eye className="w-5 h-5" />
+                  </button>
+              </td>
             </tr>
           </tbody>
         </table>
+
+        {openViewModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+
+                    <div className="bg-white w-full max-w-4xl rounded-xl shadow-lg overflow-hidden">
+
+                        {/* ===== Header ===== */}
+                        <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-orange-600 to-orange-700">
+                            <h2 className="text-lg font-semibold text-white">
+                                View Details
+                            </h2>
+                            <button
+                                onClick={() => setOpenViewModal(false)}
+                                className="text-white hover:text-orange-200 text-xl"
+                            >
+                                ✕
+                            </button>
+                        </div>
+
+                        {/* ===== Body ===== */}
+                        <div className="px-6 py-4 text-sm text-gray-700 grid grid-cols-2 gap-4">
+                            <div>
+                                <p className="font-medium">Application ID</p>
+                                <p>APP-2025-000123</p>
+                            </div>
+
+                            <div>
+                                <p className="font-medium">Applicant Name</p>
+                                <p>Rajesh Kumar</p>
+                            </div>
+
+                            <div>
+                                <p className="font-medium">Application Type</p>
+                                <p >Incentive Claim</p>
+                            </div>
+
+                            <div>
+                                <p className="font-medium">Contact Number</p>
+                                <p >+91 7898754657</p>
+                            </div>
+                            <div>
+                                <p className="font-medium"> Unit Name</p>
+                                <p >Himalayan Agro Unit</p>
+                            </div>
+                            <div>
+                                <p className="font-medium">Email Address</p>
+                                <p >rajesh@himalayan-agro.com</p>
+                            </div>
+                            <div>
+                                <p className="font-medium">Scheme</p>
+                                <p >Capital Investment Subsidy</p>
+                            </div>
+                            <div>
+                                <p className="font-medium">Address</p>
+                                <p >Industrial Area, Itanagar, Arunachal Pradesh</p>
+                            </div>
+                            <div>
+                                <p className="font-medium">Submission Date</p>
+                                <p >12 Jan 2025</p>
+                            </div>
+                            <div>
+                                <p className="font-medium"> Claim Amount</p>
+                                <p >Rs 15,00,000</p>
+                            </div>
+                            <div>
+                                <p className="font-medium"> Status</p>
+                                <p ><StatusBadge status="under_security" /></p>
+                            </div>
+
+                        </div>
+
+
+                        {/* ===== Footer ===== */}
+                        <div className="flex items-center justify-between px-6 py-4 border-t bg-gray-50">
+
+                            <div className=" text-sm text-gray-700 max-w-[70%]">
+                                <div>
+                                    <p className="font-medium">Submitted Documents</p>
+                                    <p>Investment Proof, Bank Statement, Registration Certificate</p>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-3">
+                                <button
+                                    onClick={() => setOpenViewModal(false)}
+                                    className="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100"
+                                >
+                                    Close
+                                </button>
+
+                                <button
+                                    className="px-4 py-2 rounded-md bg-orange-600 text-white hover:bg-orange-700"
+                                >
+                                    Download PDF
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            )}
+
       </div>
 
     </>

@@ -30,8 +30,10 @@ export default function Login() {
         <MainLayout>
             <div className="flex justify-center items-center bg-gray-100 px-4 py-6">
                 <div className="bg-white shadow-2xl w-full max-w-3xl p-10 rounded-3xl border border-gray-200">
-                    <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">New User Registration for State Portal </h2>
-                    <p className="text-center font-semibold text-orange-600 mb-8 text-sm">Access the Department of Industries portal</p>
+                    <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">New User Registration for APIDIP 2025 </h2>
+                    <p className="text-center font-semibold text-orange-600 mb-8 text-sm">
+                        {/* Access the Department of Industries portal */}
+                        </p>
 
                     {error && (
                         <div className="bg-red-100 text-red-700 p-3 rounded-lg text-sm mb-4 border border-red-300">

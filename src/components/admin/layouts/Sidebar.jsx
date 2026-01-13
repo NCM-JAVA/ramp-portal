@@ -34,10 +34,10 @@ export default function Sidebar({ isOpen, setIsOpen }) {
     { label: "Unit Management", icon: <Building2 className="w-5 h-5" />, path: "/admin/unit/unit-management", basePath: "/admin/unit" },
     // { label: "Incentive Schemes", icon: <Gift className="w-5 h-5" />, path: "/admin/incentive-schemes-application" },
     { label: "My Applications", icon: <FileText className="w-5 h-5" />, path: "/admin/my-application", basePath: "/admin/my-application" },
-    { label: "Progress Reporting", icon: <BarChart2 className="w-5 h-5" />, path: "/admin/progress-reporting", basePath: "/admin/progress-reporting" },
-    { label: "Marketplace", icon: <ShoppingCart className="w-5 h-5" />, path: "/admin/market-place", basePath: "/admin/market-place" },
-    { label: "Grievance", icon: <AlertCircle className="w-5 h-5" />, path: "/admin/grievance", basePath: "/admin/grievance" },
-    { label: "Notifications", icon: <Bell className="w-5 h-5" />, path: "/admin/notifications", basePath: "/admin/notifications" },
+    // { label: "Progress Reporting", icon: <BarChart2 className="w-5 h-5" />, path: "/admin/progress-reporting", basePath: "/admin/progress-reporting" },
+    // { label: "Marketplace", icon: <ShoppingCart className="w-5 h-5" />, path: "/admin/market-place", basePath: "/admin/market-place" },
+    // { label: "Grievance", icon: <AlertCircle className="w-5 h-5" />, path: "/admin/grievance", basePath: "/admin/grievance" },
+    // { label: "Notifications", icon: <Bell className="w-5 h-5" />, path: "/admin/notifications", basePath: "/admin/notifications" },
     { label: "My Profile", icon: <User className="w-5 h-5" />, path: "/admin/my-profile", basePath: "/admin/my-profile" },
   ];
 

@@ -22,7 +22,7 @@ const ApplicationList = () => {
 
                 <div className="flex flex-col">
                     <label className="text-sm font-medium text-gray-700 mb-1">
-                        Application Type <span>*</span>
+                        Registration Type <span>*</span>
                     </label>
                     <input
                         type="text"
@@ -33,18 +33,18 @@ const ApplicationList = () => {
                 </div>
 
                 <div className="flex flex-col">
-                    <label className="text-sm font-medium text-gray-700 mb-1">Scheme</label>
+                    <label className="text-sm font-medium text-gray-700 mb-1">Incentive/Subsidy</label>
                     <select
                         name="scheme"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                     >
-                        <option value="">Select Scheme</option>
-                        <option value="scheme1">Scheme 1</option>
-                        <option value="scheme2">Scheme 2</option>
+                        <option value="">Select Incentive/Subsidy</option>
+                        <option value="scheme1">Incentive/Subsidy 1</option>
+                        <option value="scheme2">Incentive/Subsidy 2</option>
                     </select>
                 </div>
 
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
                     <label className="text-sm font-medium text-gray-700 mb-1">Scheme</label>
                     <select
                         name="scheme"
@@ -54,7 +54,7 @@ const ApplicationList = () => {
                         <option value="scheme1">Scheme 1</option>
                         <option value="scheme2">Scheme 2</option>
                     </select>
-                </div>
+                </div> */}
 
                 <div className="flex flex-col">
                     <label className="text-sm font-medium text-gray-700 mb-1">Date Range</label>
@@ -94,10 +94,10 @@ const ApplicationList = () => {
                         <table class="min-w-full border-gray-300 mt-3 mb-5">
                             <thead class="bg-gray-100 text-left">
                                 <tr>
-                                    <th className="p-2">Application ID</th>
-                                    <th className="p-2">Application Type</th>
+                                    <th className="p-2">Registration ID</th>
+                                    <th className="p-2">Registration Type</th>
                                     <th className="p-2">Unit Name </th>
-                                    <th className="p-2">Scheme Name</th>
+                                    <th className="p-2">Incentive/Subsidy Name</th>
                                     <th className="p-2">Submission Date</th>
                                     <th className="p-2">Current Status</th>
                                     <th className="p-2">Action</th>
@@ -110,7 +110,7 @@ const ApplicationList = () => {
                                     <td className="p-2">Himalayan Agro Unit</td>
                                     <td className="p-2">Capital Investment Subsidy</td>
                                     <td className="p-2">12 Jan 2025</td>
-                                    <td className="p-2"><StatusBadge status="under_security" /></td>
+                                    <td className="p-2"><StatusBadge status="under_scrutiny" /></td>
                                     <td className="p-2">
                                         <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
                                             <Eye className="w-5 h-5" />
