@@ -6,9 +6,9 @@ const SubmissionSuccess = ({ formData, handleChange, nextStep, prevStep, errors,
     <>
       {/* ================= CONTENT ================= */}
       <div className="space-y-2 p-2 sm:p-2">
-        <h3 className="text-lg font-semibold border-b-2 border-gray-800 pb-1">
+        {/* <h3 className="text-lg font-semibold border-b-2 border-gray-800 pb-1">
           Submission Confirmation
-        </h3>
+        </h3> */}
 
         <div className="bg-white p-6 rounded-xl flex flex-col items-center text-center gap-4">
 
@@ -51,7 +51,7 @@ const SubmissionSuccess = ({ formData, handleChange, nextStep, prevStep, errors,
           <button
             // onClick={goToMyApplications}
             className="
-              bg-blue-600 hover:bg-blue-700 
+              bg-orange-600 hover:bg-orange-700 
               text-white
               px-5 py-2 text-sm
               sm:px-6 sm:py-2 sm:text-base

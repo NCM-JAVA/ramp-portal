@@ -26,10 +26,10 @@ const ProgressBar = ({ step }) => {
             relative px-3 py-2 text-[15px] font-medium flex items-center
             whitespace-nowrap transition-all duration-300 shadow-l 
             ${isActive
-                  ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white"
-                  : "bg-blue-100 text-blue-700"
+                  ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white"
+                  : "bg-orange-100 text-orange-700"
                 }
-            ${isCurrent && "ring-1 ring-blue-400"}
+            ${isCurrent && "ring-1 ring-orange-400"}
             ${!isLast ? "mr-1" : ""}
           `}
               style={{
@@ -45,7 +45,7 @@ const ProgressBar = ({ step }) => {
                 <div
                   className={`
                 absolute right-0 top-0 h-full w-3
-                ${isActive ? "bg-blue-700" : "bg-blue-300"}
+                ${isActive ? "bg-orange-700" : "bg-orange-300"}
               `}
                   style={{
                     clipPath: "polygon(0 0, 100% 50%, 0 100%)",

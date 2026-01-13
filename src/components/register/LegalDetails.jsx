@@ -38,21 +38,39 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
 
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Trading License No. <span>*</span>
+            Udyam / IEM Document <span>*</span>
+            <span className="text-xs text-gray-800 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
           </label>
+
           <input
-            type="text"
-            name="trading_license_no"
-            value={formData.trading_license_no}
-            onChange={handleChange}
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-            placeholder="Trading License No."
+            type="file"
+            name="udyam_document"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "udyam_document",
+                  value: e.target.files[0],
+                },
+              })
+            }
           />
 
           <div className="h-5">
-            {errors.trading_license_no && (
+            {formData.udyam_document && (
+              <p className="text-xs text-green-600 mt-1">
+                {formData.udyam_document.name}
+              </p>
+            )}
+
+            {errors.udyam_document && (
               <p className="text-red-600 text-[12px] font-bold">
-                {errors.trading_license_no}
+                {errors.udyam_document}
               </p>
             )}
           </div>
@@ -129,7 +147,7 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
         
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Factory License No. <span>*</span>
+            Factory License No. <span>(Optional)</span>
           </label>
           <input
             type="text"
@@ -151,7 +169,7 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
 
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Factory License Document <span>*</span>
+            Factory License Document
             <span className="text-xs text-gray-800 font-normal">
               (JPG, PNG, PDF • Max 2MB)
             </span>
@@ -191,18 +209,48 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
         
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Consent to Operate / SPCB <span className="text-xs font-normal">(If Applicable)</span>
+            Trading License No. <span>*</span>
           </label>
           <input
             type="text"
-            name="consent_operate"
-            value={formData.consent_operate}
-            placeholder="Consent to Operate / SPCB"
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+            name="trading_license_no"
+            value={formData.trading_license_no}
             onChange={handleChange}
+            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+            placeholder="Trading License No."
+          />
+
+          <div className="h-5">
+            {errors.trading_license_no && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.trading_license_no}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            Consent to operate/establish from State Pollution Board  <span className="text-xs font-normal">(If Applicable)</span>
+          </label>
+          <input
+            type="file"
+            name="consent_operate"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "consent_operate",
+                  value: e.target.files[0],
+                },
+              })
+            }
           />
 
           <div className="h-5">
@@ -215,7 +263,7 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:gap-6">
+      {/* <div className="grid grid-cols-1 gap-4 sm:gap-6">
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
             Any Other Registration <span className="text-xs font-normal">(Optional)</span>
@@ -237,7 +285,7 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
             )}
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div className="flex items-start md:items-center">

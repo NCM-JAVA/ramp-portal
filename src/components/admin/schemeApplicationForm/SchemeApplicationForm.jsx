@@ -87,18 +87,18 @@ const SchemeApplicationForm = ({ formData, handleChange, nextStep, prevStep, err
                         onClick={prevStep}
                         className="px-4 py-2 text-sm
                                 sm:px-5 sm:py-2 sm:text-base
-                                border border-blue-400 rounded-md 
+                                border border-orange-400 rounded-md 
                                 text-gray-700 bg-white 
                                 flex items-center justify-center gap-2 
                                 w-full sm:w-auto
-                                hover:bg-blue-100"
+                                hover:bg-orange-100"
                     >
                         Save as Draft
                     </button>
 
                     <button
                         onClick={nextStep}
-                        className="bg-blue-600 hover:bg-blue-700 
+                        className="bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm
                             sm:px-5 sm:py-2 sm:text-base
@@ -129,7 +129,7 @@ const Input = ({
         "w-full p-2 border rounded text-sm sm:text-base transition focus:outline-none";
     const readonlyStyles =
         "bg-gray-100 border-gray-300 cursor-not-allowed text-gray-700";
-    const editableStyles = "bg-white focus:ring-2 focus:ring-blue-500";
+    const editableStyles = "bg-white focus:ring-2 focus:ring-orange-500";
 
     const commonClass = `${base} ${readOnly ? readonlyStyles : editableStyles
         }`;

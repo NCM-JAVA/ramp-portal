@@ -80,8 +80,8 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                   flex items-center gap-3 px-3 py-3 mb-2 rounded-lg text-sm 
                   transition-all duration-200
                   ${active
-                    ? "bg-blue-500 text-white"
-                    : "hover:bg-blue-600 hover:text-white"
+                    ? "bg-orange-500 text-white"
+                    : "hover:bg-orange-600 hover:text-white"
                   }
                 `}
               >
@@ -93,7 +93,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
         </nav>
 
         {/* Fixed Help Box */}
-        <div className="m-4 mt-auto bg-gradient-to-r from-blue-500 to-indigo-600 p-4 rounded-xl text-white text-sm">
+        <div className="m-4 mt-auto bg-gradient-to-r from-orange-500 to-indigo-600 p-4 rounded-xl text-white text-sm">
           <p className="font-semibold">Need Help?</p>
           <p className="text-xs opacity-80">Contact Support</p>
         </div>

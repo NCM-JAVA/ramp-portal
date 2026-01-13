@@ -14,13 +14,13 @@ const AdminLayout = () => {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen">
 
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} toggle={toggleSidebar} />
 
       <div
         className={`
-          flex-1 min-h-screen bg-gray-100
+          flex flex-col flex-1 min-h-screen bg-gray-100
           transition-all duration-300
           ${isOpen ? "ml-64" : "ml-0 md:ml-64"}
         `}
@@ -28,11 +28,11 @@ const AdminLayout = () => {
 
         <Header toggleSidebar={toggleSidebar} />
 
-        <main className="pt-10 px-4 md:px-8 pb-10">
+        <main className="flex-grow pt-10 px-4 md:px-8 pb-10">
 
           <div className="space-y-6">
 
-            <div className="p-6 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl shadow flex flex-col md:flex-row md:items-center md:justify-between">
+            <div className="p-6 bg-gradient-to-r from-orange-500 to-orange-500 text-white rounded-xl shadow flex flex-col md:flex-row md:items-center md:justify-between">
 
               <div className="flex items-center gap-3">
 

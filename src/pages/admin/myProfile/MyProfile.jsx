@@ -36,8 +36,8 @@ const MyProfile = () => {
 
             {/* ================= PROFILE HEADER ================= */}
             <div className="flex items-center gap-4 border-b pb-6 mb-6">
-                <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
-                    <User className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center">
+                    <User className="w-8 h-8 text-orange-600" />
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold text-gray-800">
@@ -90,21 +90,27 @@ const MyProfile = () => {
                     <textarea
                         rows="5"
                         placeholder="Full Address"
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                     />
                 </Section>
 
                 {/* Actions */}
                 <div className="flex justify-end gap-4 pt-4">
                     <button
-                        className="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100"
+                        className="px-4 py-2 text-sm
+                                sm:px-5 sm:py-2 sm:text-base
+                                border border-orange-400 rounded-md 
+                                text-gray-700 bg-white 
+                                flex items-center justify-center gap-2 
+                                w-full sm:w-auto
+                                hover:bg-orange-100"
                         onClick={() => window.location.reload()}
                     >
                         Cancel
                     </button>
                     <button
                         onClick={handleSave}
-                        className="px-6 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 shadow"
+                        className="px-6 py-2 rounded-md bg-orange-600 text-white hover:bg-orange-700 shadow"
                     >
                         Save Changes
                     </button>
@@ -151,7 +157,7 @@ function Input({ label, name, value, onChange, disabled, icon }) {
             ${icon ? "pl-10" : ""}
             ${disabled
                             ? "bg-gray-100 border-gray-300 cursor-not-allowed text-gray-700"
-                            : "bg-white focus:ring-2 focus:ring-blue-500"}`}
+                            : "bg-white focus:ring-2 focus:ring-orange-500"}`}
                 />
             </div>
         </div>

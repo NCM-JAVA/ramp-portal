@@ -38,7 +38,7 @@ const Grievance = () => {
                             <FormField label="Grievance Category" mandatory>
                                 <input
                                     type="text"
-                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                 />
                                 <p className="text-xs text-gray-500 mt-1">Mandatory field</p>
                             </FormField>
@@ -47,7 +47,7 @@ const Grievance = () => {
                             <FormField label="Related Application ID" mandatory>
                                 <input
                                     type="text"
-                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                 />
                                 <p className="text-xs text-gray-500 mt-1">
                                     Populated with user's applications
@@ -60,7 +60,7 @@ const Grievance = () => {
                                     type="text"
                                     maxLength={150}
                                     placeholder="Brief summary of your grievance"
-                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                 />
                                 <p className="text-xs text-gray-500 mt-1">
                                     Mandatory field (Max 150 characters)
@@ -72,7 +72,7 @@ const Grievance = () => {
                                 <textarea
                                     rows="5"
                                     placeholder="Please provide detailed information about your grievance, including relevant dates, reference numbers, and any actions you've already taken..."
-                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                 />
                                 <p className="text-xs text-gray-500 mt-1">
                                     Mandatory field – Please provide complete details
@@ -89,11 +89,11 @@ const Grievance = () => {
                                         onChange={(e) => setFile(e.target.files[0])}
                                     />
 
-                                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-red-50 mb-3">
-                                        <Upload className="w-5 h-5 text-red-600" />
+                                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-orange-50 mb-3">
+                                        <Upload className="w-5 h-5 text-orange-600" />
                                     </div>
 
-                                    <p className="text-sm text-red-600 font-medium">
+                                    <p className="text-sm text-orange-600 font-medium">
                                         Click to upload
                                         <span className="text-gray-500 font-normal">
                                             {" "}or drag and drop
@@ -121,7 +121,7 @@ const Grievance = () => {
                                 {/* <button className="px-4 py-2 rounded-md border text-gray-700 hover:bg-gray-100">
                                     Clear Form
                                 </button> */}
-                                <button onClick={handleSubmit} className="px-5 py-2 rounded-md bg-blue-600 text-white shadow hover:bg-blue-700">
+                                <button onClick={handleSubmit} className="px-5 py-2 rounded-md bg-orange-600 text-white shadow hover:bg-orange-700">
                                     Submit Grievance
                                 </button>
                             </div>
@@ -138,28 +138,28 @@ const Grievance = () => {
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
 
                             <div className="flex items-center gap-3">
-                                <Phone className="w-4 h-4 text-red-600" />
+                                <Phone className="w-4 h-4 text-orange-600" />
                                 <div>
                                     <p className="text-gray-600">Helpline</p>
-                                    <p className="text-red-600 font-medium">1800-XXX-XXXX</p>
+                                    <p className="text-orange-600 font-medium">1800-XXX-XXXX</p>
                                 </div>
                             </div>
 
                             <div className="flex items-center gap-3">
-                                <Mail className="w-4 h-4 text-red-600" />
+                                <Mail className="w-4 h-4 text-orange-600" />
                                 <div>
                                     <p className="text-gray-600">Email</p>
-                                    <p className="text-red-600 font-medium">
+                                    <p className="text-orange-600 font-medium">
                                         grievance@doi.gov.in
                                     </p>
                                 </div>
                             </div>
 
                             <div className="flex items-center gap-3">
-                                <Clock className="w-4 h-4 text-red-600" />
+                                <Clock className="w-4 h-4 text-orange-600" />
                                 <div>
                                     <p className="text-gray-600">Working Hours</p>
-                                    <p className="text-red-600 font-medium">
+                                    <p className="text-orange-600 font-medium">
                                         Mon–Fri, 9 AM – 6 PM
                                     </p>
                                 </div>
@@ -184,7 +184,7 @@ function FormField({ label, children, mandatory, optional }) {
         <div>
             <label className="text-sm font-medium text-gray-700">
                 {label}
-                {mandatory && <span className="text-red-500"> *</span>}
+                {mandatory && <span className="text-orange-500"> *</span>}
                 {optional && (
                     <span className="text-gray-400 text-xs"> (Optional)</span>
                 )}

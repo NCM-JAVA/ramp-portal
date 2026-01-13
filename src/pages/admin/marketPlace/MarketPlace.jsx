@@ -125,7 +125,7 @@ const Marketplace = () => {
                         <div className="flex justify-start pt-4">
                             <button
                                 onClick={handleSubmit}
-                                className="px-6 py-2 rounded-lg bg-blue-600 text-white shadow hover:bg-blue-700"
+                                className="px-6 py-2 rounded-lg bg-orange-600 text-white shadow hover:bg-orange-700"
                             >
                                 Submit for Approval
                             </button>
@@ -169,7 +169,7 @@ function Input({ label, placeholder, value, helper, disabled, mandatory }) {
                 className={`w-full p-2 border rounded text-sm sm:text-base transition focus:outline-none
           ${disabled
                         ? "bg-gray-100 border-gray-300 cursor-not-allowed text-gray-700"
-                        : "bg-white focus:ring-2 focus:ring-blue-500"}`}
+                        : "bg-white focus:ring-2 focus:ring-orange-500"}`}
             />
             {helper && (
                 <p className="text-xs text-gray-500 mt-1">{helper}</p>
@@ -190,7 +190,7 @@ function Textarea({ label, placeholder, mandatory }) {
             <textarea
                 rows="4"
                 placeholder={placeholder}
-                className="mt-1 w-full rounded-md border px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-1 w-full rounded-md border px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-orange-500"
             />
             {mandatory && (
                 <p className="text-xs text-gray-500 mt-1">Mandatory</p>
@@ -217,8 +217,8 @@ function FileUpload({ label, file, onChange }) {
                 <span
                     className="flex items-center justify-center gap-2 
                      px-6 py-2 rounded-md 
-                     bg-blue-100 text-blue-700 
-                     hover:bg-blue-200 
+                     bg-orange-100 text-orange-700 
+                     hover:bg-orange-200 
                      min-w-[180px]"
                 >
                     <Upload className="w-4 h-4" />

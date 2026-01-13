@@ -45,7 +45,7 @@ const Notifications = () => {
 
       {/* Header */}
       <div className="flex items-center gap-2 mb-6">
-        <Bell className="w-5 h-5 text-blue-600" />
+        <Bell className="w-5 h-5 text-orange-600" />
         <h3 className="text-lg font-semibold text-gray-800">
           Notifications
         </h3>
@@ -68,7 +68,7 @@ const Notifications = () => {
             <div
               key={item.id}
               className={`border rounded-lg p-4 flex justify-between items-start
-                ${item.read ? "bg-white" : "bg-blue-50 border-blue-200"}`}
+                ${item.read ? "bg-white" : "bg-orange-50 border-orange-200"}`}
             >
               <div>
                 <h4 className="text-sm font-semibold text-gray-800">
@@ -83,7 +83,7 @@ const Notifications = () => {
               </div>
 
               {!item.read && (
-                <span className="h-2 w-2 rounded-full bg-blue-600 mt-2"></span>
+                <span className="h-2 w-2 rounded-full bg-orange-600 mt-2"></span>
               )}
             </div>
           ))}

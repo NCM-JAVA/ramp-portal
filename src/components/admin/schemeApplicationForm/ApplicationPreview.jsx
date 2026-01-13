@@ -64,7 +64,7 @@ const ApplicationPreview = ({formData, handleChange, nextStep, prevStep, errors,
                                     onClick={() =>
                                         window.open(URL.createObjectURL(file), "_blank")
                                     }
-                                    className="text-blue-600 hover:underline text-md"
+                                    className="text-orange-600 hover:underline text-md"
                                 >
                                     View
                                 </button>
@@ -98,7 +98,7 @@ const ApplicationPreview = ({formData, handleChange, nextStep, prevStep, errors,
                 <div className="flex justify-start items-center mt-2">
                     <button
                         onClick={prevStep}
-                        className="bg-blue-600 hover:bg-blue-700 
+                        className="bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm
                             sm:px-5 sm:py-2 sm:text-base
@@ -119,11 +119,11 @@ const ApplicationPreview = ({formData, handleChange, nextStep, prevStep, errors,
                         className="
               px-4 py-2 text-sm
               sm:px-5 sm:py-2 sm:text-base
-              border border-blue-400 rounded-md 
+              border border-orange-400 rounded-md 
               text-gray-700 bg-white 
               flex items-center justify-center gap-2 
               w-full sm:w-auto
-              hover:bg-blue-100
+              hover:bg-orange-100
             "
                     >
                         Save as Draft
@@ -132,7 +132,7 @@ const ApplicationPreview = ({formData, handleChange, nextStep, prevStep, errors,
                     <button
                         onClick={nextStep}
                         className="
-              bg-blue-600 hover:bg-blue-700 
+              bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm
                             sm:px-5 sm:py-2 sm:text-base

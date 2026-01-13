@@ -22,130 +22,351 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
 
             <tbody>
               <tr>
-                <td className="border px-4 py-2">APST</td>
+                <td className="border px-4 py-2 font-medium">
+                  <div className="flex items-start justify-between gap-4">
 
-                <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="apst_managerial"
-                    value={formData?.apst_managerial ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                    <span className="whitespace-nowrap">APST</span>
+                    <div className="divide-y divide-gray-300 text-right">
+                      <label className="block text-xs font-semibold text-gray-600 py-1">
+                        Male
+                      </label>
+                      <label className="block text-xs font-semibold text-gray-600 py-1">
+                        Female
+                      </label>
+                    </div>
+
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="apst_supervisory"
-                    value={formData?.apst_supervisory ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="apst_male_managerial"
+                        value={formData?.apst_male_managerial ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="apst_female_managerial"
+                        value={formData?.apst_female_managerial ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
+                </td>
+
+
+                <td className="border px-4 py-2">
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="apst_supervisory"
+                        value={formData?.apst_male_supervisory ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="apst_female_supervisory"
+                        value={formData?.apst_female_supervisory ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="apst_skilled"
-                    value={formData?.apst_skilled ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="apst_male_skilled"
+                        value={formData?.apst_male_skilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="apst_female_skilled"
+                        value={formData?.apst_female_skilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="apst_semi_skilled"
-                    value={formData?.apst_semi_skilled ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="apst_male_semi_skilled"
+                        value={formData?.apst_male_semi_skilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="apst_female_semi_skilled"
+                        value={formData?.apst_female_semi_skilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="apst_unskilled"
-                    value={formData?.apst_unskilled ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="apst_male_unskilled"
+                        value={formData?.apst_male_unskilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="apst_female_unskilled"
+                        value={formData?.apst_female_unskilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="apst_others"
-                    value={formData?.apst_others ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="apst_male_others"
+                        value={formData?.apst_male_others ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="apst_female_others"
+                        value={formData?.apst_female_others ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
               </tr>
 
               <tr className="bg-gray-50">
-                <td className="border px-4 py-2">NONAPST</td>
-
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="nonapst_managerial"
-                    value={formData?.nonapst_managerial ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="flex items-start justify-between gap-4">
+
+                    <span className="whitespace-nowrap">NONAPST</span>
+                    <div className="divide-y divide-gray-300 text-right">
+                      <label className="block text-xs font-semibold text-gray-600 py-1">
+                        Male
+                      </label>
+                      <label className="block text-xs font-semibold text-gray-600 py-1">
+                        Female
+                      </label>
+                    </div>
+
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="nonapst_supervisory"
-                    value={formData?.nonapst_supervisory ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="nonapst_male_managerial"
+                        value={formData?.nonapst_male_managerial ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="nonapst_female_managerial"
+                        value={formData?.nonapst_female_managerial ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="nonapst_skilled"
-                    value={formData?.nonapst_skilled ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="nonapst_male_supervisory"
+                        value={formData?.nonapst_male_supervisory ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="nonapst_female_supervisory"
+                        value={formData?.nonapst_female_supervisory ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="nonapst_semi_skilled"
-                    value={formData?.nonapst_semi_skilled ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="nonapst_male_skilled"
+                        value={formData?.nonapst_male_skilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="nonapst_female_skilled"
+                        value={formData?.nonapst_female_skilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="nonapst_unskilled"
-                    value={formData?.nonapst_unskilled ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="nonapst_male_semi_skilled"
+                        value={formData?.nonapst_male_semi_skilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="nonapst_female_semi_skilled"
+                        value={formData?.nonapst_female_semi_skilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
 
                 <td className="border px-4 py-2">
-                  <input
-                    type="text"
-                    name="nonapst_others"
-                    value={formData?.nonapst_others ?? ""}
-                    onChange={handleChange}
-                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                  />
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="nonapst_male_unskilled"
+                        value={formData?.nonapst_male_unskilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="nonapst_female_unskilled"
+                        value={formData?.nonapst_female_unskilled ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
+                </td>
+
+                <td className="border px-4 py-2">
+                  <div className="divide-y divide-gray-300">
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="male"
+                        name="nonapst_male_others"
+                        value={formData?.nonapst_male_others ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                      />
+                    </div>
+
+                    <div className="py-2">
+                      <input
+                        type="text"
+                        placeholder="female"
+                        name="nonapst_female_others"
+                        value={formData?.nonapst_female_others ?? ""}
+                        onChange={handleChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                      />
+                    </div>
+                  </div>
                 </td>
               </tr>
             </tbody>

@@ -68,10 +68,10 @@ const AvailableSchemes = () => {
                                         className={`
                                                     px-6 py-2.5 rounded-lg text-sm font-medium shadow-md transition-all
                                                     ${row.eligibility_status
-                                                ? "bg-blue-600 text-white hover:bg-blue-700 hover:shadow-lg active:scale-95"
+                                                ? "bg-orange-600 text-white hover:bg-orange-700 hover:shadow-lg active:scale-95"
                                                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
                                             }
-                                        focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2
+                                        focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2
                                         `}
                                     >
                                         Apply

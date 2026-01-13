@@ -12,7 +12,7 @@ const Header = () => {
     };
 
     return (
-        <header className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4 flex justify-between items-center shadow-md">
+        <header className="w-full bg-gradient-to-r from-orange-600 to-indigo-600 px-6 py-4 flex justify-between items-center shadow-md">
             <div className="text-white">
                 <h1 className="text-xl font-semibold">Industrial Unit Portal</h1>
                 <p className="text-sm opacity-80">Department of Industries, Arunachal Pradesh</p>
@@ -29,7 +29,7 @@ const Header = () => {
                     <p className="opacity-70">Unit Owner</p>
                 </div>
 
-                <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold" onClick={handleLogout}>
+                <button className="bg-white text-orange-600 px-4 py-2 rounded-lg font-semibold" onClick={handleLogout}>
                     Logout
                 </button>
             </div>

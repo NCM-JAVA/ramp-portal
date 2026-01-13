@@ -45,7 +45,7 @@ const UnitRegistration = () => {
                         <input
                             type="text"
                             name="industrial_unit_name"
-                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                             placeholder="Enter industrial unit name"
                         />
 
@@ -63,7 +63,7 @@ const UnitRegistration = () => {
                         <input
                             type="text"
                             name="unit_location"
-                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                             placeholder="Enter unit location"
                         />
                         <div className="h-5">
@@ -85,7 +85,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="factory_address_line_one"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter address line one"
                             />
                             <div className="h-5">
@@ -100,7 +100,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="factory_address_line_two"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter address line two"
                             />
                             <div className="h-5">
@@ -117,7 +117,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_pincode"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter pincode"
                             />
                             <div className="h-5">
@@ -132,7 +132,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_town"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter town"
                             />
                             <div className="h-5">
@@ -147,7 +147,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_district"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter district"
                             />
                             <div className="h-5">
@@ -162,7 +162,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_state"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter state"
                             />
                             <div className="h-5">
@@ -179,7 +179,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_final_address"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter final address"
                             />
                             <div className="h-5">
@@ -201,7 +201,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_registered_works_no"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Registered Works Number"
                             />
                             <div className="h-5">
@@ -216,7 +216,7 @@ const UnitRegistration = () => {
                             <input
                                 type="email"
                                 name="unit_email"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter email id"
                             />
                             <div className="h-5">
@@ -237,7 +237,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_constitution"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Sole Proprietor, Partnership, Pvt. Ltd. etc."
                             />
                             <div className="h-5">
@@ -252,7 +252,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_udyog_registration_no"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Udyog / EM registration number"
                             />
                             <div className="h-5">
@@ -269,7 +269,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_gst_registration_no"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter GST Registration Number"
                             />
                             <div className="h-5">
@@ -284,7 +284,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_factory_license_no"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Factory License Number"
                             />
                             <div className="h-5">
@@ -301,7 +301,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="pan_association"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter PAN (Association / Board / Company)"
                             />
                             <div className="h-5">
@@ -316,7 +316,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="pan_individual"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter PAN (Individual / Limited Liability)"
                             />
                             <div className="h-5">
@@ -338,7 +338,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="name"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Name"
                             />
                             <div className="h-5">
@@ -353,7 +353,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="address"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Udyog / EM registration number"
                             />
                             <div className="h-5">
@@ -370,7 +370,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="unit_head"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter unit head name"
                             />
                             <div className="h-5">
@@ -385,7 +385,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="mobile"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Mobile Number"
                             />
                             <div className="h-5">
@@ -402,7 +402,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="email"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Email"
                             />
                             <div className="h-5">
@@ -417,7 +417,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="aadhar_no"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Aadhar Number"
                             />
                             <div className="h-5">
@@ -439,7 +439,7 @@ const UnitRegistration = () => {
                             <input
                                 type="date"
                                 name="commencement_date"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                             />
                             <div className="h-5">
                                 {errors.commencement_date && (
@@ -453,7 +453,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="industry_type"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter type of industry"
                             />
                             <div className="h-5">
@@ -470,7 +470,7 @@ const UnitRegistration = () => {
                             <input
                                 type="date"
                                 name="actual_commencement_date"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                             />
                             <div className="h-5">
                                 {errors.actual_commencement_date && (
@@ -481,7 +481,7 @@ const UnitRegistration = () => {
 
                         <div>
                             <label className="text-sm font-medium text-gray-700">Main Product</label>
-                            <select name="main_product" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                            <select name="main_product" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm">
                                 <option value="">Select Product</option>
                                 <option value="product_1">Product 1</option>
                                 <option value="product_2">Product 2</option>
@@ -502,7 +502,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="installed_production_capacity"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter Installed Production Capacity"
                             />
                             <div className="h-5">
@@ -523,7 +523,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="land_cost"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter land cost in reupees"
                             />
                             <div className="h-5">
@@ -538,7 +538,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="site_development_cost"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter site development cost"
                             />
                             <div className="h-5">
@@ -555,7 +555,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="factory_building_cost"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter factory building cost"
                             />
                             <div className="h-5">
@@ -570,7 +570,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="office_building_cost"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter office building cost"
                             />
 
@@ -588,7 +588,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="plant_machinary_cost"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter plant and machinary cost"
                             />
                             <div className="h-5">
@@ -603,7 +603,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="electrical_cost"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter electrical cost"
                             />
                             <div className="h-5">
@@ -620,7 +620,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="total_fixed_investment"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Auto calculated"
                                 readOnly
                             />
@@ -636,7 +636,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="cost_position"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter cost position"
                             />
                             <div className="h-5">
@@ -668,38 +668,38 @@ const UnitRegistration = () => {
                                 <tr>
                                     <th class="border px-4 py-2 text-left font-semibold">ASPT / (Non ASPT)</th>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="aspt_managerial" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="aspt_managerial" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="aspt_supervisory" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="aspt_supervisory" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="aspt_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="aspt_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="aspt_semi_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="aspt_semi_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="aspt_non_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="aspt_non_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                 </tr>
 
                                 <tr class="bg-gray-50">
                                     <td class="border px-4 py-2 text-left font-semibold">Non-APST / (Non APST)</td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="non_aspt_managerial" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="non_aspt_managerial" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="non_aspt_supervisory" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="non_aspt_supervisory" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="non_aspt_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="non_aspt_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="non_aspt_semi_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="non_aspt_semi_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <input type="text" name="non_aspt_non_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                                        <input type="text" name="non_aspt_non_skilled" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm" />
                                     </td>
                                 </tr>
                             </tbody>
@@ -716,7 +716,7 @@ const UnitRegistration = () => {
                                 type="checkbox"
                                 name="declaration"
                                 value="1"
-                                className="mt-1 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                                className="mt-1 h-4 w-4 text-orange-600 border-gray-300 rounded focus:ring-orange-500"
                             />
 
                             <label className="text-sm text-gray-700">
@@ -740,7 +740,7 @@ const UnitRegistration = () => {
                             <input
                                 type="file"
                                 name="signature"
-                                className="w-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                             />
                             <div className="h-5">
                                 {errors.signature && (
@@ -754,7 +754,7 @@ const UnitRegistration = () => {
                             <input
                                 type="text"
                                 name="designation"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                                 placeholder="Enter designation"
                             />
 
@@ -772,7 +772,7 @@ const UnitRegistration = () => {
                             <input
                                 type="date"
                                 name="declaration_date"
-                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+                                className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                             />
                             <div className="h-5">
                                 {errors.declaration_date && (
@@ -787,8 +787,8 @@ const UnitRegistration = () => {
                             type="submit"
                             className="
                                     flex items-center justify-center gap-2 
-                                    bg-gradient-to-r from-blue-500 to-indigo-600 
-                                    hover:from-blue-600 hover:to-indigo-700 
+                                    bg-gradient-to-r from-orange-500 to-orange-600 
+                                    hover:from-orange-600 hover:to-orange-700 
                                     text-white font-semibold py-2 px-4 
                                     rounded-lg shadow 
                                     transition-all duration-300 ease-in-out

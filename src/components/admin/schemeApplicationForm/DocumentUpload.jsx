@@ -27,7 +27,7 @@ const SchemeApplicationForm = ({ formData, handleChange, nextStep, prevStep, err
                   type="file"
                   accept=".pdf,.jpg,.jpeg,.png"
                   className="w-full p-2 border rounded 
-                      focus:outline-none focus:ring-2 focus:ring-blue-500 
+                      focus:outline-none focus:ring-2 focus:ring-orange-500 
                       text-sm sm:text-base"
                   onChange={(e) =>
                     handleFileChange(doc.key, e.target.files[0])
@@ -42,7 +42,7 @@ const SchemeApplicationForm = ({ formData, handleChange, nextStep, prevStep, err
                         "_blank"
                       )
                     }
-                    className="px-3 py-1 bg-blue-100 rounded mt-1"
+                    className="px-3 py-1 bg-orange-100 rounded mt-1"
                   >
                     Preview
                   </button>
@@ -59,7 +59,7 @@ const SchemeApplicationForm = ({ formData, handleChange, nextStep, prevStep, err
         <div className="flex justify-start items-center mt-2">
           <button
             onClick={prevStep}
-            className="bg-blue-600 hover:bg-blue-700 
+            className="bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm
                             sm:px-5 sm:py-2 sm:text-base
@@ -80,11 +80,11 @@ const SchemeApplicationForm = ({ formData, handleChange, nextStep, prevStep, err
             className="
               px-4 py-2 text-sm
               sm:px-5 sm:py-2 sm:text-base
-              border border-blue-400 rounded-md 
+              border border-orange-400 rounded-md 
               text-gray-700 bg-white 
               flex items-center justify-center gap-2 
               w-full sm:w-auto
-              hover:bg-blue-100
+              hover:bg-orange-100
             "
           >
             Save as Draft
@@ -93,7 +93,7 @@ const SchemeApplicationForm = ({ formData, handleChange, nextStep, prevStep, err
           <button
             onClick={nextStep}
             className="
-              bg-blue-600 hover:bg-blue-700 
+              bg-orange-600 hover:bg-orange-700 
                             text-white
                             px-4 py-2 text-sm
                             sm:px-5 sm:py-2 sm:text-base

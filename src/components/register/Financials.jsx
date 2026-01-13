@@ -3,17 +3,17 @@ import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
 const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
   return (
     <div className="space-y-2 p-2 sm:p-2">
-      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Financials</h2>
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Fixed Capital Investment</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Land <span>*</span></label>
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Land (Rupees) <span>*</span></label>
           <input
             type="text"
             name="land"
             value={formData.land}
             onChange={handleChange}
-            placeholder="Land"
+            placeholder="Land (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
           />
 
@@ -28,13 +28,13 @@ const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
         </div>
 
         <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Site Development <span>*</span></label>
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Site Development (Rupees) <span>*</span></label>
           <input
             type="text"
             name="site_development"
             value={formData.site_development}
             onChange={handleChange}
-            placeholder="Site Development"
+            placeholder="Site Development (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
           />
 
@@ -51,13 +51,13 @@ const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Factory Building <span>*</span></label>
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Factory Building (Rupees) <span>*</span></label>
           <input
             type="text"
             name="factory_building"
             value={formData.factory_building}
             onChange={handleChange}
-            placeholder="Factory Building"
+            placeholder="Factory Building (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
           />
 
@@ -72,13 +72,13 @@ const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
         </div>
 
         <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Office Building <span>*</span></label>
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Office Building (Rupees) <span>*</span></label>
           <input
             type="text"
             name="office_building"
             value={formData.office_building}
             onChange={handleChange}
-            placeholder="Office Building"
+            placeholder="Office Building (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
           />
 
@@ -95,13 +95,13 @@ const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Plant & Machinery <span>*</span></label>
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Plant & Machinery (Rupees) <span>*</span></label>
           <input
             type="text"
             name="plant_machinary"
             value={formData.plant_machinary}
             onChange={handleChange}
-            placeholder="Plant & Machinery"
+            placeholder="Plant & Machinery (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
           />
 
@@ -116,13 +116,13 @@ const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
         </div>
 
         <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Electrical Installation <span>*</span></label>
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Electrical Installation (Rupees) <span>*</span></label>
           <input
             type="text"
             name="electrical_installation"
             value={formData.electrical_installation}
             onChange={handleChange}
-            placeholder="Electrical Installation"
+            placeholder="Electrical Installation (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
           />
 
@@ -140,14 +140,14 @@ const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Preliminary & Pre-operative Expenses <span>*</span>
+            Preliminary & Pre-operative Expenses (Rupees) <span>*</span>
           </label>
           <input
             type="text"
             name="preliminary_expenses"
             value={formData.preliminary_expenses}
             onChange={handleChange}
-            placeholder="Preliminary & Pre-operative Expenses"
+            placeholder="Preliminary & Pre-operative Expenses (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
           />
 
@@ -163,14 +163,14 @@ const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
 
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Miscellaneous Fixed Assets <span>*</span>
+            Miscellaneous Fixed Assets (Rupees) <span>*</span>
           </label>
           <input
             type="text"
             name="miscellaneous_fixed_assets"
             value={formData.miscellaneous_fixed_assets}
             onChange={handleChange}
-            placeholder="Miscellaneous Fixed Assets"
+            placeholder="Miscellaneous Fixed Assets (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
           />
 
@@ -187,12 +187,12 @@ const Financials = ({ formData, handleChange, nextStep, prevStep, errors }) => {
 
       <div className="grid grid-cols-1 gap-4 sm:gap-6">
         <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Total <span className="text-xs font-normal">(Auto-calculated)</span></label>
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Total (Rupees)<span className="text-xs font-normal">(Auto-calculated)</span></label>
           <input
             type="text"
             name="total_financial"
             value={formData.total_financial}
-            placeholder="Total"
+            placeholder="Total (Rupees)"
             className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
             onChange={handleChange}
             readOnly

@@ -28,7 +28,7 @@ const ApplicationList = () => {
                         type="text"
                         name="applied_incentive_name"
                         placeholder="Enter name of incentive applied for"
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                     />
                 </div>
 
@@ -36,7 +36,7 @@ const ApplicationList = () => {
                     <label className="text-sm font-medium text-gray-700 mb-1">Scheme</label>
                     <select
                         name="scheme"
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                     >
                         <option value="">Select Scheme</option>
                         <option value="scheme1">Scheme 1</option>
@@ -48,9 +48,9 @@ const ApplicationList = () => {
                     <label className="text-sm font-medium text-gray-700 mb-1">Scheme</label>
                     <select
                         name="scheme"
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                     >
-                        <option value="">Select Scheme</option>
+                        <option value="" >Select Scheme</option>
                         <option value="scheme1">Scheme 1</option>
                         <option value="scheme2">Scheme 2</option>
                     </select>
@@ -62,12 +62,12 @@ const ApplicationList = () => {
                         <input
                             type="date"
                             name="start_date"
-                            className="w-1/2 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                            className="w-1/2 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         />
                         <input
                             type="date"
                             name="end_date"
-                            className="w-1/2 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                            className="w-1/2 p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                         />
                     </div>
                 </div>
@@ -76,8 +76,8 @@ const ApplicationList = () => {
                     type="button"
                     className="
                   flex items-center justify-center gap-2
-                  bg-gradient-to-r from-blue-500 to-indigo-600
-                  hover:from-blue-600 hover:to-indigo-700
+                  bg-gradient-to-r from-orange-500 to-orange-600
+                  hover:from-orange-600 hover:to-orange-700
                   text-white font-semibold py-2 px-4
                   rounded-lg shadow
                   transition-all duration-300 ease-in-out
@@ -112,7 +112,7 @@ const ApplicationList = () => {
                                     <td className="p-2">12 Jan 2025</td>
                                     <td className="p-2"><StatusBadge status="under_security" /></td>
                                     <td className="p-2">
-                                        <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-blue-100 text-blue-600">
+                                        <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
                                             <Eye className="w-5 h-5" />
                                         </button>
 
@@ -137,13 +137,13 @@ const ApplicationList = () => {
                     <div className="bg-white w-full max-w-4xl rounded-xl shadow-lg overflow-hidden">
 
                         {/* ===== Header ===== */}
-                        <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700">
+                        <div className="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-orange-600 to-orange-700">
                             <h2 className="text-lg font-semibold text-white">
                                 View Details
                             </h2>
                             <button
                                 onClick={() => setOpenViewModal(false)}
-                                className="text-white hover:text-blue-200 text-xl"
+                                className="text-white hover:text-orange-200 text-xl"
                             >
                                 ✕
                             </button>
@@ -221,7 +221,7 @@ const ApplicationList = () => {
                                 </button>
 
                                 <button
-                                    className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700"
+                                    className="px-4 py-2 rounded-md bg-orange-600 text-white hover:bg-orange-700"
                                 >
                                     Download PDF
                                 </button>

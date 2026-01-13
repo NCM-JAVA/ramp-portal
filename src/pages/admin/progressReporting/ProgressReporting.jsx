@@ -87,7 +87,7 @@ const ProgressReporting = () => {
                 {/* ================= MILESTONE UPDATE ================= */}
                 <Section title="MILESTONE UPDATE">
                     <div className="overflow-hidden rounded-lg border">
-                        <div className="grid grid-cols-12 bg-gradient-to-r from-blue-500 to-blue-700 text-white text-sm font-semibold">
+                        <div className="grid grid-cols-12 bg-gradient-to-r from-orange-500 to-orange-700 text-white text-sm font-semibold">
                             <div className="col-span-4 px-4 py-3">Milestone</div>
                             <div className="col-span-3 px-4 py-3">Status</div>
                             <div className="col-span-5 px-4 py-3">Remarks</div>
@@ -98,12 +98,12 @@ const ProgressReporting = () => {
                                 <div key={index} className="grid grid-cols-12 border-t text-sm">
                                     <div className="col-span-4 px-4 py-3">{item}</div>
                                     <div className="col-span-3 px-4 py-2">
-                                        <input className="w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none" />
+                                        <input className="w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-orange-500 outline-none" />
                                     </div>
                                     <div className="col-span-5 px-4 py-2">
                                         <input
                                             placeholder="Optional remarks"
-                                            className="w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-blue-500 outline-none"
+                                            className="w-full rounded-md border px-3 py-2 focus:ring-2 focus:ring-orange-500 outline-none"
                                         />
                                     </div>
                                 </div>
@@ -147,8 +147,8 @@ const ProgressReporting = () => {
                                         </span>
                                     ) : (
                                         <span className="flex items-center justify-center gap-2 w-full px-4 py-2 
-                             text-sm bg-blue-50 text-blue-600 rounded-md 
-                             hover:bg-blue-100">
+                             text-sm bg-orange-50 text-orange-600 rounded-md 
+                             hover:bg-orange-100">
                                             <Upload className="w-4 h-4" />
                                             Upload
                                         </span>
@@ -163,7 +163,7 @@ const ProgressReporting = () => {
 
                 {/* ================= FOOTER ================= */}
                 <div className="flex justify-end pt-6">
-                    <button onClick={handleSubmit} className="px-6 py-2 rounded-lg bg-blue-600 text-white shadow hover:bg-blue-700">
+                    <button onClick={handleSubmit} className="px-6 py-2 rounded-lg bg-orange-600 text-white shadow hover:bg-orange-700">
                         Submit Report
                     </button>
                 </div>
@@ -211,7 +211,7 @@ function Input({ label, value, placeholder, helper, disabled }) {
                 placeholder={placeholder}
                 disabled={disabled}
                 className={`w-full p-2 border rounded text-sm sm:text-base transition focus:outline-none 
-          ${disabled ? "bg-gray-100 border-gray-300 cursor-not-allowed text-gray-700" : "bg-white focus:ring-2 focus:ring-blue-500"}
+          ${disabled ? "bg-gray-100 border-gray-300 cursor-not-allowed text-gray-700" : "bg-white focus:ring-2 focus:ring-orange-500"}
           outline-none`}
             />
             {helper && (
