@@ -23,11 +23,19 @@ export default function Login() {
     };
 
     const handleSubmit = (e) => {
+        const userid = formData.email.trim();
         e.preventDefault();
         // navigate("/admin/dashboard");
         // dispatch(loginUser(formData));
 
-        setOpenModal(true);
+        if (userid === "DIC012026") {
+            navigate("/dic/dashboard");
+            return;
+        }else{
+            setOpenModal(true);
+        }
+
+        
     };
 
     useEffect(() => {
@@ -54,14 +62,14 @@ export default function Login() {
                     <form className="space-y-1" onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-1 gap-4 sm:gap-6">
                             <div className="flex flex-col">
-                                <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Email</label>
+                                <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Userid</label>
                                 <input
-                                    type="email"
+                                    type="text"
                                     name="email"
                                     value={formData.email}
                                     onChange={handleChange}
                                     className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                                    placeholder="Enter Email"
+                                    placeholder="Enter Userid / Email"
                                 />
 
                                 <div className="h-5">
@@ -142,28 +150,6 @@ export default function Login() {
                             <button
                                 onClick={() => {
                                     setOpenModal(false);
-                                    navigate("/admin/dashboard");
-                                }}
-                                className="group flex items-start gap-4 p-6 rounded-xl border border-gray-200
-                     hover:border-green-600 hover:bg-green-50 transition-all
-                     text-left shadow-sm hover:shadow-md"
-                            >
-                                <div className="mt-1 w-5 h-5 rounded-full border-2 border-green-600
-                          group-hover:bg-green-600"></div>
-                                <div>
-                                    <p className="font-medium text-gray-800">
-                                        Application for Subsidy / Incentive
-                                    </p>
-                                    <p className="text-sm text-gray-500 mt-1">
-                                        Claim for APIDIP
-                                    </p>
-                                </div>
-                            </button>
-
-                            {/* Option 2 */}
-                            <button
-                                onClick={() => {
-                                    setOpenModal(false);
                                     navigate("/unit-register");
                                 }}
                                 className="group flex items-start gap-4 p-6 rounded-xl border border-gray-200
@@ -181,6 +167,31 @@ export default function Login() {
                                     </p>
                                 </div>
                             </button>
+                            
+
+                            {/* Option 2 */}
+                            
+                            <button
+                                onClick={() => {
+                                    setOpenModal(false);
+                                    navigate("/admin/dashboard");
+                                }}
+                                className="group flex items-start gap-4 p-6 rounded-xl border border-gray-200
+                     hover:border-green-600 hover:bg-green-50 transition-all
+                     text-left shadow-sm hover:shadow-md"
+                            >
+                                <div className="mt-1 w-5 h-5 rounded-full border-2 border-green-600
+                          group-hover:bg-green-600"></div>
+                                <div>
+                                    <p className="font-medium text-gray-800">
+                                        Application for Subsidy / Incentive
+                                    </p>
+                                    <p className="text-sm text-gray-500 mt-1">
+                                        Claim for APIDIP
+                                    </p>
+                                </div>
+                            </button>
+                            
 
 
                         </div>

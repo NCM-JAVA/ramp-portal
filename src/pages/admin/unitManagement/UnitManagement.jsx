@@ -26,11 +26,11 @@ const UnitManagement = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card title="Total Units" value="9" subtitle="Submitted" gradient="bg-gradient-to-r from-orange-500 to-orange-700" />
         <Card title="Approved Units" value="6" subtitle="Approved" gradient="bg-gradient-to-r from-green-500 to-green-700" />
         <Card title="Pending Approval" value="3" subtitle="Under Review" gradient="bg-gradient-to-r from-orange-500 to-red-500" />
-      </div>
+      </div> */}
 
       <div className="bg-white p-6 rounded-xl shadow overflow-x-auto">
         <h3 className="text-lg font-semibold mb-4">Registered Units</h3>

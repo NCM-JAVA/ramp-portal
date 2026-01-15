@@ -21,6 +21,15 @@ import Grievance from "./pages/admin/grievance/Grievance";
 import Notifications from "./pages/admin/notifications/Notifications";
 import MyProfile from "./pages/admin/myProfile/MyProfile";
 
+import DicAdminLayout from "./components/dic/layouts/DicAdminLayout";
+import DicDashboard from "./pages/dic/Dashboard";
+import VerificationQueue from "./pages/dic/verification/VerificationQueue";
+import CommencementQueue from "./pages/dic/commencement/CommencementQueue";
+import DirectorateReview from "./pages/dic/directorate/DirectorateReview";
+import SLCCommencement from "./pages/dic/slc/SLCCommencement";
+import AuthenticationCertificate from "./pages/dic/certificate/AuthenticateCertificate";
+import DICProfile from "./pages/dic/myProfile/MyProfile";
+
 function App() {
   return (
     <>
@@ -49,6 +58,17 @@ function App() {
             <Route path="notifications" element={<Notifications />} />
             <Route path="my-profile" element={<MyProfile />} />
           </Route>
+
+          <Route path="/dic" element={<DicAdminLayout />}>
+            <Route path="dashboard" element={<DicDashboard />} />
+            <Route path="verification-queue" element={<VerificationQueue />} />
+            <Route path="commencement-queue" element={<CommencementQueue />} />
+            <Route path="directorate-review" element={<DirectorateReview />} />
+            <Route path="slc-commencement-authentication" element={<SLCCommencement />} />
+            <Route path="authentication-certificate" element={<AuthenticationCertificate />} />
+            <Route path="my-profile" element={<DICProfile />} />
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

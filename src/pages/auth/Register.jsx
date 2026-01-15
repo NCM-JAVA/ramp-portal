@@ -128,7 +128,7 @@ export default function Login() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                             <div className="flex flex-col">
-                                <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Password</label>
+                                <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Create Password</label>
                                 <input
                                     type="password"
                                     name="password"

@@ -44,18 +44,6 @@ const ApplicationList = () => {
                     </select>
                 </div>
 
-                {/* <div className="flex flex-col">
-                    <label className="text-sm font-medium text-gray-700 mb-1">Scheme</label>
-                    <select
-                        name="scheme"
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-                    >
-                        <option value="" >Select Scheme</option>
-                        <option value="scheme1">Scheme 1</option>
-                        <option value="scheme2">Scheme 2</option>
-                    </select>
-                </div> */}
-
                 <div className="flex flex-col">
                     <label className="text-sm font-medium text-gray-700 mb-1">Date Range</label>
                     <div className="flex gap-2">
@@ -72,20 +60,24 @@ const ApplicationList = () => {
                     </div>
                 </div>
 
-                <button
-                    type="button"
-                    className="
-                  flex items-center justify-center gap-2
-                  bg-gradient-to-r from-orange-500 to-orange-600
-                  hover:from-orange-600 hover:to-orange-700
-                  text-white font-semibold py-2 px-4
-                  rounded-lg shadow
-                  transition-all duration-300 ease-in-out
-                "
-                    onclick="document.getElementById('filterForm').reset();"
-                >
-                    Reset Filters
-                </button>
+                <div className="flex flex-col h-full">
+                    <div className="flex-1" />
+                    <button
+                        type="button"
+                        onClick={() => document.getElementById("filterForm").reset()}
+                        className="
+                            h-[42px] w-full
+                            flex items-center justify-center
+                            bg-gradient-to-r from-orange-500 to-orange-600
+                            hover:from-orange-600 hover:to-orange-700
+                            text-white font-semibold
+                            rounded-lg shadow
+                            transition-all duration-300
+                        "
+                    >
+                        Reset Filters
+                    </button>
+                </div>
             </form>
 
             <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-6">
