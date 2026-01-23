@@ -38,9 +38,8 @@ const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors })
                         onChange={handleChange}
                     >
                         <option value="">--- Select Industry Type ---</option>
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-                        <option value="Option 3">Option 3</option>
+                        <option value="Manufacturing">Manufacturing</option>
+                        <option value="Service">Service</option>
                     </select>
                     <div className="h-5">
                         {errors.industry_type && (
@@ -165,6 +164,9 @@ const OperationalPlan = ({ formData, handleChange, nextStep, prevStep, errors })
                 <div className="flex flex-col sm:col-span-1 md:col-span-2">
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Load Sanction Certificate <span>*</span>
+                        <span className="text-xs text-gray-800 font-normal">
+                            (JPG, PNG, PDF • Max 2MB)
+                        </span>
                     </label>
                     {/* <input
                         name="load_sanction_certificate"

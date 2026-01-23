@@ -2,7 +2,7 @@ import React from "react";
 
 const ProgressBar = ({ step }) => {
   const steps = [
-    "Scheme Application",
+    "Incentive Application",
     "Document Upload",
     "Application Preview",
     "Submission Success",

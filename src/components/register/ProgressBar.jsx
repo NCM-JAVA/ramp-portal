@@ -5,7 +5,8 @@ const ArrowProgressBar = ({ step }) => {
     "Unit Details",
     "Unit Constitution",
     "Operational Plan",
-    "Legal Details",
+    // "Legal Details",
+    "Licenses",
     "Fixed Capital Investment",
     "Employment",
     "Declaration"

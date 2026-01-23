@@ -4,22 +4,22 @@ import Login from "./pages/auth/Login";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/auth/Register";
 import UnitRegister from "./pages/auth/UnitRegister";
-import Dashboard from "./pages/admin/Dashboard";
-import User from "./pages/admin/users/User";
-import AvailableSchemes from "./pages/admin/Schemes/AvailableSchemes";
-import UnitManagement from "./pages/admin/unitManagement/UnitManagement";
-import UnitRegistration from "./pages/admin/unitManagement/UnitRegistration";
-import Toaster from "./components/admin/common/Toaster";
-import AddIncentiveScheme from "./pages/admin/incentiveSchemes/AddIncentiveScheme";
-import IncentiveApplicationForm from "./pages/admin/incentiveSchemes/IncentiveApplicationForm";
-import AdminLayout from "./components/admin/layouts/AdminLayout";
-import ApplicationList from "./pages/admin/applicationManagement/ApplicationList";
-import SchemeApplicationForm from "./pages/admin/Schemes/SchemeApplicationForm";
-import ProgressReporting from "./pages/admin/progressReporting/ProgressReporting";
-import Marketplace from "./pages/admin/marketPlace/MarketPlace";
-import Grievance from "./pages/admin/grievance/Grievance";
-import Notifications from "./pages/admin/notifications/Notifications";
-import MyProfile from "./pages/admin/myProfile/MyProfile";
+import Dashboard from "./pages/entrepreneur/Dashboard";
+import User from "./pages/entrepreneur/users/User";
+import AvailableSchemes from "./pages/entrepreneur/Schemes/AvailableSchemes";
+import UnitManagement from "./pages/entrepreneur/unitManagement/UnitManagement";
+import UnitRegistration from "./pages/entrepreneur/unitManagement/UnitRegistration";
+import Toaster from "./components/common/Toaster";
+import AddIncentiveScheme from "./pages/entrepreneur/incentiveSchemes/AddIncentiveScheme";
+import IncentiveApplicationForm from "./pages/entrepreneur/incentiveSchemes/IncentiveApplicationForm";
+import AdminLayout from "./components/entrepreneur/layouts/AdminLayout";
+import ApplicationList from "./pages/entrepreneur/applicationManagement/ApplicationList";
+import SchemeApplicationForm from "./pages/entrepreneur/Schemes/SchemeApplicationForm";
+import ProgressReporting from "./pages/entrepreneur/progressReporting/ProgressReporting";
+import Marketplace from "./pages/entrepreneur/marketPlace/MarketPlace";
+import Grievance from "./pages/entrepreneur/grievance/Grievance";
+import Notifications from "./pages/entrepreneur/notifications/Notifications";
+import MyProfile from "./pages/entrepreneur/myProfile/MyProfile";
 
 import DicAdminLayout from "./components/dic/layouts/DicAdminLayout";
 import DicDashboard from "./pages/dic/Dashboard";
@@ -35,6 +35,7 @@ import DirectorateDashboard from "./pages/directorate/Dashboard";
 import CalculationSheet from "./pages/directorate/CalculationSheet";
 import RuleConfiguration from "./pages/directorate/RuleConfiguration";
 import SanctionPreparation from "./pages/directorate/SanctionPreparation";
+import CalculationAuditLog from "./pages/directorate/CalculationAuditLog";
 
 function App() {
   return (
@@ -47,8 +48,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/unit-register" element={<UnitRegister />} />
 
-          {/* Admin Panle */}
-          <Route path="/admin" element={<AdminLayout />} >
+          {/* Entrepreneur Panel */}
+          <Route path="/entrepreneur" element={<AdminLayout />} >
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="schemes/available-schemes" element={<AvailableSchemes />} />
             <Route path="users" element={<User />} />
@@ -80,6 +81,7 @@ function App() {
             <Route path="calculation-sheets" element={<CalculationSheet />} />
             <Route path="rule-configuration" element={<RuleConfiguration />} />
             <Route path="sanction-preparation" element={<SanctionPreparation />} />
+            <Route path="calculation-audit-check" element={<CalculationAuditLog />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

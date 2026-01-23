@@ -1,6 +1,22 @@
 import { ArrowLeftCircleIcon, ArrowRightCircleIcon } from "lucide-react";
 
 const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
+
+  const handleNumericChange = (e) => {
+    const { name, value } = e.target;
+
+    // allow only digits
+    const numericValue = value.replace(/[^0-9]/g, "");
+
+    handleChange({
+      target: {
+        name,
+        value: numericValue,
+      },
+    });
+  };
+
+
   return (
     <div className="space-y-2 p-2 sm:p-2">
       <h2 className="text-xl sm:text-2xl font-bold mb-4 text-black-600">Employment Generation</h2>
@@ -26,14 +42,14 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                   <div className="flex items-start justify-between gap-4">
 
                     <span className="whitespace-nowrap">APST</span>
-                    <div className="divide-y divide-gray-300 text-right">
+                    {/* <div className="divide-y divide-gray-300 text-right">
                       <label className="block text-xs font-semibold text-gray-600 py-1">
                         Male
                       </label>
                       <label className="block text-xs font-semibold text-gray-600 py-1">
                         Female
                       </label>
-                    </div>
+                    </div> */}
 
                   </div>
                 </td>
@@ -44,9 +60,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="apst_male_managerial"
                         value={formData?.apst_male_managerial ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -55,9 +72,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="apst_female_managerial"
                         value={formData?.apst_female_managerial ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -71,10 +89,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
-                        name="apst_supervisory"
+                        title="Add the Number of Employees"
+                        name="apst_male_supervisory"
                         value={formData?.apst_male_supervisory ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -82,9 +101,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="apst_female_supervisory"
                         value={formData?.apst_female_supervisory ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -97,10 +117,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="apst_male_skilled"
                         value={formData?.apst_male_skilled ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -108,9 +129,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="apst_female_skilled"
                         value={formData?.apst_female_skilled ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -123,10 +145,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="apst_male_semi_skilled"
                         value={formData?.apst_male_semi_skilled ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -134,9 +157,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="apst_female_semi_skilled"
                         value={formData?.apst_female_semi_skilled ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -149,10 +173,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="apst_male_unskilled"
                         value={formData?.apst_male_unskilled ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -160,9 +185,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="apst_female_unskilled"
                         value={formData?.apst_female_unskilled ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -175,10 +201,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="apst_male_others"
                         value={formData?.apst_male_others ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -187,8 +214,9 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                         type="text"
                         placeholder="female"
                         name="apst_female_others"
+                        title="Add the Number of Employees"
                         value={formData?.apst_female_others ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -197,18 +225,18 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
               </tr>
 
               <tr className="bg-gray-50">
-                <td className="border px-4 py-2">
+                <td className="border px-4 py-2 font-medium">
                   <div className="flex items-start justify-between gap-4">
 
-                    <span className="whitespace-nowrap">NONAPST</span>
-                    <div className="divide-y divide-gray-300 text-right">
+                    <span className="whitespace-nowrap">NON-APST</span>
+                    {/* <div className="divide-y divide-gray-300 text-right">
                       <label className="block text-xs font-semibold text-gray-600 py-1">
                         Male
                       </label>
                       <label className="block text-xs font-semibold text-gray-600 py-1">
                         Female
                       </label>
-                    </div>
+                    </div> */}
 
                   </div>
                 </td>
@@ -219,10 +247,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="nonapst_male_managerial"
                         value={formData?.nonapst_male_managerial ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -230,9 +259,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="nonapst_female_managerial"
                         value={formData?.nonapst_female_managerial ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -245,10 +275,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="nonapst_male_supervisory"
                         value={formData?.nonapst_male_supervisory ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -256,9 +287,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="nonapst_female_supervisory"
                         value={formData?.nonapst_female_supervisory ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -271,10 +303,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="nonapst_male_skilled"
                         value={formData?.nonapst_male_skilled ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -282,9 +315,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="nonapst_female_skilled"
                         value={formData?.nonapst_female_skilled ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -297,10 +331,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="nonapst_male_semi_skilled"
                         value={formData?.nonapst_male_semi_skilled ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -308,9 +343,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="nonapst_female_semi_skilled"
                         value={formData?.nonapst_female_semi_skilled ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -323,10 +359,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="nonapst_male_unskilled"
                         value={formData?.nonapst_male_unskilled ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -334,9 +371,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="nonapst_female_unskilled"
                         value={formData?.nonapst_female_unskilled ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
@@ -349,10 +387,11 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="male"
+                        title="Add the Number of Employees"
                         name="nonapst_male_others"
                         value={formData?.nonapst_male_others ?? ""}
-                        onChange={handleChange}
-                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleNumericChange}
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>
 
@@ -360,9 +399,10 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                       <input
                         type="text"
                         placeholder="female"
+                        title="Add the Number of Employees"
                         name="nonapst_female_others"
                         value={formData?.nonapst_female_others ?? ""}
-                        onChange={handleChange}
+                        onChange={handleNumericChange}
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
                       />
                     </div>

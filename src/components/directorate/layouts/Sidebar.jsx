@@ -3,15 +3,10 @@ import { useEffect, useState } from "react";
 
 import {
   LayoutDashboard,
-  Building2,
-  Gift,
-  FileText,
-  BarChart2,
-  ShoppingCart,
-  MessageSquare,
-  User,
-  Bell,
-  AlertCircle
+  Calculator,
+  Settings,
+  FileCheck,
+  ShieldCheck
 } from "lucide-react";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
@@ -29,9 +24,10 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   const menuItems = [
     { label: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" />, path: "/directorate/dashboard", basePath: "/directorate/dashboard" },
-    { label: "Calculation Sheet", icon: <LayoutDashboard className="w-5 h-5" />, path: "/directorate/calculation-sheets", basePath: "/directorate/calculation-sheets" },
-    { label: "Rule Configuration", icon: <LayoutDashboard className="w-5 h-5" />, path: "/directorate/rule-configuration", basePath: "/directorate/rule-configuration" },
-    { label: "Sanction Preparation", icon: <LayoutDashboard className="w-5 h-5" />, path: "/directorate/sanction-preparation", basePath: "/directorate/sanction-preparation" }
+    { label: "Calculation Sheet", icon: <Calculator className="w-5 h-5" />, path: "/directorate/calculation-sheets", basePath: "/directorate/calculation-sheets" },
+    { label: "Rule Configuration", icon: <Settings className="w-5 h-5" />, path: "/directorate/rule-configuration", basePath: "/directorate/rule-configuration" },
+    { label: "Sanction Preparation", icon: <FileCheck className="w-5 h-5" />, path: "/directorate/sanction-preparation", basePath: "/directorate/sanction-preparation" },
+    { label: "Calculation Audit Check", icon: <ShieldCheck className="w-5 h-5" />, path: "/directorate/calculation-audit-check", basePath: "/directorate/calculation-audit-check" }
   ];
 
   return (

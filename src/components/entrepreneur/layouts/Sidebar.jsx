@@ -18,7 +18,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
   const location = useLocation();
 
   // Default active route
-  const [activePath, setActivePath] = useState("/admin/dashboard");
+  const [activePath, setActivePath] = useState("/entrepreneur/dashboard");
 
   // Update active on route change
   useEffect(() => {
@@ -28,17 +28,17 @@ export default function Sidebar({ isOpen, setIsOpen }) {
   }, [location.pathname]);
 
   const menuItems = [
-    { label: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" />, path: "/admin/dashboard", basePath: "/admin/dashboard" },
-    // { label: "Available Schemes", icon: <LayoutDashboard className="w-5 h-5" />, path: "/admin/available-schemes" },
-    { label: "Apply for Incentives", icon: <LayoutDashboard className="w-5 h-5" />, path: "/admin/schemes/available-schemes", basePath: "/admin/schemes" },
-    { label: "Unit Management", icon: <Building2 className="w-5 h-5" />, path: "/admin/unit/unit-management", basePath: "/admin/unit" },
-    // { label: "Incentive Schemes", icon: <Gift className="w-5 h-5" />, path: "/admin/incentive-schemes-application" },
-    { label: "My Applications", icon: <FileText className="w-5 h-5" />, path: "/admin/my-application", basePath: "/admin/my-application" },
-    // { label: "Progress Reporting", icon: <BarChart2 className="w-5 h-5" />, path: "/admin/progress-reporting", basePath: "/admin/progress-reporting" },
-    // { label: "Marketplace", icon: <ShoppingCart className="w-5 h-5" />, path: "/admin/market-place", basePath: "/admin/market-place" },
-    // { label: "Grievance", icon: <AlertCircle className="w-5 h-5" />, path: "/admin/grievance", basePath: "/admin/grievance" },
-    // { label: "Notifications", icon: <Bell className="w-5 h-5" />, path: "/admin/notifications", basePath: "/admin/notifications" },
-    { label: "My Profile", icon: <User className="w-5 h-5" />, path: "/admin/my-profile", basePath: "/admin/my-profile" },
+    { label: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" />, path: "/entrepreneur/dashboard", basePath: "/entrepreneur/dashboard" },
+    // { label: "Available Schemes", icon: <LayoutDashboard className="w-5 h-5" />, path: "/entrepreneur/available-schemes" },
+    { label: "Apply for Incentives", icon: <LayoutDashboard className="w-5 h-5" />, path: "/entrepreneur/schemes/available-schemes", basePath: "/entrepreneur/schemes" },
+    { label: "Unit Management", icon: <Building2 className="w-5 h-5" />, path: "/entrepreneur/unit/unit-management", basePath: "/entrepreneur/unit" },
+    // { label: "Incentive Schemes", icon: <Gift className="w-5 h-5" />, path: "/entrepreneur/incentive-schemes-application" },
+    { label: "My Applications", icon: <FileText className="w-5 h-5" />, path: "/entrepreneur/my-application", basePath: "/entrepreneur/my-application" },
+    // { label: "Progress Reporting", icon: <BarChart2 className="w-5 h-5" />, path: "/entrepreneur/progress-reporting", basePath: "/entrepreneur/progress-reporting" },
+    // { label: "Marketplace", icon: <ShoppingCart className="w-5 h-5" />, path: "/entrepreneur/market-place", basePath: "/entrepreneur/market-place" },
+    // { label: "Grievance", icon: <AlertCircle className="w-5 h-5" />, path: "/entrepreneur/grievance", basePath: "/entrepreneur/grievance" },
+    // { label: "Notifications", icon: <Bell className="w-5 h-5" />, path: "/entrepreneur/notifications", basePath: "/entrepreneur/notifications" },
+    { label: "My Profile", icon: <User className="w-5 h-5" />, path: "/entrepreneur/my-profile", basePath: "/entrepreneur/my-profile" },
   ];
 
   return (

@@ -34,7 +34,7 @@ const Declaration = ({ formData, handleChange, handleSubmit, nextStep, prevStep,
         </p>
 
         <a
-          href="/admin/dashboard"
+          href="/entrepreneur/dashboard"
           className="inline-block bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700 transition text-sm sm:text-base"
         >
           Go to Dashboard

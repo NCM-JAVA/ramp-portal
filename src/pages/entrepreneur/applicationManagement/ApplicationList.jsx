@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import StatusBadge from "../../../components/admin/common/StatusBadge";
+import StatusBadge from "../../../components/common/StatusBadge";
 import { Edit, Eye, Trash2 } from "lucide-react";
 
 const ApplicationList = () => {
@@ -81,6 +81,15 @@ const ApplicationList = () => {
             </form>
 
             <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-6">
+                <div className="mt-4 mb-2 p-4 rounded-lg border border-orange-300 bg-orange-50 text-orange-800 text-sm flex gap-2">
+                    <span className="font-semibold">Note:</span>
+                    <span>
+                        Applicant can withdraw the application only while it is under
+                        <b> DIC</b>. Once the application is moved to
+                        <b> Directorate</b>, withdrawal is not permitted.
+                    </span>
+                </div>
+
                 <div className="space-y-1">
                     <div class="overflow-x-auto">
                         <table class="min-w-full border-gray-300 mt-3 mb-5">
@@ -104,9 +113,29 @@ const ApplicationList = () => {
                                     <td className="p-2">12 Jan 2025</td>
                                     <td className="p-2"><StatusBadge status="under_scrutiny" /></td>
                                     <td className="p-2">
-                                        <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
-                                            <Eye className="w-5 h-5" />
-                                        </button>
+                                        <div className="flex items-center gap-2 whitespace-nowrap">
+                                            <button
+                                                onClick={() => setOpenViewModal(true)}
+                                                className="h-10 w-10 flex items-center justify-center
+                                                rounded-lg text-orange-600
+                                                hover:bg-orange-100 transition"
+                                            >
+                                                <Eye className="w-5 h-5" />
+                                            </button>
+
+                                            <button
+                                                className="h-10 px-4 flex items-center justify-center
+                                                bg-gradient-to-r from-orange-500 to-orange-600
+                                                hover:from-orange-600 hover:to-orange-700
+                                                text-white font-semibold
+                                                rounded-lg shadow
+                                                transition-all duration-300
+                                                whitespace-nowrap"
+                                            >
+                                                Withdraw Application
+                                            </button>
+                                        </div>
+
 
                                         {/* <button className="p-2 rounded-md hover:bg-green-100 text-green-600">
                                             <Edit className="w-5 h-5" />

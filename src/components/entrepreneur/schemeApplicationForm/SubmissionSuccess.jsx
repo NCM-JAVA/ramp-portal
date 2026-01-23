@@ -46,7 +46,7 @@ const SubmissionSuccess = ({ formData, handleChange, nextStep, prevStep, errors,
         <div />
 
         {/* RIGHT ACTION */}
-        <Link to="/admin/my-application">
+        <Link to="/entrepreneur/my-application">
         <div className="flex justify-end items-center">
           <button
             // onClick={goToMyApplications}

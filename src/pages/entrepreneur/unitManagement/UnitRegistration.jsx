@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import BackButton from "../../../components/admin/common/BackButton";
+import BackButton from "../../../components/common/BackButton";
 import { Send } from "lucide-react";
 import { toast } from "react-toastify";
 

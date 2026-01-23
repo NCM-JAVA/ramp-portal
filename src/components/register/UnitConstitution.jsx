@@ -36,6 +36,9 @@ const UnitConstitution = ({ formData, handleChange, nextStep, prevStep, errors }
         </div>
 
         <div className="flex flex-col justify-end">
+          <span className="text-xs text-gray-800 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
           <input
             type="file"
             name="constitution_document"
@@ -102,6 +105,9 @@ const UnitConstitution = ({ formData, handleChange, nextStep, prevStep, errors }
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
             Aadhar Document <span>*</span>
+            <span className="text-xs text-gray-800 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
           </label>
 
           <input
@@ -139,6 +145,9 @@ const UnitConstitution = ({ formData, handleChange, nextStep, prevStep, errors }
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
             PAN / TAN Document <span>*</span>
+            <span className="text-xs text-gray-800 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
           </label>
 
           <input

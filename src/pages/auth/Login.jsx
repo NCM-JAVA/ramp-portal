@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveUserDetails, logout } from "../../redux/slices/AuthSlice";
 import actions from "../../redux/actions";
+import { toast } from "react-toastify";
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -11,7 +12,7 @@ export default function Login() {
     const navigate = useNavigate();
     const [openModal, setOpenModal] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
-
+    const [errors, setErrors] = useState({});
 
     const [formData, setFormData] = useState({
         login: "",
@@ -21,67 +22,44 @@ export default function Login() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
+        if (errors[name]) {
+            setErrors({ ...errors, [name]: null });
+        }
     };
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const userid = formData.login.trim();
-        
+        setErrors({});
+
+        const userid = formData?.email?.trim();
         // let res = await actions.LoginAction(formData);
-        // console.log('login user - ',res);
         
         // if (res?.status === 200) {
-        //     if (userid === "DIC012026"){
-        //         navigate("/admin/dashboard");
-        //         return;
-        //     } else{
-        //         setOpenModal(true);
-        //     }
+            // toast.success("Login Successful");
+            if (userid === "DIC012026") {
+                navigate("/dic/dashboard");
+                return;
+            } else if (userid === "DIR012026") {
+                navigate("/directorate/dashboard");
+                return;
+            } else {
+                setOpenModal(true);
+            }
         // }else{
-        //     // Handle login failure (error message is already in the Redux state)
-        //     console.log('Login failed');
+        //     setErrors(res?.errors || {});
+        //     return;
         // }
-        // navigate("/admin/dashboard");
-        // dispatch(loginUser(formData));
-
-        if (userid === "DIC012026") {
-            navigate("/dic/dashboard");
-            return;
-        }else if (userid === "DIR012026"){
-            navigate("/directorate/dashboard");
-            return;
-        }else {
-            setOpenModal(true);
-        }
-
-        
     };
-
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-
-    //     // let result = validation(data);
-    //     // setError(result);
-    //     // if (!result?.isError) {
-    //     let res = await actions.LoginAction(formData);
-    //     console.log('login page response --- ', formData, res);
-        
-    //     if (res?.status === 200) {
-    //         navigate("/admin/dashboard");
-    //     }
-    //     // }
-    //     // console.log(res, "ghghjghjgjhgj");
-    // };
-
 
     useEffect(() => {
         if (token) {
-            navigate("/admin/dashboard");
+            navigate("/entrepreneur/dashboard");
         } else {
             setFormData({ login: "", password: "" });
         }
     }, [token]);
+
+    console.log('login page error ---- ',errors);
 
     return (
         <MainLayout>
@@ -90,9 +68,9 @@ export default function Login() {
                     <h2 className="text-3xl font-bold text-center text-gray-900 mb-2">Sign in to your account</h2>
                     <p className="text-center font-semibold text-orange-600 mb-8 text-sm">Access the Department of Industries portal</p>
 
-                    {error && (
+                    {errors && errors.length > 0 && (
                         <div className="bg-red-100 text-red-700 p-3 rounded-lg text-sm mb-4 border border-red-300">
-                            {typeof error === "string" ? error : JSON.stringify(error)}
+                            {typeof errors === "string" ? errors : JSON.stringify(errors)}
                         </div>
                     )}
 
@@ -102,17 +80,17 @@ export default function Login() {
                                 <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">Userid</label>
                                 <input
                                     type="text"
-                                    name="login"
-                                    value={formData.login}
+                                    name="email"
+                                    value={formData.email}
                                     onChange={handleChange}
                                     className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
                                     placeholder="Enter Userid / login"
                                 />
 
                                 <div className="h-5">
-                                    {error?.login && (
+                                    {errors?.email && (
                                         <p className="text-red-600 text-[12px] font-bold">
-                                            {error.login}
+                                            {errors.email}
                                         </p>
                                     )}
                                 </div>
@@ -131,9 +109,9 @@ export default function Login() {
                                     placeholder="Enter Password"
                                 />
                                 <div className="h-5">
-                                    {error?.password && (
+                                    {errors?.password && (
                                         <p className="text-red-600 text-[12px] font-bold">
-                                            {error.password}
+                                            {errors.password}
                                         </p>
                                     )}
                                 </div>
@@ -204,14 +182,14 @@ export default function Login() {
                                     </p>
                                 </div>
                             </button>
-                            
+
 
                             {/* Option 2 */}
-                            
+
                             <button
                                 onClick={() => {
                                     setOpenModal(false);
-                                    navigate("/admin/dashboard");
+                                    navigate("/entrepreneur/dashboard");
                                 }}
                                 className="group flex items-start gap-4 p-6 rounded-xl border border-gray-200
                      hover:border-green-600 hover:bg-green-50 transition-all
@@ -228,7 +206,7 @@ export default function Login() {
                                     </p>
                                 </div>
                             </button>
-                            
+
 
 
                         </div>

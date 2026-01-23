@@ -2,7 +2,9 @@ import axios from "axios";
 import { LOGIN, REGISTER } from "./url";
 
 class AuthServiceClass {
-  async loginService(data) {    
+  async loginService(data) { 
+    console.log(data);
+       
     const headers = {
       "Content-Type": "application/json",
     };
