@@ -1,7 +1,7 @@
-import Card from "../../components/admin/common/Card";
+import Card from "../../components/common/Card";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import StatusBadge from "../../components/admin/common/StatusBadge";
+import StatusBadge from "../../components/common/StatusBadge";
 import { Eye } from "lucide-react";
 
 const Dashboard = () => {

@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import SchemeApplication from "../../../components/admin/schemeApplicationForm/SchemeApplicationForm";
-import DocumentUpload from "../../../components/admin/schemeApplicationForm/DocumentUpload";
-import ProgressBar from "../../../components/admin/schemeApplicationForm/ProgressBar";
-import ApplicationPreview from "../../../components/admin/schemeApplicationForm/ApplicationPreview";
-import SubmissionSuccess from "../../../components/admin/schemeApplicationForm/SubmissionSuccess";
+import SchemeApplication from "../../../components/entrepreneur/schemeApplicationForm/SchemeApplicationForm";
+import DocumentUpload from "../../../components/entrepreneur/schemeApplicationForm/DocumentUpload";
+import ProgressBar from "../../../components/entrepreneur/schemeApplicationForm/ProgressBar";
+import ApplicationPreview from "../../../components/entrepreneur/schemeApplicationForm/ApplicationPreview";
+import SubmissionSuccess from "../../../components/entrepreneur/schemeApplicationForm/SubmissionSuccess";
 
 const SchemeApplicationForm = () => {
     const { setPageTitle, setPageSubTitle, setBackButton, setActionButton } = useOutletContext();
@@ -135,8 +135,8 @@ const SchemeApplicationForm = () => {
     //   };
 
     useEffect(() => {
-        setPageTitle("Scheme Application Form");
-        setPageSubTitle(`Scheme ID: ${id}`);
+        setPageTitle("Incentive Application Form");
+        // setPageSubTitle(`Scheme ID: ${id}`);
         setBackButton(null);
         setActionButton(null);
     }, [id]);
@@ -177,10 +177,12 @@ const SchemeApplicationForm = () => {
     };
 
     return (
-        <div className="bg-white p-6 rounded-xl shadow overflow-x-auto">
+        <>
+            {/* <div className="bg-white p-6 rounded-xl shadow overflow-x-auto"> */}
             <ProgressBar step={step} />
             {renderStep()}
-        </div>
+            {/* </div> */}
+        </>
     );
 };
 

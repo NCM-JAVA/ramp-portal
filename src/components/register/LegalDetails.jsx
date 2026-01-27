@@ -144,6 +144,118 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            Trading License No. <span>*</span>
+          </label>
+          <input
+            type="text"
+            name="trading_license_no"
+            value={formData.trading_license_no}
+            onChange={handleChange}
+            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+            placeholder="Trading License No."
+          />
+
+          <div className="h-5">
+            {errors.trading_license_no && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.trading_license_no}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            Trading License Doc. Upload <span>*</span>  
+            <span className="text-xs text-gray-800 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
+          </label>
+          <input
+            type="file"
+            name="consent_operate"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "consent_operate",
+                  value: e.target.files[0],
+                },
+              })
+            }
+          />
+
+          <div className="h-5">
+            {errors.consent_operate && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.consent_operate}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            Consent to operate/establish from State Pollution Board No. <span>*</span>
+          </label>
+          <input
+            type="text"
+            name="trading_license_no"
+            value={formData.trading_license_no}
+            onChange={handleChange}
+            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
+            placeholder="Trading License No."
+          />
+
+          <div className="h-5">
+            {errors.trading_license_no && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.trading_license_no}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+            Consent to operate/establish from State Pollution Board Document Upload <span className="text-xs font-normal">(If Applicable)</span>
+            
+          </label>
+          <input
+            type="file"
+            name="consent_operate"
+            accept="image/png,image/jpeg,image/jpg,application/pdf"
+            className="w-full p-2 border rounded 
+               focus:outline-none focus:ring-2 focus:ring-orange-500 
+               text-sm sm:text-base"
+            onChange={(e) =>
+              handleChange({
+                target: {
+                  name: "consent_operate",
+                  value: e.target.files[0],
+                },
+              })
+            }
+          />
+
+          <div className="h-5">
+            {errors.consent_operate && (
+              <p className="text-red-600 text-[12px] font-bold">
+                {errors.consent_operate}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
@@ -207,60 +319,6 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
           </div>
         </div>
         
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Trading License No. <span>*</span>
-          </label>
-          <input
-            type="text"
-            name="trading_license_no"
-            value={formData.trading_license_no}
-            onChange={handleChange}
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base"
-            placeholder="Trading License No."
-          />
-
-          <div className="h-5">
-            {errors.trading_license_no && (
-              <p className="text-red-600 text-[12px] font-bold">
-                {errors.trading_license_no}
-              </p>
-            )}
-          </div>
-        </div>
-
-        <div className="flex flex-col">
-          <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Consent to operate/establish from State Pollution Board  <span className="text-xs font-normal">(If Applicable)</span>
-          </label>
-          <input
-            type="file"
-            name="consent_operate"
-            accept="image/png,image/jpeg,image/jpg,application/pdf"
-            className="w-full p-2 border rounded 
-               focus:outline-none focus:ring-2 focus:ring-orange-500 
-               text-sm sm:text-base"
-            onChange={(e) =>
-              handleChange({
-                target: {
-                  name: "consent_operate",
-                  value: e.target.files[0],
-                },
-              })
-            }
-          />
-
-          <div className="h-5">
-            {errors.consent_operate && (
-              <p className="text-red-600 text-[12px] font-bold">
-                {errors.consent_operate}
-              </p>
-            )}
-          </div>
-        </div>
       </div>
 
       {/* <div className="grid grid-cols-1 gap-4 sm:gap-6">

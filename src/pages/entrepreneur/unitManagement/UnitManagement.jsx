@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
-import Card from "../../../components/admin/common/Card";
+import Card from "../../../components/common/Card";
 import { Eye, Edit, Trash2 } from "lucide-react";
-import StatusBadge from "../../../components/admin/common/StatusBadge";
+import StatusBadge from "../../../components/common/StatusBadge";
 
 
 const UnitManagement = () => {
@@ -15,7 +15,7 @@ const UnitManagement = () => {
     setPageSubTitle("Manage your industrial units");
     setActionButton(
       <button
-        onClick={() => navigate("/admin/unit/unit-registration")}
+        onClick={() => navigate("/entrepreneur/unit/unit-registration")}
         className="bg-white text-orange-600 px-4 py-2 rounded-lg shadow font-semibold border border-orange-600 hover:bg-orange-50"
       >
         + New Unit Registration

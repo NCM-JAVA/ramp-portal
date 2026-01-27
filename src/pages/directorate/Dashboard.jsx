@@ -1,7 +1,7 @@
 import { AlertTriangle, CheckCircle, Cpu, FileText } from "lucide-react";
-import Card from "../../components/admin/common/Card";
+import Card from "../../components/common/Card";
 import { useState } from "react";
-import StatusBadge from "../../components/admin/common/StatusBadge";
+import StatusBadge from "../../components/common/StatusBadge";
 
 const Dashboard = () => {
 

@@ -19,13 +19,13 @@ const CalculationSheet = () => {
             ruleParameter: "Required Documents Submitted?",
             value: "Yes",
             source: "Document Master",
-            status: "Fail"
+            status: "Pass"
         },
         {
             ruleParameter: "APST % Requirement",
             value: "No",
             source: "Form I",
-            status: "Pass"
+            status: "Fail"
         },
         {
             ruleParameter: "Form IV Required?",
@@ -37,7 +37,7 @@ const CalculationSheet = () => {
             ruleParameter: "AnnualTurnover (If Required)",
             value: "Input",
             source: "Form III",
-            status: "Fail"
+            status: "Pass"
         },
     ];
 

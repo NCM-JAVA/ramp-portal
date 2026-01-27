@@ -1,8 +1,8 @@
-import Card from "../../components/admin/common/Card";
+import Card from "../../components/common/Card";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import StatusBadge from "../../components/admin/common/StatusBadge";
-import { Eye } from "lucide-react";
+import StatusBadge from "../../components/common/StatusBadge";
+import { Eye, Undo2 } from "lucide-react";
 
 const Dashboard = () => {
 
@@ -32,51 +32,51 @@ const Dashboard = () => {
           <thead className="bg-gray-100 text-left">
             <tr>
               <th className="p-2">Application ID</th>
-              <th className="p-2">Application Type</th>
+              {/* <th className="p-2">Application Type</th> */}
               <th className="p-2">Unit Name </th>
-              <th className="p-2">Scheme Name</th>
+              <th className="p-2">Incentive Name</th>
               <th className="p-2">Submission Date</th>
               <th className="p-2">Current Status</th>
-              <th className="p-2">Action</th>
+              <th className="p-2">Withdraw Application</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b">
               <td className="p-2">APP-2025-000123</td>
-              <td className="p-2">Incentive Claim</td>
+              {/* <td className="p-2">Incentive Claim</td> */}
               <td className="p-2">Himalayan Agro Unit</td>
               <td className="p-2">Capital Investment Subsidy</td>
               <td className="p-2">12 Jan 2025</td>
               <td className="p-2"><StatusBadge status="under_scrutiny" /></td>
-              <td className="p-2">
-                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
-                      <Eye className="w-5 h-5" />
+              <td className="p-2 text-center">
+                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600" title="Withdraw Application">
+                      <Undo2 className="w-5 h-5 " />
                   </button>
               </td>
             </tr>
             <tr className="border-b">
               <td className="p-2">APP-2025-000124</td>
-              <td className="p-2">Incentive Claim</td>
+              {/* <td className="p-2">Incentive Claim</td> */}
               <td className="p-2">Himalayan Agro Unit</td>
               <td className="p-2">Capital Investment Subsidy</td>
               <td className="p-2">01 Mar 2025</td>
               <td className="p-2"><StatusBadge status="under_scrutiny" /></td>
-              <td className="p-2">
-                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
-                      <Eye className="w-5 h-5" />
+              <td className="p-2 text-center">
+                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600" title="Withdraw Application">
+                      <Undo2 className="w-5 h-5" />
                   </button>
               </td>
             </tr>
             <tr className="border-b">
               <td className="p-2">APP-2025-000125</td>
-              <td className="p-2">Incentive Claim</td>
+              {/* <td className="p-2">Incentive Claim</td> */}
               <td className="p-2">Himalayan Agro Unit</td>
               <td className="p-2">Capital Investment Subsidy</td>
               <td className="p-2">21 Aug 2025</td>
               <td className="p-2"><StatusBadge status="under_scrutiny" /></td>
-              <td className="p-2">
-                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600">
-                      <Eye className="w-5 h-5" />
+              <td className="p-2 text-center">
+                  <button onClick={() => setOpenViewModal(true)} className="p-2 rounded-md hover:bg-orange-100 text-orange-600" title="Withdraw Application">
+                      <Undo2 className="w-5 h-5" />
                   </button>
               </td>
             </tr>

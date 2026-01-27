@@ -5,5 +5,5 @@ export const getApiUrl = (endpoint) => {
 };
 
 //auth
-export const LOGIN = getApiUrl("/auth/login");
+export const LOGIN = getApiUrl("/login");
 export const REGISTER = getApiUrl("/auth/user-register");

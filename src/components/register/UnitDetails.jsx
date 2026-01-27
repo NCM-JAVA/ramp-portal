@@ -33,7 +33,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     </div>
                 </div>
 
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
                         Registered Mobile/Telephone
                     </label>
@@ -55,28 +55,32 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                             </p>
                         )}
                     </div>
-                </div>
+                </div> */}
 
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+
+            <h3 className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 text-orange-600 font-semibold border-b-2 border-orange-500 pb-1">
+                Unit / Factory Address
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
 
                 <div className="flex flex-col justify-end">
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-                        Factory Address <span>*</span>
+                        Location <span>*</span>
                     </label>
 
                     <input
                         type="text"
                         name="factory_address"
                         value={formData.factory_address}
-                        placeholder="Address Line"
+                        placeholder="Location"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
-                    <div className="h-5">
+                    <div className="h-1">
                         {errors.factory_address && (
                             <p className="text-red-600 text-[12px] font-bold">
                                 {errors.factory_address}
@@ -86,17 +90,20 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                 </div>
 
                 <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        Police Station/Post Office  <span>*</span>
+                    </label>
                     <input
                         type="text"
                         name="po"
                         value={formData.po}
-                        placeholder="PO"
+                        placeholder="Police Station/Post Office "
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
-                    <div className="h-5">
+                    <div className="h-1">
                         {errors.po && (
                             <p className="text-red-600 text-[12px] font-bold">
                                 {errors.po}
@@ -106,6 +113,9 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                 </div>
 
                 <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        District <span>*</span>
+                    </label>
                     <input
                         type="text"
                         name="district"
@@ -116,7 +126,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         onChange={handleChange}
                     />
 
-                    <div className="h-5">
+                    <div className="h-1">
                         {errors.district && (
                             <p className="text-red-600 text-[12px] font-bold">
                                 {errors.district}
@@ -126,6 +136,9 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                 </div>
 
                 <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        State  <span>*</span>
+                    </label>
                     <input
                         type="text"
                         name="state"
@@ -136,7 +149,7 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         onChange={handleChange}
                     />
 
-                    <div className="h-5">
+                    <div className="h-1">
                         {errors.state && (
                             <p className="text-red-600 text-[12px] font-bold">
                                 {errors.state}
@@ -145,25 +158,44 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                     </div>
                 </div>
 
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-1">
-                <div className="flex flex-col">
+                <div className="flex flex-col justify-end">
                     <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-                        Email <span>*</span>
+                        Registered mobile number  <span>*</span>
                     </label>
-
                     <input
                         type="text"
-                        name="email"
-                        value={formData.email}
-                        placeholder="Enter email"
+                        name="phone"
+                        value={formData.phone}
+                        placeholder="Registered mobile/telephone number"
                         className="w-full p-2 border rounded focus:outline-none focus:ring-2 
                                   focus:ring-orange-500 text-sm sm:text-base"
                         onChange={handleChange}
                     />
 
-                    <div className="h-5">
+                    <div className="h-1">
+                        {errors.phone && (
+                            <p className="text-red-600 text-[12px] font-bold">
+                                {errors.phone}
+                            </p>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        Email ID  <span>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="email"
+                        value={formData.email}
+                        placeholder="Enter email ID"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 
+                                  focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleChange}
+                    />
+
+                    <div className="h-1">
                         {errors.email && (
                             <p className="text-red-600 text-[12px] font-bold">
                                 {errors.email}
@@ -171,7 +203,154 @@ const UnitDetails = ({ formData, handleChange, nextStep, prevStep, errors }) => 
                         )}
                     </div>
                 </div>
+
             </div>
+
+            <h3 className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 text-orange-600 font-semibold border-b-2 border-orange-500 pb-1">
+                Office Address
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+
+                <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        Location <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        name="factory_address"
+                        value={formData.factory_address}
+                        placeholder="Location"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 
+                                  focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleChange}
+                    />
+
+                    <div className="h-1">
+                        {errors.factory_address && (
+                            <p className="text-red-600 text-[12px] font-bold">
+                                {errors.factory_address}
+                            </p>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        Police Station/Post Office  <span>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="po"
+                        value={formData.po}
+                        placeholder="Police Station/Post Office "
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 
+                                  focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleChange}
+                    />
+
+                    <div className="h-1">
+                        {errors.po && (
+                            <p className="text-red-600 text-[12px] font-bold">
+                                {errors.po}
+                            </p>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        District <span>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="district"
+                        value={formData.district}
+                        placeholder="District"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 
+                                  focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleChange}
+                    />
+
+                    <div className="h-1">
+                        {errors.district && (
+                            <p className="text-red-600 text-[12px] font-bold">
+                                {errors.district}
+                            </p>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        State  <span>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="state"
+                        value={formData.state}
+                        placeholder="State"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 
+                                  focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleChange}
+                    />
+
+                    <div className="h-1">
+                        {errors.state && (
+                            <p className="text-red-600 text-[12px] font-bold">
+                                {errors.state}
+                            </p>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        Registered mobile number  <span>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="phone"
+                        value={formData.phone}
+                        placeholder="Registered mobile/telephone number"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 
+                                  focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleChange}
+                    />
+
+                    <div className="h-1">
+                        {errors.phone && (
+                            <p className="text-red-600 text-[12px] font-bold">
+                                {errors.phone}
+                            </p>
+                        )}
+                    </div>
+                </div>
+
+                <div className="flex flex-col justify-end">
+                    <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
+                        Email ID  <span>*</span>
+                    </label>
+                    <input
+                        type="text"
+                        name="email"
+                        value={formData.email}
+                        placeholder="Enter email ID"
+                        className="w-full p-2 border rounded focus:outline-none focus:ring-2 
+                                  focus:ring-orange-500 text-sm sm:text-base"
+                        onChange={handleChange}
+                    />
+
+                    <div className="h-1">
+                        {errors.email && (
+                            <p className="text-red-600 text-[12px] font-bold">
+                                {errors.email}
+                            </p>
+                        )}
+                    </div>
+                </div>
+
+            </div>            
 
             <div className="grid grid-cols-1">
                 <div className="flex items-center space-x-3">

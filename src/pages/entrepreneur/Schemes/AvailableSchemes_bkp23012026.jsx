@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
-import StatusBadge from "../../../components/admin/common/StatusBadge";
+import StatusBadge from "../../../components/common/StatusBadge";
 
 const AvailableSchemes = () => {
 
@@ -104,7 +104,7 @@ const AvailableSchemes = () => {
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (row.eligibility_status) {
-                                            navigate(`/admin/schemes/scheme-application/${row.id}/form`);
+                                            navigate(`/entrepreneur/schemes/scheme-application/${row.id}/form`);
                                         }
                                     }}
                                     className={`w-full px-4 py-2 rounded-lg text-sm font-medium transition-all

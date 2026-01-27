@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
-import StatusBadge from "../../../components/admin/common/StatusBadge";
+import StatusBadge from "../../../components/common/StatusBadge";
 
 const AvailableSchemes = () => {
 

@@ -81,7 +81,9 @@ const authSlice = createSlice({
     userDetails: {},
   },
   reducers: {
-    saveUserDetails: (state, action) => {      
+    saveUserDetails: (state, action) => {  
+      console.log('auth slice data --- ', action.payload);
+          
       state.userDetails = action.payload;
       // let data = JSON.parse(sessionStorage.getItem("loginUserDetails"))
       sessionStorage.setItem(
