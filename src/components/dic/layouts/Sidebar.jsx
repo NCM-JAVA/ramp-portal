@@ -3,17 +3,14 @@ import { useEffect, useState } from "react";
 
 import {
   LayoutDashboard,
-  Building2,
-  Gift,
-  FileText,
-  BarChart2,
   User,
   ClipboardCheck,
   ClipboardList,
   MapPinCheck,
   Eye,
   ShieldCheck,
-  FileBadge
+  FileBadge,
+  UserPlus
 } from "lucide-react";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
@@ -31,6 +28,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   const menuItems = [
     { label: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" />, path: "/dic/dashboard", basePath: "/dic/dashboard" },
+    // { label: "Registration Dashboard", icon: <UserPlus className="w-5 h-5" />, path: "/dic/registration-management", basePath: "/dic/registration-management" },
     { label: "Verification Queue", icon: <ClipboardCheck className="w-5 h-5" />, path: "/dic/verification-queue",  basePath: "/dic/verification-queue"},
     { label: "Commencement Queue", icon: <ClipboardList className="w-5 h-5" />, path: "/dic/commencement-queue", basePath: "/dic/commencement-queue" },
     { label: "Field Inspection", icon: <MapPinCheck className="w-5 h-5" />, path: "#", basePath: "#" },
