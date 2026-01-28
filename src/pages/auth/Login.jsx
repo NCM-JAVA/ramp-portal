@@ -1,10 +1,7 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import MainLayout from "../../components/layouts/MainLayout";
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { saveUserDetails, logout } from "../../redux/slices/AuthSlice";
-import actions from "../../redux/actions";
-import { toast } from "react-toastify";
 
 export default function Login() {
     const dispatch = useDispatch();
@@ -33,18 +30,21 @@ export default function Login() {
 
         const userid = formData?.email?.trim();
         // let res = await actions.LoginAction(formData);
-        
+
         // if (res?.status === 200) {
-            // toast.success("Login Successful");
-            if (userid === "DIC012026") {
-                navigate("/dic/dashboard");
-                return;
-            } else if (userid === "DIR012026") {
-                navigate("/directorate/dashboard");
-                return;
-            } else {
-                setOpenModal(true);
-            }
+        // toast.success("Login Successful");
+        if (userid === "DIC012026") {
+            navigate("/dic/dashboard");
+            return;
+        } else if (userid === "DIR012026") {
+            navigate("/directorate/dashboard");
+            return;
+        } else if (userid === "SLC012026") {
+            navigate("/slc/dashboard");
+            return;
+        } else {
+            setOpenModal(true);
+        }
         // }else{
         //     setErrors(res?.errors || {});
         //     return;
@@ -59,7 +59,7 @@ export default function Login() {
         }
     }, [token]);
 
-    console.log('login page error ---- ',errors);
+    console.log('login page error ---- ', errors);
 
     return (
         <MainLayout>
