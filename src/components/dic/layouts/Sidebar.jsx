@@ -3,17 +3,14 @@ import { useEffect, useState } from "react";
 
 import {
   LayoutDashboard,
-  Building2,
-  Gift,
-  FileText,
-  BarChart2,
   User,
   ClipboardCheck,
   ClipboardList,
   MapPinCheck,
   Eye,
   ShieldCheck,
-  FileBadge
+  FileBadge,
+  UserPlus
 } from "lucide-react";
 
 export default function Sidebar({ isOpen, setIsOpen }) {
@@ -31,12 +28,13 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
   const menuItems = [
     { label: "Dashboard", icon: <LayoutDashboard className="w-5 h-5" />, path: "/dic/dashboard", basePath: "/dic/dashboard" },
-    { label: "Verification Queue", icon: <ClipboardCheck className="w-5 h-5" />, path: "/dic/verification-queue",  basePath: "/dic/verification-queue"},
-    { label: "Commencement Queue", icon: <ClipboardList className="w-5 h-5" />, path: "/dic/commencement-queue", basePath: "/dic/commencement-queue" },
-    { label: "Field Inspection", icon: <MapPinCheck className="w-5 h-5" />, path: "#", basePath: "#" },
-    { label: "Directorate Review of Commencement", icon: <Eye className="w-5 h-5" />, path: "/dic/directorate-review", basePath: "/dic/directorate-review" },
-    { label: "SLC Commencement Authentication", icon: <ShieldCheck className="w-5 h-5" />, path: "/dic/slc-commencement-authentication", basePath: "/dic/slc-commencement-authentication" },
-    { label: "Authentication Certificate", icon: <FileBadge className="w-5 h-5" />, path: "/dic/authentication-certificate", basePath: "/dic/authentication-certificate" },
+    // { label: "Registration Dashboard", icon: <UserPlus className="w-5 h-5" />, path: "/dic/registration-management", basePath: "/dic/registration-management" },
+    // { label: "Verification Queue", icon: <ClipboardCheck className="w-5 h-5" />, path: "/dic/verification-queue",  basePath: "/dic/verification-queue"},
+    // { label: "Commencement Queue", icon: <ClipboardList className="w-5 h-5" />, path: "/dic/commencement-queue", basePath: "/dic/commencement-queue" },
+    // { label: "Field Inspection", icon: <MapPinCheck className="w-5 h-5" />, path: "#", basePath: "#" },
+    // { label: "Directorate Review of Commencement", icon: <Eye className="w-5 h-5" />, path: "/dic/directorate-review", basePath: "/dic/directorate-review" },
+    // { label: "SLC Commencement Authentication", icon: <ShieldCheck className="w-5 h-5" />, path: "/dic/slc-commencement-authentication", basePath: "/dic/slc-commencement-authentication" },
+    // { label: "Authentication Certificate", icon: <FileBadge className="w-5 h-5" />, path: "/dic/authentication-certificate", basePath: "/dic/authentication-certificate" },
     // { label: "Marketplace", icon: <ShoppingCart className="w-5 h-5" />, path: "/dic/market-place", basePath: "/dic/market-place" },
     // { label: "Grievance", icon: <AlertCircle className="w-5 h-5" />, path: "/dic/grievance", basePath: "/dic/grievance" },
     // { label: "Notifications", icon: <Bell className="w-5 h-5" />, path: "/dic/notifications", basePath: "/dic/notifications" },

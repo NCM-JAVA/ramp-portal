@@ -1,8 +1,17 @@
-const Card = ({ title, value, subtitle, gradient, icon }) => {
+const Card = ({ title, value, subtitle, gradient, icon, link }) => {
+
+  const handleClick = () => {
+    if (link) {
+      window.location.href = link;
+      // window.open(link, "_blank");
+    }
+  };
+
   return (
     <div
+      onClick={handleClick}
       className={`p-4 sm:p-6 rounded-xl shadow-md text-white ${gradient}
-      hover:shadow-lg transition-all duration-200`}
+      hover:shadow-lg transition-all duration-200 ${link ? "cursor-pointer hover:shadow-lg" : "cursor-default"}`}
     >
       {/* <h3 className="text-base sm:text-lg font-semibold">{title}</h3> */}
       <div className="flex items-center justify-between">
