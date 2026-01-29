@@ -36,9 +36,9 @@ import CalculationSheet from "./pages/directorate/CalculationSheet";
 import RuleConfiguration from "./pages/directorate/RuleConfiguration";
 import SanctionPreparation from "./pages/directorate/SanctionPreparation";
 import CalculationAuditLog from "./pages/directorate/CalculationAuditLog";
-import RegistrationDashboard from "./pages/dic/registration/RegistrationDashboard";
 import TotalRegistration from "./pages/dic/registration/TotalRegistration";
-import RegistrationApplicationView from "./components/dic/RegistrationApplicationView";
+import RegistrationApplicationView from "./pages/dic/registration/RegistrationApplicationView";
+import RegApproved from "./pages/dic/registration/RegApproved";
 
 function App() {
   return (
@@ -71,7 +71,6 @@ function App() {
 
           <Route path="/dic" element={<DicAdminLayout />}>
             <Route path="dashboard" element={<DicDashboard />} />
-            <Route path="registration-management" element={<RegistrationDashboard />} />
             <Route path="verification-queue" element={<VerificationQueue />} />
             <Route path="commencement-queue" element={<CommencementQueue />} />
             <Route path="directorate-review" element={<DirectorateReview />} />
@@ -81,6 +80,7 @@ function App() {
 
             <Route path="registered-application" element={<TotalRegistration />} />
             <Route path="registered-application/view/:unitId" element={<RegistrationApplicationView />} />
+            <Route path="registered-application/approve-registration-application/:unitId" element={<RegApproved />} />
           </Route>
 
           <Route path="/directorate" element={<DirectorateLayout />}>
