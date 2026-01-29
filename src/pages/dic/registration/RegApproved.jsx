@@ -66,12 +66,12 @@ const RegApproved = () => {
                     <div className="flex items-center gap-2 mx-auto">
 
                         <input
-                                type="file"
-                                accept="application/pdf"
-                                ref={fileInputRef}
-                                onChange={handleUpload}
-                                className="hidden"
-                            />
+                            type="file"
+                            accept="application/pdf"
+                            ref={fileInputRef}
+                            onChange={handleUpload}
+                            className="hidden"
+                        />
                         <button
                             onClick={() => fileInputRef.current.click()}
                             title="Approve Application"
@@ -106,9 +106,9 @@ const RegApproved = () => {
                 <section className="mt-8 mb-12 flex justify-center ">
                     <div className="border-2 border-orange-500 h-full p-10">
 
-                        <h2 className="text-center text-lg font-bold tracking-wide mb-12">GOVERNMENT OF ARUNACHAL PRADESH 
-                        DISTRICT INDUSTRIES CENTER <br/>
-                        (NAME OF THE DIC)</h2>
+                        <h2 className="text-center text-lg font-bold tracking-wide mb-12">GOVERNMENT OF ARUNACHAL PRADESH
+                            DISTRICT INDUSTRIES CENTER <br />
+                            (NAME OF THE DIC)</h2>
 
                         <h2 className="text-center text-lg font-bold underline tracking-wide mb-12">
                             CERTIFICATE OF REGISTRATION UNDER APIDIP 2025
@@ -157,6 +157,10 @@ const RegApproved = () => {
                         className="hidden pdf-a4 bg-white text-black mx-auto"
                     >
                         <div className="h-full p-10">
+
+                            <h2 className="text-center text-lg font-bold tracking-wide mb-12">GOVERNMENT OF ARUNACHAL PRADESH
+                                DISTRICT INDUSTRIES CENTER <br />
+                                (NAME OF THE DIC)</h2>
 
                             <h2 className="text-center text-lg font-bold underline tracking-wide mb-12">
                                 CERTIFICATE OF REGISTRATION UNDER APIDIP 2025
