@@ -225,7 +225,10 @@ const LegalDetails = ({ formData, handleChange, nextStep, prevStep, errors }) =>
 
         <div className="flex flex-col">
           <label className="mb-1 font-medium text-gray-700 text-sm sm:text-base">
-            Consent to operate/establish from State Pollution Board Document Upload <span className="text-xs font-normal">(If Applicable)</span>
+            Consent to operate/establish from State Pollution Board Document Upload <span>*</span>
+            <span className="text-xs text-gray-800 font-normal">
+              (JPG, PNG, PDF • Max 2MB)
+            </span>
             
           </label>
           <input

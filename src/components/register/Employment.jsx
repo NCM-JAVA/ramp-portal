@@ -59,7 +59,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="apst_male_managerial"
                         value={formData?.apst_male_managerial ?? ""}
@@ -71,7 +71,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="apst_female_managerial"
                         value={formData?.apst_female_managerial ?? ""}
@@ -88,7 +88,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="apst_male_supervisory"
                         value={formData?.apst_male_supervisory ?? ""}
@@ -100,7 +100,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="apst_female_supervisory"
                         value={formData?.apst_female_supervisory ?? ""}
@@ -116,7 +116,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="apst_male_skilled"
                         value={formData?.apst_male_skilled ?? ""}
@@ -128,7 +128,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="apst_female_skilled"
                         value={formData?.apst_female_skilled ?? ""}
@@ -144,7 +144,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="apst_male_semi_skilled"
                         value={formData?.apst_male_semi_skilled ?? ""}
@@ -156,7 +156,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="apst_female_semi_skilled"
                         value={formData?.apst_female_semi_skilled ?? ""}
@@ -172,7 +172,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="apst_male_unskilled"
                         value={formData?.apst_male_unskilled ?? ""}
@@ -184,7 +184,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="apst_female_unskilled"
                         value={formData?.apst_female_unskilled ?? ""}
@@ -200,7 +200,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="apst_male_others"
                         value={formData?.apst_male_others ?? ""}
@@ -212,7 +212,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         name="apst_female_others"
                         title="Add the Number of Employees"
                         value={formData?.apst_female_others ?? ""}
@@ -246,7 +246,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="nonapst_male_managerial"
                         value={formData?.nonapst_male_managerial ?? ""}
@@ -258,7 +258,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="nonapst_female_managerial"
                         value={formData?.nonapst_female_managerial ?? ""}
@@ -274,7 +274,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="nonapst_male_supervisory"
                         value={formData?.nonapst_male_supervisory ?? ""}
@@ -286,7 +286,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="nonapst_female_supervisory"
                         value={formData?.nonapst_female_supervisory ?? ""}
@@ -302,7 +302,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="nonapst_male_skilled"
                         value={formData?.nonapst_male_skilled ?? ""}
@@ -314,7 +314,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="nonapst_female_skilled"
                         value={formData?.nonapst_female_skilled ?? ""}
@@ -330,7 +330,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="nonapst_male_semi_skilled"
                         value={formData?.nonapst_male_semi_skilled ?? ""}
@@ -342,7 +342,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="nonapst_female_semi_skilled"
                         value={formData?.nonapst_female_semi_skilled ?? ""}
@@ -358,7 +358,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="nonapst_male_unskilled"
                         value={formData?.nonapst_male_unskilled ?? ""}
@@ -370,7 +370,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="nonapst_female_unskilled"
                         value={formData?.nonapst_female_unskilled ?? ""}
@@ -386,7 +386,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="male"
+                        placeholder="Male"
                         title="Add the Number of Employees"
                         name="nonapst_male_others"
                         value={formData?.nonapst_male_others ?? ""}
@@ -398,7 +398,7 @@ const Employment = ({ formData, handleChange, nextStep, prevStep }) => {
                     <div className="py-2">
                       <input
                         type="text"
-                        placeholder="female"
+                        placeholder="Female"
                         title="Add the Number of Employees"
                         name="nonapst_female_others"
                         value={formData?.nonapst_female_others ?? ""}

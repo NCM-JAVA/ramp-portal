@@ -83,7 +83,7 @@ const TotalRegistration = () => {
                             <th className="p-2">GST Number</th>
                             <th className="p-2">Udyog Number</th>
                             <th className="p-2">Registration Date</th>
-                            <th className="p-2">Status</th>
+                            {/* <th className="p-2">Status</th> */}
                             <th className="p-2 w-32">Action</th>
                         </tr>
                     </thead>
@@ -99,9 +99,9 @@ const TotalRegistration = () => {
                                 <td className="p-2">{row.gstNumber}</td>
                                 <td className="p-2">{row.udyogNumber}</td>
                                 <td className="p-2">{row.registrationDate}</td>
-                                <td className="p-2">
+                                {/* <td className="p-2">
                                     <StatusBadge status={row.status} />
-                                </td>
+                                </td> */}
                                 <td className="p-2">
                                     <button 
                                         onClick={() => navigate("/dic/registered-application/view/" + row.unitId)}

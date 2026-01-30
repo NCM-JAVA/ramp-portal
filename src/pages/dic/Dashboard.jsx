@@ -40,7 +40,7 @@ const Dashboard = () => {
         />
 
         <Card
-          title="Rejected Registration"
+          title="Returned to Applicant"
           value="1"
           subtitle="Queries Raised"
           gradient="bg-gradient-to-r from-orange-500 to-pink-500"
