@@ -93,25 +93,25 @@ const VerificationQueue = () => {
                 <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mt-6">
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50">
+                        <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50">
                             <option >District</option>
                             <option>District1</option>
                             <option>District2</option>
                         </select>
 
-                        <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50">
+                        <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50">
                             <option>Status</option>
                         </select>
 
-                        <input type="date" className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50" />
+                        <input type="date" className="w-full p-2 border rounded focus:outline-none focus:ring-2 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50" />
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mt-3">
-                        <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50">
+                        <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50">
                             <option>Incentive / Subsidy</option>
                         </select>
 
-                        <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50">
+                        <select className="w-full p-2 border rounded focus:outline-none focus:ring-2 text-sm sm:text-base focus:ring-orange-500 focus:bg-orange-50">
                             <option>Red Flag</option>
                             <option>Yes</option>
                             <option>No</option>

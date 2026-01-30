@@ -1,7 +1,7 @@
+import html2pdf from "html2pdf.js";
 import { ArrowLeft, CheckCircle, Download, XCircle } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import html2pdf from "html2pdf.js";
 import RegistrationApplicationPDF from "../../../components/dic/RegistrationApplicationPDF";
 
 const RegistrationApplicationView = () => {
@@ -341,9 +341,9 @@ const RegistrationApplicationView = () => {
                                     onClick={() => {
                                         console.log("Application Approved");
                                         setOpenApprove(false);
-                                        navigate(`/dic/registered-application/approve-registration-application/${unitId}`, 
+                                        navigate(`/dic/registered-application/approve-registration-application/${unitId}`,
                                             {
-                                            state: {
+                                                state: {
                                                     fullName: unitRegData.fullName,
                                                     dicName: "District Industries Centre, Tawang",
                                                     registrationNo: "DIC/123/APIDIP/2025",

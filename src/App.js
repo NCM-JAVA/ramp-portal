@@ -30,16 +30,25 @@ import DICProfile from "./pages/dic/myProfile/MyProfile";
 import SLCCommencement from "./pages/dic/slc/SLCCommencement";
 import VerificationQueue from "./pages/dic/verification/VerificationQueue";
 
-import RegistrationApplicationView from "./components/dic/RegistrationApplicationView";
 import DirectorateLayout from "./components/directorate/layouts/DirectorateLayout";
-import DirectorateDashboard from "./pages/directorate/Dashboard";
+import RegApproved from "./pages/dic/registration/RegApproved";
+import RegistrationApplicationView from "./pages/dic/registration/RegistrationApplicationView";
+import TotalRegistration from "./pages/dic/registration/TotalRegistration";
+import CalculationAuditLog from "./pages/directorate/CalculationAuditLog";
 import CalculationSheet from "./pages/directorate/CalculationSheet";
+import DirectorateDashboard from "./pages/directorate/Dashboard";
 import RuleConfiguration from "./pages/directorate/RuleConfiguration";
 import SanctionPreparation from "./pages/directorate/SanctionPreparation";
-import CalculationAuditLog from "./pages/directorate/CalculationAuditLog";
-import TotalRegistration from "./pages/dic/registration/TotalRegistration";
-import RegistrationApplicationView from "./pages/dic/registration/RegistrationApplicationView";
-import RegApproved from "./pages/dic/registration/RegApproved";
+
+import SlcLayout from "./components/slc/slcLayout";
+import SlcApplicationsForFinalApproval from "./pages/slc/SlcApplicationsForFinalApproval";
+import SlcApplicationView from "./pages/slc/SlcApplicationView";
+import SlcApprovalConfirmation from "./pages/slc/SlcApprovalConfirmation";
+import SlcApprovedApplications from "./pages/slc/SlcApprovedApplications";
+import SlcDashboard from "./pages/slc/SlcDashboard";
+import SlcPendingApplications from "./pages/slc/SlcPendingApplications";
+import SlcRejectedApplications from "./pages/slc/SlcRejectedApplications";
+import SlcReports from "./pages/slc/SlcReports";
 
 function App() {
     return (
